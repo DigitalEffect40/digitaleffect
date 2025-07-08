@@ -139,6 +139,48 @@ nav a {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+  
+  /* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > a {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  min-width: 180px;
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background-color: #00bcd4;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
   
 }
   </style>
@@ -152,25 +194,25 @@ nav a {
   </div>
 
   <div class="nav-container">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <div class="dropdown">
-  <a href="products.html">Product ▾</a>
-  <div class="dropdown-content">
-    <a href="bed-design.html">Bed Design</a>
-    <a href="flower-design.html">Flower Design</a>
-    <a href="door-design.html">Door Design</a>
-    <a href="religious-hindu.html">Religious - Hindu</a>
-    <a href="religious-catholic.html">Religious - Catholic</a>
+  
+      <nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <div class="dropdown">
+    <a href="products.html">Product ▾</a>
+    <div class="dropdown-content">
+      <a href="bed-design.html">Bed Design</a>
+      <a href="flower-design.html">Flower Design</a>
+      <a href="door-design.html">Door Design</a>
+      <a href="religious-hindu.html">Religious - Hindu</a>
+      <a href="religious-catholic.html">Religious - Catholic</a>
+    </div>
   </div>
-      </div>
-      
-      <a href="video.html">Video</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <input type="text" class="search-box" placeholder="Search..." />
-  </div>
+  <a href="video.html">Video</a>
+  <a href="contact.html">Contact</a>
+  <input type="text" class="search-box" placeholder="Search..." />
+      </nav>
+
 </header>
   
   <main>
