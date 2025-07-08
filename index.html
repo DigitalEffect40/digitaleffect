@@ -114,10 +114,41 @@
       display: block;
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
+    /* Scrollable mobile nav */
+@media (max-width: 768px) {
+  nav.mobile-scroll-nav {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    background-color: #000;
+    padding: 10px;
+    width: 100%;
+  }
+
+  nav.mobile-scroll-nav a,
+  .search-box {
+    margin-right: 20px;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: #111;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown .dropbtn:focus + .dropdown-content,
+  .dropdown .dropbtn:active + .dropdown-content {
+    display: block;
+  }
+}
+    
 
       nav {
         display: none;
@@ -167,10 +198,7 @@
     <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
     <div class="site-name">Digital Effect</div>
   </div>
-
-  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-
-  <nav id="navbar">
+  <nav class="mobile-scroll-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <div class="dropdown">
