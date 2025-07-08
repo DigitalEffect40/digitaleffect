@@ -125,10 +125,19 @@ nav.mobile-scroll-nav {
 /* Mobile: Scrollable menu */
 @media (max-width: 768px) {
   nav.mobile-scroll-nav {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px 0;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  width: 100%;
+  flex-wrap: nowrap;
+  gap: 20px;
   }
+  
+nav.mobile-scroll-nav a {
+  font-size: 17px;
+  padding: 5px 0;
+}
 
   nav.mobile-scroll-nav a,
   .search-box {
