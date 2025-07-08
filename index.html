@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Digital Effect - Home</title>
   <style>
-  
     * {
       margin: 0;
       padding: 0;
@@ -24,8 +22,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
-      background-color: #000000; /* pure black */
+      background-color: #000;
       color: white;
+      position: relative;
     }
 
     .logo-container {
@@ -36,7 +35,7 @@
     .logo-container img {
       height: 40px;
       margin-left: 20px;
-       margin-right: 10px; 
+      margin-right: 10px;
     }
 
     .site-name {
@@ -44,14 +43,24 @@
       font-weight: bold;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     nav {
-      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 25px;
       font-weight: 500;
       transition: color 0.3s ease;
     }
@@ -60,130 +69,95 @@
       color: #00bcd4;
     }
 
+    .search-box {
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a::after {
+      content: " ▾";
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #222;
+      min-width: 180px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #00bcd4;
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #000;
+        width: 100%;
+        padding: 10px 20px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a, .search-box {
+        margin: 10px 0;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #111;
+        width: 100%;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: none;
+      }
+
+      .dropdown .dropbtn:focus + .dropdown-content,
+      .dropdown .dropbtn:active + .dropdown-content {
+        display: block;
+      }
+    }
+
     main {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
-  .search-box {
-    padding: 5px 10px;
-    margin-left: 25px;
-    border-radius: 4px;
-    border: none;
-    font-size: 14px;
-  }
-    /* Container for nav and search box */
-.nav-container {
-  display: flex;
-  align-items: center;
-}
-
-/* Make the header items stack on small screens */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo-container {
-    margin-bottom: 10px;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-nav a {
-  margin: 8px 14px 0 0;  /* Increased right spacing */
-  font-size: 18px;       /* Increased font size slightly */
-}
-  
-  .search-box {
-    margin: 10px 0 0 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #222;
-  min-width: 180px;
-  z-index: 1;
-  flex-direction: column;
-  border-radius: 4px;
-  padding: 5px 0;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 8px 16px;
-  display: block;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background-color: #00bcd4;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-  
-  /* Dropdown styling */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown > a {
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #222;
-  min-width: 180px;
-  z-index: 1000;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-  display: block;
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  font-size: 15px;
-  white-space: nowrap;
-}
-
-.dropdown-content a:hover {
-  background-color: #00bcd4;
-  color: #000;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-  
-}
   </style>
 </head>
 <body>
@@ -194,32 +168,40 @@ nav a {
     <div class="site-name">Digital Effect</div>
   </div>
 
-  <div class="nav-container">
-  
-      <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <div class="dropdown">
-    <a href="products.html">Product ▾</a>
-    <div class="dropdown-content">
-      <a href="bed-design.html">Bed Design</a>
-      <a href="flower-design.html">Flower Design</a>
-      <a href="door-design.html">Door Design</a>
-      <a href="religious-hindu.html">Religious - Hindu</a>
-      <a href="religious-catholic.html">Religious - Catholic</a>
-    </div>
-  </div>
-  <a href="video.html">Video</a>
-  <a href="contact.html">Contact</a>
-  <input type="text" class="search-box" placeholder="Sear
-ch..." />
-      </nav>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Product</a>
+      <div class="dropdown-content">
+        <a href="bed-design.html">Bed Design</a>
+        <a href="flower-design.html">Flower Design</a>
+        <a href="door-design.html">Door Design</a>
+        <a href="religious-hindu.html">Religious - Hindu</a>
+        <a href="religious-catholic.html">Religious - Catholic</a>
+      </div>
+    </div>
+    <a href="video.html">Video</a>
+    <a href="contact.html">Contact</a>
+    <input type="text" class="search-box" placeholder="Search..." />
+  </nav>
 </header>
-  
-  <main>
-    <h1>Welcome to Digital Effect</h1>
-    <p>Your trusted source for CNC 3D designs including bed, flower, door, and religious designs.</p>
-  </main>
+
+<main>
+  <h1>Welcome to Digital Effect</h1>
+  <p>Your trusted source for CNC 3D designs including bed, flower, door, and religious designs.</p>
+</main>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+
+  toggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
