@@ -129,8 +129,21 @@
       }
 
       nav {
-        flex-direction: column;
-        align-items: flex-start;
+        @media (max-width: 768px) {
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    margin: 8px 12px 0 0;
+    font-size: 17px;
+  }
+
+  .search-box {
+    margin: 10px 0 0 10px;
+    width: auto;
+  }
+        }
         width: 100%;
       }
 
