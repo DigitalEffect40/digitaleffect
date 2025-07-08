@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +5,25 @@
   <title>About - Digital Effect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f8f8f8;
-      margin: 20px;
       color: #333;
       line-height: 1.6;
     }
     .container {
-      max-width: 900px;
+      width: 100%;
+      max-width: 1200px;
       margin: auto;
       background: #fff;
       padding: 25px 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 0;
+      box-shadow: none;
     }
     h1 {
       color: #1c1c1c;
@@ -53,7 +57,7 @@
     .profile-card {
       background: #f0f0f0;
       border-radius: 12px;
-      width: 260px;
+      width: 300px;
       padding: 20px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -62,7 +66,6 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      aspect-ratio: 1 / 1;
       object-fit: cover;
       margin-bottom: 15px;
       border: 3px solid #1c1c1c;
@@ -82,7 +85,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 15px;
       margin-top: 10px;
     }
     .social-links a {
@@ -96,12 +99,15 @@
       text-decoration: underline;
     }
     @media(max-width: 760px) {
+      .container {
+        padding: 15px;
+      }
       .profile-cards {
         flex-direction: column;
         align-items: center;
       }
       .profile-card {
-        width: 80%;
+        width: 100%;
       }
     }
   </style>
