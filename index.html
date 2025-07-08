@@ -71,26 +71,67 @@
     border: none;
     font-size: 14px;
   }
+    /* Container for nav and search box */
+.nav-container {
+  display: flex;
+  align-items: center;
+}
 
+/* Make the header items stack on small screens */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  nav a {
+    margin: 8px 10px 0 0;
+  }
+
+  .search-box {
+    margin: 10px 0 0 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-    <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
-     <div class="site-name">Digital Effect</div>
-    </div>
 
+<header>
+  <div class="logo-container">
+    <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
+    <div class="site-name">Digital Effect</div>
+  </div>
+
+  <div class="nav-container">
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Product</a>
       <a href="video.html">Video</a>
       <a href="contact.html">Contact</a>
-         <input type="text" class="search-box" placeholder="Search..." />
-        </nav>
-  </header>
-
+    </nav>
+    <input type="text" class="search-box" placeholder="Search..." />
+  </div>
+</header>
+  
   <main>
     <h1>Welcome to Digital Effect</h1>
     <p>Your trusted source for CNC 3D designs including bed, flower, door, and religious designs.</p>
