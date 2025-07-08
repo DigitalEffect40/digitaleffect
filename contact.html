@@ -13,13 +13,13 @@
       background-color: #f8f8f8;
       color: #333;
       line-height: 1.6;
-      padding: 0 15px;
+      margin: 0;
     }
     .container {
       max-width: 900px;
       margin: 30px auto;
       background: #fff;
-      padding: 30px 25px;
+      padding: 30px 40px; /* desktop padding */
       border-radius: 5px;
       box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
@@ -51,7 +51,14 @@
     }
     a:hover {
       text-decoration: underline;
-      color: #007BFF;
+    }
+    /* Special clickable color for WhatsApp and Telegram */
+    .special-link {
+      color: #7f6000;
+      font-weight: 600;
+    }
+    .special-link:hover {
+      color: #5c4600;
     }
     .contact-info p {
       margin-bottom: 8px;
@@ -76,8 +83,16 @@
     .social-media-item a {
       font-weight: 600;
       color: #007BFF;
+      transition: color 0.3s ease;
+    }
+    .social-media-item a:hover {
+      color: #0056b3;
+      text-decoration: underline;
     }
     @media (max-width: 600px) {
+      .container {
+        padding: 30px 15px; /* add gap on mobile */
+      }
       .social-media-list {
         flex-direction: column;
       }
@@ -101,9 +116,9 @@
 
     <h2>Phone / Messaging</h2>
     <div class="contact-info">
-      <p><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Contact us on WhatsApp</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="special-link">Contact us on WhatsApp</a></p>
       <p><strong>Mobile:</strong> +256-775856965</p>
-      <p><strong>Telegram:</strong> <a href="https://t.me/+256775856965" target="_blank" rel="noopener noreferrer">Connect on Telegram</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/+256775856965" target="_blank" rel="noopener noreferrer" class="special-link">Connect on Telegram</a></p>
     </div>
 
     <h2>Social Media</h2>
@@ -132,4 +147,3 @@
   </div>
 </body>
 </html>
-
