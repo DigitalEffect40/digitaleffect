@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <title>Contact Us - Digital Effect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Comfortaa', cursive;
       background-color: #f8f8f8;
       color: #333;
       line-height: 1.6;
-      margin: 0;
     }
     .container {
       max-width: 900px;
       margin: 30px auto;
       background: #fff;
-      padding: 30px 40px; /* desktop padding */
+      padding: 30px 40px;
       border-radius: 5px;
       box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
@@ -52,7 +52,6 @@
     a:hover {
       text-decoration: underline;
     }
-    /* Special clickable color for WhatsApp and Telegram */
     .special-link {
       color: #7f6000;
       font-weight: 600;
@@ -87,11 +86,10 @@
     }
     .social-media-item a:hover {
       color: #0056b3;
-      text-decoration: underline;
     }
     @media (max-width: 600px) {
       .container {
-        padding: 30px 15px; /* add gap on mobile */
+        padding: 30px 15px;
       }
       .social-media-list {
         flex-direction: column;
@@ -100,6 +98,85 @@
         min-width: auto;
       }
     }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+    .contact-container {
+      background: #f8f8f8;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    .contact-container h2 {
+      color: #000;
+      margin-bottom: 5px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .contact-container p {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      background: #fff;
+      color: #000;
+      transition: all 0.3s ease;
+      font-family: 'Comfortaa', cursive;
+    }
+    input:focus, textarea:focus {
+      border-color: #1abc9c;
+      box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      font-family: 'Comfortaa', cursive;
+    }
+    button:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+    .success-message {
+      display: none;
+      color: #1abc9c;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 20px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -107,7 +184,7 @@
     <h1>Contact Us</h1>
     <p class="subheading">We’d love to hear from you! Whether you have a question about tutorials, suggestions, collaboration or custom orders – feel free to reach out through any of the platforms below:</p>
     <hr class="divider" />
-    
+
     <h2>Need Help or Have a Question?</h2>
     <p>We're here to assist you with your design needs. Get in touch today!</p>
     <div class="contact-info">
@@ -116,34 +193,98 @@
 
     <h2>Phone / Messaging</h2>
     <div class="contact-info">
-      <p><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="special-link">Contact us on WhatsApp</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank" class="special-link">Contact us on WhatsApp</a></p>
       <p><strong>Mobile:</strong> +256-775856965</p>
-      <p><strong>Telegram:</strong> <a href="https://t.me/+256775856965" target="_blank" rel="noopener noreferrer" class="special-link">Connect on Telegram</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/+256775856965" target="_blank" class="special-link">Connect on Telegram</a></p>
     </div>
 
     <h2>Social Media</h2>
     <div class="social-media-list">
       <div class="social-media-item">
         <img src="images/products/Icon/Digital_facebook_Digial_Effect.png" alt="Facebook Logo" />
-        <a href="http://facebook.com/digitaleffects40" target="_blank" rel="noopener noreferrer">Follow us on Facebook</a>
+        <a href="http://facebook.com/digitaleffects40" target="_blank">Follow us on Facebook</a>
       </div>
       <div class="social-media-item">
         <img src="images/products/Icon/Digital_instagram_Digial_Effect.png" alt="Instagram Logo" />
-        <a href="https://www.instagram.com/digital_effectteam" target="_blank" rel="noopener noreferrer">Follow us on Instagram</a>
+        <a href="https://www.instagram.com/digital_effectteam" target="_blank">Follow us on Instagram</a>
       </div>
       <div class="social-media-item">
         <img src="images/products/Icon/Digital_linkedin_Digial_Effect.png" alt="LinkedIn Logo" />
-        <a href="https://www.linkedin.com/in/digital-effects-6a80ab267/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/digital-effects-6a80ab267/" target="_blank">Connect on LinkedIn</a>
       </div>
       <div class="social-media-item">
         <img src="images/products/Icon/Digital_twitter_Digial_Effect.png" alt="Twitter Logo" />
-        <a href="https://x.com/digitaleffects4" target="_blank" rel="noopener noreferrer">Follow us on Twitter</a>
+        <a href="https://x.com/digitaleffects4" target="_blank">Follow us on Twitter</a>
       </div>
       <div class="social-media-item">
         <img src="images/products/Icon/Digital_pinterest_Digial_Effect.png" alt="Pinterest Logo" />
-        <a href="https://in.pinterest.com/teamdigitaleffect/" target="_blank" rel="noopener noreferrer">Explore us on Pinterest</a>
+        <a href="https://in.pinterest.com/teamdigitaleffect/" target="_blank">Explore us on Pinterest</a>
       </div>
     </div>
   </div>
+
+  <div class="form-wrapper">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>Use this to contact us</p>
+
+      <form id="contactForm" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email ID:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile Number:</label>
+          <input type="tel" id="mobile" name="mobile" required placeholder="e.g., +12025550123">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div class="success-message" id="successMessage">
+        Thank you! Your message has been submitted. You will be redirected to digitaleffect.in shortly.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        const response = await fetch('https://formsubmit.co/teamdigitaleffect@gmail.com', {
+          method: 'POST',
+          body: formData
+        });
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            window.location.href = 'https://digitaleffect.in';
+          }, 3000);
+        } else {
+          alert('There was an error submitting the form. Please try again.');
+        }
+      } catch (error) {
+        alert('Network error: ' + error.message);
+      }
+    });
+  </script>
 </body>
 </html>
