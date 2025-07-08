@@ -126,14 +126,20 @@ nav.mobile-scroll-nav {
 @media (max-width: 768px) {
   nav.mobile-scroll-nav {
   display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px 0;
+  flex-wrap: wrap;
+  gap: 15px;
   width: 100%;
-  flex-wrap: nowrap;
-  gap: 20px;
   }
   
+  nav.mobile-scroll-nav a {
+  font-size: 16px;
+  flex: none;
+}
+
+.search-box {
+  width: 100%;
+  margin-top: 10px;
+}
 nav.mobile-scroll-nav a {
   font-size: 17px;
   padding: 5px 0;
