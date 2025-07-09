@@ -43,10 +43,24 @@
       font-weight: bold;
     }
 
+    .search-box {
+      padding: 6px 12px;
+      margin-left: 20px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+    }
+
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      margin-left: 15px;
     }
 
     .menu-toggle span {
@@ -105,14 +119,6 @@
       display: block;
     }
 
-    .search-box {
-      padding: 6px 12px;
-      margin-left: 20px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
-    }
-
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -145,8 +151,16 @@
       }
 
       .search-box {
-        margin: 10px 0;
+        margin-top: 10px;
+        margin-left: 0;
         width: 100%;
+      }
+
+      .right-section {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
       }
     }
   </style>
@@ -159,10 +173,14 @@
       <div class="site-name">Digital Effect</div>
     </div>
 
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="right-section">
+      <input type="text" class="search-box" placeholder="Search..." />
+
+      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
 
     <nav>
@@ -190,7 +208,6 @@
       </div>
       <a href="video.html">Video</a>
       <a href="contact.html">Contact</a>
-      <input type="text" class="search-box" placeholder="Search..." />
     </nav>
   </header>
 
