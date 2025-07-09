@@ -95,7 +95,16 @@
     <label for="price">Price (USD):</label>
     <input type="text" id="price" />
 
-    <label for="image">Upload Image:</label>
+    <label for="code">Product Code:</label>
+    <input type="text" id="code" />
+
+    <label for="likes">Like Count:</label>
+    <input type="number" id="likes" />
+
+    <label for="note">Note:</label>
+    <textarea id="note"></textarea>
+
+    <label for="image">Upload Image (1920x1080):</label>
     <input type="file" id="image" accept="image/*" />
     <img id="imagePreview" class="preview-img" style="display:none;" />
 
@@ -128,16 +137,21 @@
       const name = document.getElementById('name').value;
       const desc = document.getElementById('description').value;
       const price = document.getElementById('price').value;
+      const code = document.getElementById('code').value;
+      const likes = document.getElementById('likes').value;
+      const note = document.getElementById('note').value;
       const buy = document.getElementById('buy').value;
       const imageUrl = imagePreview.src;
 
       const html = `<!-- ${category} Product -->
-<div class="product-card">
-  <img src="${imageUrl}" alt="${name}" class="product-img" />
-  <h3>${name}</h3>
-  <p>${desc}</p>
-  <strong>Price: $${price}</strong><br>
-  <a href="${buy}" target="_blank" class="buy-btn">Buy Now</a>
+<div class="product-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 30px; font-family: Comfortaa, cursive;">
+  <img src="${imageUrl}" alt="${name}" style="width: 100%; max-width: 100%; height: auto; border-radius: 8px;" />
+  <h3 style="margin-top: 15px; font-size: 1.4rem;">${name}</h3>
+  <p style="margin: 10px 0; color: #444;">${desc}</p>
+  <p style="font-weight: 600; margin-bottom: 8px;">Code: ${code} | Price: $${price}</p>
+  <a href="${buy}" target="_blank" style="display: inline-block; background-color: #7f6000; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0;">Buy Now</a>
+  <p style="margin: 8px 0; color: #888;">❤️ ${likes} Likes</p>
+  <p style="font-size: 0.9rem; color: #555;"><strong>Note:</strong> ${note}</p>
 </div>`;
 
       document.getElementById('output').textContent = html;
@@ -145,4 +159,3 @@
   </script>
 </body>
 </html>
-
