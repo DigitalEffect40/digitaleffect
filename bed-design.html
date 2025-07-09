@@ -4,45 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bed Design - Digital Effect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: 'Comfortaa', cursive;
-      background: #f9f9f9;
-      color: #333;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.8rem;
-      color: #1c1c1c;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .subheading {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #666;
-      margin-bottom: 30px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
       line-height: 1.6;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 1.1rem;
+      text-align: center;
+      color: #666;
+      margin-bottom: 35px;
+    }
+
     .subheading strong {
       color: #000;
     }
+
     .divider {
-      height: 4px;
       width: 80px;
-      background: #7f6000;
-      margin: 0 auto 40px;
+      height: 4px;
+      background-color: #7f6000;
+      margin: 0 auto 40px auto;
       border-radius: 2px;
     }
 
@@ -55,13 +60,14 @@
     .product-card {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .product-card:hover {
       transform: translateY(-8px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
     }
 
     .product-card img {
@@ -75,9 +81,9 @@
     }
 
     .product-content h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
-      color: #222;
+      color: #333;
     }
 
     .product-content p {
@@ -100,28 +106,34 @@
       padding: 12px 22px;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       transition: background 0.3s ease;
     }
 
     .buy-button:hover {
-      background-color: #5f4700;
+      background-color: #5e4500;
     }
 
     .footer-note {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 60px;
       font-size: 1rem;
-      color: #777;
+      color: #888;
+    }
+
+    .footer-note strong {
+      color: #000;
     }
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
+
       .subheading {
         font-size: 1rem;
       }
+
       .buy-button {
         font-size: 0.95rem;
         padding: 10px 18px;
@@ -139,12 +151,12 @@
     <div class="divider"></div>
 
     <div class="product-grid">
-      <!-- Paste product cards generated from admin panel here -->
+      <!-- ⬇️ Paste product cards here ⬇️ -->
     </div>
 
     <div class="divider" style="margin-top: 60px;"></div>
     <div class="footer-note">
-      More elegant bed designs will be added soon. Stay creative with <strong style="color: #000;">Digital Effect</strong>.
+      More elegant bed designs will be added soon. Stay creative with <strong>Digital Effect</strong>.
     </div>
   </div>
 
