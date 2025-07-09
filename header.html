@@ -23,7 +23,8 @@
         <a href="clock-design.html">Clock Design</a>
         <a href="pillar-column-stair-design.html">Pillar, Column & Stair Design</a>
         <a href="heroes-of-india-design.html">Heros of India</a>
-           </div>
+        <a href="products-admin.html">All Products</a>
+      </div>
     </div>
     <a href="video.html">Video</a>
     <a href="contact.html">Contact</a>
@@ -59,6 +60,7 @@
   .logo-container {
     display: flex;
     align-items: center;
+    margin-bottom: 0;
   }
 
   .logo-container img {
@@ -138,6 +140,11 @@
     header {
       flex-direction: column;
       align-items: flex-start;
+      padding: 15px 15px;
+    }
+
+    .logo-container {
+      margin-bottom: 10px;
     }
 
     nav {
@@ -147,22 +154,32 @@
     }
 
     nav a, .dropbtn {
-      margin: 8px 0;
+      margin: 10px 0;
+      font-size: 17px;
+      width: 100%;
     }
 
     .search-box-wrapper {
-      margin: 10px 0 0;
+      margin-top: 10px;
       width: 100%;
     }
 
     .search-box {
       width: 100%;
+      font-size: 16px;
     }
 
     .dropdown-content {
       position: static;
       box-shadow: none;
       background-color: #2c2c2c;
+      width: 100%;
+      padding: 5px 0;
+    }
+
+    .dropdown-content a {
+      padding: 10px 20px;
+      font-size: 16px;
     }
   }
 </style>
