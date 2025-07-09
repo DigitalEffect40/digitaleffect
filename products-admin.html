@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Product Admin - Digital Effect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Comfortaa', cursive;
@@ -15,7 +15,7 @@
     .admin-container {
       background: #fff;
       padding: 30px;
-      max-width: 800px;
+      max-width: 700px;
       margin: auto;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.08);
@@ -31,12 +31,13 @@
       margin: 15px 0 5px;
       font-weight: 600;
     }
-    input, select, textarea {
+    input, textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-family: 'Comfortaa', cursive;
+      box-sizing: border-box;
     }
     textarea {
       min-height: 100px;
@@ -63,11 +64,22 @@
       white-space: pre-wrap;
       border-radius: 10px;
       overflow-x: auto;
+      position: relative;
+      font-family: monospace;
     }
-    .preview-img {
+    .copy-button {
       margin-top: 10px;
-      max-width: 100%;
-      border-radius: 10px;
+      background: #7f6000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .copy-button:hover {
+      background-color: #5f4700;
     }
   </style>
 </head>
@@ -75,64 +87,39 @@
   <div class="admin-container">
     <h1>Product Admin Panel</h1>
 
-    <label for="category">Select Category:</label>
-    <select id="category">
-      <option>Flower Design</option>
-      <option>Bed Design</option>
-      <option>Door Design</option>
-      <option>Religious Design - Hindu</option>
-      <option>Religious Design - Catholic</option>
-      <option>Animal Design</option>
-      <option>Tree Design</option>
-      <option>Furniture</option>
-    </select>
-
     <label for="name">Product Name:</label>
-    <input type="text" id="name" />
+    <input type="text" id="name" placeholder="Enter product name" />
 
     <label for="description">Description:</label>
-    <textarea id="description"></textarea>
+    <textarea id="description" placeholder="Enter product description"></textarea>
 
     <label for="price">Price (USD):</label>
-    <input type="text" id="price" />
+    <input type="text" id="price" placeholder="Enter price" />
 
     <label for="code">Product Code:</label>
-    <input type="text" id="code" />
+    <input type="text" id="code" placeholder="Enter product code" />
 
     <label for="likes">Like Count:</label>
-    <input type="number" id="likes" />
+    <input type="number" id="likes" placeholder="Enter number of likes" />
 
     <label for="note">Note:</label>
-    <textarea id="note"></textarea>
+    <textarea id="note" placeholder="Enter any note"></textarea>
 
-    <label for="image">Upload Image (1920x1080):</label>
-    <input type="file" id="image" accept="image/*" />
-    <img id="imagePreview" class="preview-img" style="display:none;" />
+    <label for="imageUrl">Image URL (1920x1080 recommended):</label>
+    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" />
 
     <label for="buy">Buy Now Link:</label>
-    <input type="text" id="buy" placeholder="https://your-payment-link.com" />
+    <input type="url" id="buy" placeholder="https://your-payment-link.com" />
 
     <button onclick="generateProduct()">Generate Product Card</button>
 
-    <div class="output" id="output"></div>
+    <div class="output">
+      <pre id="output"></pre>
+      <button class="copy-button" onclick="copyToClipboard()">📋 Copy Code</button>
+    </div>
   </div>
 
   <script>
-    const imageInput = document.getElementById('image');
-    const imagePreview = document.getElementById('imagePreview');
-
-    imageInput.addEventListener('change', function () {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          imagePreview.src = e.target.result;
-          imagePreview.style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
     function escapeHtml(text) {
       const map = {
         '&': '&amp;',
@@ -141,23 +128,48 @@
         '"': '&quot;',
         "'": '&#039;'
       };
-      return text.replace(/[&<>"]/g, function(m) { return map[m]; });
+      return text.replace(/[&<>"']/g, m => map[m]);
     }
 
     function generateProduct() {
-      const category = escapeHtml(document.getElementById('category').value);
-      const name = escapeHtml(document.getElementById('name').value);
-      const desc = escapeHtml(document.getElementById('description').value);
-      const price = escapeHtml(document.getElementById('price').value);
-      const code = escapeHtml(document.getElementById('code').value);
-      const likes = escapeHtml(document.getElementById('likes').value);
-      const note = escapeHtml(document.getElementById('note').value);
-      const buy = escapeHtml(document.getElementById('buy').value);
-      const imageUrl = imagePreview.src;
+      const name = escapeHtml(document.getElementById('name').value.trim());
+      const desc = escapeHtml(document.getElementById('description').value.trim());
+      const price = escapeHtml(document.getElementById('price').value.trim());
+      const code = escapeHtml(document.getElementById('code').value.trim());
+      const likes = escapeHtml(document.getElementById('likes').value.trim());
+      const note = escapeHtml(document.getElementById('note').value.trim());
+      const imageUrl = escapeHtml(document.getElementById('imageUrl').value.trim());
+      const buy = escapeHtml(document.getElementById('buy').value.trim());
 
-      const html = `<!-- ${category} Product -->\n<div class="product-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 30px; font-family: Comfortaa, cursive;">\n  <img src="${imageUrl}" alt="${name}" style="width: 100%; max-width: 100%; height: auto; border-radius: 8px;" />\n  <h3 style="margin-top: 15px; font-size: 1.4rem;">${name}</h3>\n  <p style="margin: 10px 0; color: #444;">${desc}</p>\n  <p style="font-weight: 600; margin-bottom: 8px;">Code: ${code} | Price: $${price}</p>\n  <a href="${buy}" target="_blank" style="display: inline-block; background-color: #7f6000; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0;">Buy Now</a>\n  <p style="margin: 8px 0; color: #888;">❤️ ${likes} Likes</p>\n  <p style="font-size: 0.9rem; color: #555;"><strong>Note:</strong> ${note}</p>\n</div>`;
+      if (!name || !imageUrl || !buy) {
+        alert('Please fill in at least Product Name, Image URL, and Buy Now Link.');
+        return;
+      }
+
+      const html = `
+<div class="product-card">
+  <img src="${imageUrl}" alt="${name}" loading="lazy" />
+  <div class="product-info">
+    <h3>${name}</h3>
+    <p class="desc">${desc}</p>
+    <p class="code-price">Code: ${code} | Price: $${price}</p>
+    <a href="${buy}" target="_blank" class="buy-button">Buy Now</a>
+    <p class="likes">❤️ ${likes} Likes</p>
+    <p class="note"><strong>Note:</strong> ${note}</p>
+  </div>
+</div>`.trim();
 
       document.getElementById('output').textContent = html;
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById('output');
+      if (!output) return;
+      navigator.clipboard.writeText(output.textContent).then(() => {
+        alert('✅ Code copied to clipboard!');
+      }).catch(() => {
+        alert('❌ Copy failed. Please try manually.');
+      });
     }
   </script>
 </body>
