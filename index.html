@@ -1,257 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Digital Effect - Home</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Effect - Home</title>
 
-    html, body {
-      height: 100%;
-    }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet" />
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    .page-container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    html, body {
+      height: 100%;
+    }
 
-    main {
-      flex: 1;
-    }
+    body {
+      font-family: 'Roboto', 'Open Sans', 'Inter', 'Noto Sans', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #1c1c1c;
-      color: white;
-      flex-wrap: wrap;
-    }
+    .page-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
+    main {
+      flex: 1;
+    }
 
-    .logo-container img {
-      height: 40px;
-      margin-right: 10px;
-    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #1c1c1c;
+      color: white;
+      flex-wrap: wrap;
+    }
 
-    .site-name {
-      font-size: 24px;
-      font-weight: bold;
-    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
 
-    nav {
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    .logo-container img {
+      height: 40px;
+      margin-right: 10px;
+    }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+    .site-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-    nav a:hover {
-      color: #00bcd4;
-    }
+    nav {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-    .search-box {
-      padding: 6px 12px;
-      margin-left: 20px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
-    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+    nav a:hover {
+      color: #00bcd4;
+    }
 
-    .dropbtn {
-      color: white;
-      text-decoration: none;
-      padding: 0 10px;
-      font-weight: 500;
-      cursor: pointer;
-    }
+    .search-box {
+      padding: 6px 12px;
+      margin-left: 20px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      min-width: 180px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
-      z-index: 1000;
-    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-    .dropdown-content a {
-      color: white;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      font-size: 15px;
-    }
+    .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 0 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
 
-    .dropdown-content a:hover {
-      background-color: #00bcd4;
-      color: black;
-    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      min-width: 180px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      z-index: 1000;
+    }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 15px;
+    }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .dropdown-content a:hover {
+      background-color: #00bcd4;
+      color: black;
+    }
 
-      .logo-container {
-        margin-bottom: 10px;
-      }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-      nav a {
-        margin: 8px 12px 0 0;
-        font-size: 17px;
-      }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-      .search-box {
-        margin: 10px 0 0 10px;
-        width: auto;
-      }
-    }
-  </style>
+      .logo-container {
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        margin: 8px 12px 0 0;
+        font-size: 17px;
+      }
+
+      .search-box {
+        margin: 10px 0 0 10px;
+        width: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-container">
+  <div class="page-container">
 
-    <!-- ===================== HEADER START ===================== -->
-    <header>
-      <div class="logo-container">
-        <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
-        <div class="site-name">Digital Effect</div>
-      </div>
+    <!-- ===================== HEADER START ===================== -->
+    <header>
+      <div class="logo-container">
+        <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
+        <div class="site-name">Digital Effect</div>
+      </div>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-          <span class="dropbtn">Product ▾</span>
-          <div class="dropdown-content">
-            <a href="bed-design.html">Bed Design</a>
-            <a href="flower-design.html">Flower Design</a>
-            <a href="door-design.html">Door Design</a>
-            <a href="religious-hindu.html">Religious - Hindu</a>
-            <a href="religious-catholic.html">Religious - Catholic</a>
-          </div>
-        </div>
-        <a href="video.html">Video</a>
-        <a href="contact.html">Contact</a>
-        <input type="text" class="search-box" placeholder="Search..." />
-      </nav>
-    </header>
-    <!-- ===================== HEADER END ======================= -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+          <span class="dropbtn">Product ▾</span>
+          <div class="dropdown-content">
+            <a href="bed-design.html">Bed Design</a>
+            <a href="flower-design.html">Flower Design</a>
+            <a href="door-design.html">Door Design</a>
+            <a href="religious-hindu.html">Religious - Hindu</a>
+            <a href="religious-catholic.html">Religious - Catholic</a>
+          </div>
+        </div>
+        <a href="video.html">Video</a>
+        <a href="contact.html">Contact</a>
+        <input type="text" class="search-box" placeholder="Search..." />
+      </nav>
+    </header>
+    <!-- ===================== HEADER END ======================= -->
 
-    <main>
-      <h1 style="margin: 40px 20px;">Digital Effect – Premium CNC & 3D Design Files for Every Project</h1>
-      <p style="margin: 0 20px;">
-        Welcome to Digital Effect, your trusted source for high-quality STL, RLF, and TAP files crafted for CNC machining and 3D printing. From intricate furniture and stunning home decor to majestic animal reliefs and sacred religious art, explore our vast collection of ready-to-use designs. Perfect for professionals and hobbyists looking to bring creativity and precision to life.
-      </p>
-    </main>
+    <main>
+      <h1 style="margin: 40px 20px;">Digital Effect – Premium CNC & 3D Design Files for Every Project</h1>
+      <p style="margin: 0 20px;">
+        Welcome to Digital Effect, your trusted source for high-quality STL, RLF, and TAP files crafted for CNC machining and 3D printing. From intricate furniture and stunning home decor to majestic animal reliefs and sacred religious art, explore our vast collection of ready-to-use designs. Perfect for professionals and hobbyists looking to bring creativity and precision to life.
+      </p>
+    </main>
 
-    <!-- ===================== FOOTER START ===================== -->
-    <!-- ===================== FOOTER START ===================== -->
-<footer style="
-  background-color: #1c1c1c;
-  color: #ccc;
-  text-align: center;
-  padding: 40px 20px 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-">
-  <!-- Logo + Name -->
-  <div style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-  ">
-    <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" style="height: 100px;" />
-    <span style="font-size: 25px; font-weight: 700; color: white;">Digital Effect</span>
-  </div>
+    <!-- ===================== FOOTER START ===================== -->
+    <footer style="
+      background-color: #1c1c1c;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 14px;
+    ">
+      <!-- Logo + Name -->
+      <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+      ">
+        <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" style="height: 100px;" />
+        <span style="font-size: 25px; font-weight: bold; color: white;">Digital Effect</span>
+      </div>
 
-  <!-- Description -->
-  <p style="max-width: 700px; margin: 0 auto 18px; line-height: 1.6; color: #aaa;">
-    Since 2018, our team has been dedicated to creating designs that are not only visually stunning but also meaningful and valuable through true collaboration.
-  </p>
+      <!-- Description -->
+      <p style="max-width: 700px; margin: 0 auto 18px; line-height: 1.6; color: #aaa;">
+        Since 2018, our team has been dedicated to creating designs that are not only visually stunning but also meaningful and valuable through true collaboration.
+      </p>
 
-  <!-- Social Media Icons -->
-  <div style="margin: 15px 0;">
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/facebook_Digial_Effect.png" alt="Facebook" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/youtube_Digial_Effect.png" alt="YouTube" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/instagram_Digial_Effect.png" alt="Instagram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/whatsapp_Digial_Effect.png" alt="WhatsApp" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/telegram_Digial_Effect.png" alt="Telegram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/pinterest_Digial_Effect.png" alt="Pinterest" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/twitter_Digial_Effect.png" alt="Twitter" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-    <a href="#" target="_blank" style="margin: 0 8px; display: inline-block;">
-      <img src="images/products/Icon/linkedin_Digial_Effect.png" alt="LinkedIn" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
-    </a>
-  </div>
+      <!-- Social Media Icons -->
+      <div style="margin: 15px 0;">
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/facebook_Digial_Effect.png" alt="Facebook" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/youtube_Digial_Effect.png" alt="YouTube" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/instagram_Digial_Effect.png" alt="Instagram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/whatsapp_Digial_Effect.png" alt="WhatsApp" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/telegram_Digial_Effect.png" alt="Telegram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/pinterest_Digial_Effect.png" alt="Pinterest" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/twitter_Digial_Effect.png" alt="Twitter" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+        <a href="#" target="_blank" style="margin: 0 8px;">
+          <img src="images/products/Icon/linkedin_Digial_Effect.png" alt="LinkedIn" style="width: 24px; height: 24px; filter: brightness(0) invert(1);" />
+        </a>
+      </div>
 
-  <!-- Policy Links -->
-  <div style="margin-top: 20px;">
-    <a href="privacy-policy.html" style="color: #888; text-decoration: none; margin: 0 10px; font-size: 12px;">Privacy Policy</a>
-    <a href="terms-and-conditions.html" style="color: #888; text-decoration: none; margin: 0 10px; font-size: 12px;">Terms & Conditions</a>
-    <a href="return-policy.html" style="color: #888; text-decora
-tion: none; margin: 0 10px; font-size: 12px;">Return Policy</a>
-  </div>
-</footer>
-<!-- ===================== FOOTER END ======================= -->
+      <!-- Policy Links -->
+      <div style="margin-top: 20px;">
+        <a href="privacy-policy.html" style="color: #888; text-decoration: none; margin: 0 10px; font-size: 12px;">Privacy Policy</a>
+        <a href="terms-and-conditions.html" style="color: #888; text-decoration: none; margin: 0 10px; font-size: 12px;">Terms & Conditions</a>
+        <a href="return-policy.html" style="color: #888; text-decoration: none; margin: 0 10px; font-size: 12px;">Return Policy</a>
+      </div>
+    </footer>
+    <!-- ===================== FOOTER END ======================= -->
 
-    <!-- ===================== FOOTER END ======================= -->
-
-  </div>
+  </div>
 </body>
 </html>
-
