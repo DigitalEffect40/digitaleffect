@@ -66,6 +66,32 @@
       margin: 0 10px;
       font-size: 12px;
     }
+    
+    /* Remove default link styling */
+    a {
+      outline: none;
+      text-decoration: none;
+    }
+    
+    /* Add space between icons in desktop view */
+    @media (min-width: 768px) {
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Add horizontal spacing */
+      }
+    }
+    
+    /* Add vertical spacing for mobile view */
+    @media (max-width: 767px) {
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Add vertical spacing */
+      }
+    }
   </style>
 </head>
 <body>
