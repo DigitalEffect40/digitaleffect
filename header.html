@@ -64,6 +64,7 @@
       cursor: pointer; /* Add this to make it look clickable */
       margin-left: auto; /* Add this to move to right side */
       margin-right: 15px; /* Add this to add spacing */
+      transition: transform 0.3s ease; /* Add this for smooth transition */
     }
 
     .menu-toggle span {
@@ -71,6 +72,19 @@
       width: 25px;
       background: white;
       margin: 4px 0;
+      transition: transform 0.3s ease; /* Add this for smooth transition */
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); /* Add this for first span */
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0; /* Add this for middle span */
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px); /* Add this for last span */
     }
 
     nav {
@@ -179,7 +193,7 @@
     <div class="right-section">
       <input type="text" class="search-box" placeholder="Search..." />
 
-      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active'); this.classList.toggle('active')">
         <span></span>
         <span></span>
         <span></span>
