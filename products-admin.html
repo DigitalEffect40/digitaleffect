@@ -62,6 +62,7 @@
       border: 1px dashed #aaa;
       white-space: pre-wrap;
       border-radius: 10px;
+      overflow-x: auto;
     }
     .preview-img {
       margin-top: 10px;
@@ -132,27 +133,29 @@
       }
     });
 
+    function escapeHtml(text) {
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"]/g, function(m) { return map[m]; });
+    }
+
     function generateProduct() {
-      const category = document.getElementById('category').value;
-      const name = document.getElementById('name').value;
-      const desc = document.getElementById('description').value;
-      const price = document.getElementById('price').value;
-      const code = document.getElementById('code').value;
-      const likes = document.getElementById('likes').value;
-      const note = document.getElementById('note').value;
-      const buy = document.getElementById('buy').value;
+      const category = escapeHtml(document.getElementById('category').value);
+      const name = escapeHtml(document.getElementById('name').value);
+      const desc = escapeHtml(document.getElementById('description').value);
+      const price = escapeHtml(document.getElementById('price').value);
+      const code = escapeHtml(document.getElementById('code').value);
+      const likes = escapeHtml(document.getElementById('likes').value);
+      const note = escapeHtml(document.getElementById('note').value);
+      const buy = escapeHtml(document.getElementById('buy').value);
       const imageUrl = imagePreview.src;
 
-      const html = `<!-- ${category} Product -->
-<div class="product-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 30px; font-family: Comfortaa, cursive;">
-  <img src="${imageUrl}" alt="${name}" style="width: 100%; max-width: 100%; height: auto; border-radius: 8px;" />
-  <h3 style="margin-top: 15px; font-size: 1.4rem;">${name}</h3>
-  <p style="margin: 10px 0; color: #444;">${desc}</p>
-  <p style="font-weight: 600; margin-bottom: 8px;">Code: ${code} | Price: $${price}</p>
-  <a href="${buy}" target="_blank" style="display: inline-block; background-color: #7f6000; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0;">Buy Now</a>
-  <p style="margin: 8px 0; color: #888;">❤️ ${likes} Likes</p>
-  <p style="font-size: 0.9rem; color: #555;"><strong>Note:</strong> ${note}</p>
-</div>`;
+      const html = `<!-- ${category} Product -->\n<div class="product-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 30px; font-family: Comfortaa, cursive;">\n  <img src="${imageUrl}" alt="${name}" style="width: 100%; max-width: 100%; height: auto; border-radius: 8px;" />\n  <h3 style="margin-top: 15px; font-size: 1.4rem;">${name}</h3>\n  <p style="margin: 10px 0; color: #444;">${desc}</p>\n  <p style="font-weight: 600; margin-bottom: 8px;">Code: ${code} | Price: $${price}</p>\n  <a href="${buy}" target="_blank" style="display: inline-block; background-color: #7f6000; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0;">Buy Now</a>\n  <p style="margin: 8px 0; color: #888;">❤️ ${likes} Likes</p>\n  <p style="font-size: 0.9rem; color: #555;"><strong>Note:</strong> ${note}</p>\n</div>`;
 
       document.getElementById('output').textContent = html;
     }
