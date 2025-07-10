@@ -1,43 +1,18 @@
-oh<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bed Design - Digital Effect</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
-    line-height: 1.6;
-  }
-
-    .page-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px;
-    flex: 1;
-  }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -49,9 +24,12 @@ html, body {
       background-color: #f5f5f5;
       color: #222;
       line-height: 1.6;
-      min-height: 100vh;
+    }
+
+    .page-wrapper {
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     .container {
@@ -178,80 +156,61 @@ html, body {
   </style>
 </head>
 <body>
+  <div class="page-wrapper">
+    
+    <!-- ✅ HEADER PLACEHOLDER -->
+    <div id="header-placeholder"></div>
 
+    <!-- ✅ MAIN CONTENT -->
+    <div class="container">
+      <h1>Bed Design</h1>
+      <p class="subheading">
+        Elegant Bed Relief Designs by <strong>Digital Effect</strong> – Premium STL, RLF & TAP files for luxurious and artistic furniture detailing.
+      </p>
+      <div class="divider"></div>
 
-  
-<div class="page-wrapper">
-
-
-  
-<!-- ✅ HEADER PLACEHOLDER -->
- 
-  <div id="header-placeholder"></div>
-
-
-  
-  
-  
-
-  
-  <div class="container">
-    <h1>Bed Design</h1>
-    <p class="subheading">
-      Elegant Bed Relief Designs by <strong>Digital Effect</strong> – Premium STL, RLF & TAP files for luxurious and artistic furniture detailing.
-    </p>
-    <div class="divider"></div>
-
-    <div class="product-grid">
-      <!-- ⬇️ Paste product cards here ⬇️ -->
-      <div class="product-card">
-        <img src="path-to-image.jpg" alt="Bed Design 1">
-        <div class="product-content">
-          <h3>Bed Design 1</h3>
-          <p>Beautifully crafted bed design featuring intricate woodwork and luxurious upholstery.</p>
-          <p class="code-price">$199.99</p>
-          <a href="#" class="buy-button">Buy Now</a>
+      <div class="product-grid">
+        <!-- ⬇️ Paste product cards here ⬇️ -->
+        <div class="product-card">
+          <img src="path-to-image.jpg" alt="Bed Design 1">
+          <div class="product-content">
+            <h3>Bed Design 1</h3>
+            <p>Beautifully crafted bed design featuring intricate woodwork and luxurious upholstery.</p>
+            <p class="code-price">$199.99</p>
+            <a href="#" class="buy-button">Buy Now</a>
+          </div>
         </div>
-      </div>
-      <div class="product-card">
-        <img src="path-to-image.jpg" alt="Bed Design 2">
-        <div class="product-content">
-          <h3>Bed Design 2</h3>
-          <p>Modern and sleek design with clean lines and high-quality materials.</p>
-          <p class="code-price">$249.99</p>
-          <a href="#" class="buy-button">Buy Now</a>
+        <div class="product-card">
+          <img src="path-to-image.jpg" alt="Bed Design 2">
+          <div class="product-content">
+            <h3>Bed Design 2</h3>
+            <p>Modern and sleek design with clean lines and high-quality materials.</p>
+            <p class="code-price">$249.99</p>
+            <a href="#" class="buy-button">Buy Now</a>
+          </div>
         </div>
-      </div>
-      <div class="product-card">
-        <img src="path-to-image.jpg" alt="Bed Design 3">
-        <div class="product-content">
-          <h3>Bed Design 3</h3>
-          <p>Classic design with timeless elegance and comfort.</p>
-          <p class="code-price">$179.99</p>
-          <a href="#" class="buy-button">Buy Now</a>
+        <div class="product-card">
+          <img src="path-to-image.jpg" alt="Bed Design 3">
+          <div class="product-content">
+            <h3>Bed Design 3</h3>
+            <p>Classic design with timeless elegance and comfort.</p>
+            <p class="code-price">$179.99</p>
+            <a href="#" class="buy-button">Buy Now</a>
+          </div>
         </div>
+        <!-- 👆 Paste product cards here 👆 -->
       </div>
-      <!-- 👆 Paste product cards here 👆 -->
+
+      <div class="divider" style="margin-top: 60px;"></div>
+      <div class="footer-note">
+        More elegant bed designs will be added soon. Stay creative with <strong>Digital Effect</strong>.
+      </div>
     </div>
 
-    <div class="divider" style="margin-top: 60px;"></div>
-    <div class="footer-note">
-      More elegant bed designs will be added soon. Stay creative with <strong>Digital Effect</strong>.
-    </div>
+    <!-- ✅ FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
   </div>
 
-
-
-
-  
-<!-- ✅ FOOTER PLACEHOLDER -->
-  
-  <div id="footer-placeholder"></div>
-    
-
-
-
-  
   <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
   <script>
     fetch("header.html")
@@ -266,12 +225,5 @@ html, body {
         document.getElementById("footer-placeholder").innerHTML = data;
       });
   </script>
-
-
-
-
-
-
-  
 </body>
 </html>
