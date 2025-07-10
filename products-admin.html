@@ -2,163 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Product Admin Panel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Admin Panel - Digital Effect</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
       background: #f7f8fc;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #7f6000;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
     label {
-      margin-top: 12px;
-      font-weight: 600;
       display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #444;
     }
-    input, textarea, select {
+    input[type="text"],
+    input[type="url"],
+    input[type="number"],
+    select,
+    textarea {
       width: 100%;
       padding: 8px 10px;
-      margin-top: 4px;
-      font-size: 14px;
-      border-radius: 6px;
       border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      margin-top: 4px;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
     textarea {
       resize: vertical;
-      min-height: 60px;
     }
     button {
-      margin-top: 20px;
       background-color: #7f6000;
       color: white;
-      padding: 12px 20px;
       border: none;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
+      padding: 14px 20px;
       font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 15px;
+      width: 100%;
       transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #a67c00;
     }
-    #product-list {
-      margin-top: 30px;
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      max-height: 200px;
-      overflow-y: auto;
-      font-size: 15px;
-    }
-    .product-item {
-      padding: 8px 10px;
-      border-bottom: 1px solid #eee;
-    }
-    .product-item:last-child {
-      border-bottom: none;
-    }
-    #output {
-      margin-top: 30px;
-      width: 100%;
-      height: 300px;
+    #generatedHTML {
+      margin-top: 20px;
       font-family: monospace;
-      font-size: 13px;
+      font-size: 14px;
+      white-space: pre-wrap;
+      background: #eee;
+      padding: 15px;
       border-radius: 10px;
-      padding: 12px;
-      box-sizing: border-box;
-      resize: vertical;
+      height: 250px;
+      overflow-y: auto;
+    }
+    small {
+      color: #666;
     }
   </style>
 </head>
 <body>
 
   <h1>Product Admin Panel</h1>
+  <form id="productForm">
+    <label>
+      Image URL:
+      <input type="url" id="imageUrl" required placeholder="https://example.com/image.jpg" />
+    </label>
 
-  <label for="image">Image URL:</label>
-  <input type="text" id="image" placeholder="https://example.com/image.jpg" />
+    <label>
+      Alt Text:
+      <input type="text" id="altText" required placeholder="Describe the product image" />
+    </label>
 
-  <label for="tag">Tag / Type:</label>
-  <input type="text" id="tag" placeholder="Door Design" />
+    <label>
+      Price (INR):
+      <input type="number" id="price" required min="0" placeholder="999" />
+    </label>
 
-  <label for="code">Code:</label>
-  <input type="text" id="code" placeholder="#DD1001" />
+    <label>
+      Currency:
+      <select id="currency">
+        <option value="INR" selected>INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </label>
 
-  <label for="price">Price (INR):</label>
-  <input type="number" id="price" placeholder="999" />
+    <label>
+      Buy Button Link:
+      <input type="url" id="buyLink" required placeholder="https://yourstore.com/buy/product" />
+    </label>
 
-  <label for="details">Details:</label>
-  <textarea id="details" placeholder="Product description"></textarea>
+    <label>
+      Product Tag:
+      <input type="text" id="productTag" placeholder="e.g. Door Design" />
+      <small>Optional: Category or tag</small>
+    </label>
 
-  <label for="likes">Likes:</label>
-  <input type="number" id="likes" placeholder="120" />
+    <label>
+      Product Code:
+      <input type="text" id="productCode" placeholder="#DD1001" />
+      <small>Optional: Unique product code</small>
+    </label>
 
-  <label for="buyLink">Buy Now Link:</label>
-  <input type="text" id="buyLink" placeholder="https://yourstore.com/buy/door-design-1001" />
+    <label>
+      Description:
+      <textarea id="description" rows="3" placeholder="Product description for details and alt text"></textarea>
+    </label>
 
-  <button onclick="addProduct()">Add Product</button>
+    <label>
+      Likes:
+      <input type="number" id="likes" min="0" value="0" />
+      <small>Optional: Number of likes or favorites</small>
+    </label>
 
-  <div id="product-list"></div>
+    <button type="submit">Generate HTML</button>
+  </form>
 
-  <button onclick="generateHTML()">Generate product.html code</button>
-
-  <h3>Generated HTML (copy all, save as product.html):</h3>
-  <textarea id="output" readonly></textarea>
+  <textarea id="generatedHTML" readonly placeholder="Your generated product card HTML will appear here..."></textarea>
 
   <script>
-    const products = [];
+    document.getElementById('productForm').addEventListener('submit', function(e){
+      e.preventDefault();
 
-    function addProduct() {
-      const image = document.getElementById('image').value.trim();
-      const tag = document.getElementById('tag').value.trim();
-      const code = document.getElementById('code').value.trim();
-      const price = parseInt(document.getElementById('price').value.trim());
-      const details = document.getElementById('details').value.trim();
-      const likes = parseInt(document.getElementById('likes').value.trim());
+      const imageUrl = document.getElementById('imageUrl').value.trim();
+      const altText = document.getElementById('altText').value.trim();
+      const priceINR = Number(document.getElementById('price').value);
+      const currency = document.getElementById('currency').value;
       const buyLink = document.getElementById('buyLink').value.trim();
+      const productTag = document.getElementById('productTag').value.trim() || 'Product';
+      const productCode = document.getElementById('productCode').value.trim() || '#CODE';
+      const description = document.getElementById('description').value.trim() || '';
+      const likes = Number(document.getElementById('likes').value) || 0;
 
-      if (!image || !tag || !code || isNaN(price) || !details || isNaN(likes) || !buyLink) {
-        alert('Please fill all fields correctly!');
-        return;
-      }
+      const symbols = {
+        INR: "₹",
+        USD: "$",
+        EUR: "€",
+        GBP: "£"
+      };
 
-      products.push({ image, tag, code, price, details, likes, buyLink });
-      renderProductList();
-      clearInputs();
-    }
+      // Generate product card HTML snippet
+      const html = `
+<div class="product-card">
+  <div class="product-image-container">
+    <img src="${imageUrl}" alt="${altText}" aria-describedby="img-desc" loading="lazy" onclick="zoomImage('${imageUrl}')">
+    <span id="img-desc" style="display:none;">${description}</span>
+  </div>
+  <div class="product-tags">
+    <span class="tag">${productTag}</span>
+    <span class="code">${productCode}</span>
+  </div>
+  <div class="price-row">
+    <div class="product-price" id="price">${symbols[currency]}${priceINR.toFixed(2)}</div>
+    <select id="currency" class="price-currency" onchange="convertPrice()">
+      <option value="INR" ${currency === 'INR' ? 'selected' : ''}>INR</option>
+      <option value="USD" ${currency === 'USD' ? 'selected' : ''}>USD</option>
+      <option value="EUR" ${currency === 'EUR' ? 'selected' : ''}>EUR</option>
+      <option value="GBP" ${currency === 'GBP' ? 'selected' : ''}>GBP</option>
+    </select>
+  </div>
+  <p class="product-details">${description}</p>
+  <div class="product-likes">❤️ ${likes}</div>
+  <a href="${buyLink}" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
+</div>`.trim();
 
-    function renderProductList() {
-      const list = document.getElementById('product-list');
-      list.innerHTML = '';
-      products.forEach((p, i) => {
-        list.innerHTML += `<div class="product-item"><b>${p.tag}</b> - ${p.code} - ₹${p.price}</div>`;
-      });
-    }
+      document.getElementById('generatedHTML').value = html;
+    });
+  </script>
 
-    function clearInputs() {
-      ['image','tag','code','price','details','likes','buyLink'].forEach(id => document.getElementById(id).value = '');
-    }
-
-    function generateHTML() {
-      if(products.length === 0) {
-        alert('Add at least one product!');
-        return;
-      }
-
-      const css = `
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #f7f8fc, #e9eff5);
-    padding: 30px;
-  }
-  .product-card {
-    background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
-    border-radius: 20px;
-    box-sh
+</body>
+</html>
