@@ -1,272 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Digital Effect - Responsive Header</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Effect - Footer</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
+    /* Font Family */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    
+    /* Footer Styles */
+    footer {
       background-color: #1c1c1c;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+      left: 0;
     }
-
+    
+    /* Logo + Name */
     .logo-container {
       display: flex;
+      justify-content: center;
       align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
     }
-
-    .logo-container img {
-      height: 40px;
-      margin-right: 10px;
+    
+    /* Description */
+    .description {
+      max-width: 700px;
+      margin: 0 auto 18px;
+      line-height: 1.6;
+      color: #aaa;
     }
-
-    .site-name {
-      font-size: 22px;
-      font-weight: bold;
+    
+    /* Social Media Icons */
+    .social-icons {
+      margin: 15px 0;
     }
-
-    .search-box {
-      padding: 6px 12px;
-      margin-left: 20px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
-      margin-top: auto; /* Add this to move down */
+    
+    .social-icons a {
+      margin: 0 8px;
     }
-
-    .right-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; /* Add this to distribute space */
+    
+    /* Increase icon size */
+    .social-icons img {
+      width: 48px;
+      height: 48px;
     }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column; /* Add this to stack spans vertically */
-      cursor: pointer; /* Add this to make it look clickable */
-      margin-left: auto; /* Add this to move to right side */
-      margin-right: 15px; /* Add this to add spacing */
-      transition: transform 0.3s ease; /* Add this for smooth transition */
+    
+    /* Policy Links */
+    .policy-links {
+      margin-top: 20px;
     }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      transition: transform 0.3s ease; /* Add this for smooth transition */
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); /* Add this for first span */
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0; /* Add this for middle span */
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px); /* Add this for last span */
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
-    nav a, .dropbtn {
-      color: white;
+    
+    .policy-links a {
+      color: #888;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-      font-size: 16px;
+      margin: 0 10px;
+      font-size: 12px;
     }
-
-    nav a:hover, .dropbtn:hover {
-      color: #00bcd4;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      background-color: #333;
-      min-width: 200px;
-      z-index: 1000;
-      border-radius: 4px;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 16px;
-      color: white;
+    
+    /* Remove default link styling */
+    a {
+      outline: none;
       text-decoration: none;
-      font-size: 15px;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #00bcd4;
-      color: black;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      nav a, .dropbtn {
-        margin: 10px 0;
-        width: 100%;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background-color: #2c2c2c;
-      }
-
-      .dropdown-content a {
-        padding: 10px 20px;
-      }
-
-      .search-box {
-        margin-top: 10px;
-        margin-left: 0;
-        width: 100%;
-      }
-
-      .right-section {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      /* Add this for social media icons */
-      .social-icons {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .social-icons a {
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        margin: 0 5px;
-      }
-
-      .social-icons a:hover {
-        color: #00bcd4;
-      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="logo-container">
-      <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
-      <div class="site-name">Digital Effect</div>
-    </div>
-
-    <div class="right-section">
-      <input type="text" class="search-box" placeholder="Search..." />
-
-      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active'); this.classList.toggle('active')">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <div class="dropdown">
-        <span class="dropbtn">Product ▾</span>
-        <div class="dropdown-content">
-          <a href="bed-design.html">Bed Design</a>
-          <a href="flower-design.html">Flower Design</a>
-          <a href="door-design.html">Door Design</a>
-          <a href="frame-design.html">Frame Design</a>
-          <a href="jain-buddhist-design.html">Jain & Buddhist Design</a>
-          <a href="hindu-gods-design.html">Hindu Gods Design</a>
-          <a href="cross-jesus-design.html">Cross & Jesus Design</a>
-          <a href="animal-design.html">Animal Design</a>
-          <a href="birds-design.html">Birds Design</a>
-          <a href="tree-design.html">Tree Design</a>
-          <a href="mirror-design.html">Mirror Design</a>
-          <a href="clock-design.html">Clock Design</a>
-          <a href="pillar-column-stair-design.html">Pillar, Column & Stair Design</a>
-          <a href="heroes-of-india-design.html">Heroes of India</a>
-          <a href="products-admin.html">All Products</a>
-        </div>
-      </div>
-      <a href="video.html">Video</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <!-- Add this for social media icons -->
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-  </header>
-
-  <!-- Add this for footer -->
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2023 Digital Effect. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+    <!-- Logo + Name -->
+    <div class="logo-container">
+      <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" style="height: 100px;">
+      <span style="font-size: 25px; font-weight: bold; color: white;">Digital Effect</span>
+    </div>
+    
+    <!-- Description -->
+    <p class="description">
+      Since 2018, our team has been dedicated to creating designs that are not only visually stunning but also meaningful and valuable through true collaboration.
+    </p>
+    
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/digitaleffects40" target="_blank">
+        <img src="images/products/Icon/facebook_Digial_Effect.png" alt="Facebook">
+      </a>
+      <a href="https://www.youtube.com/@DigitalEffect" target="_blank">
+        <img src="images/products/Icon/youtube_Digial_Effect.png" alt="YouTube">
+      </a>
+      <a href="https://www.instagram.com/digital_effectteam" target="_blank">
+        <img src="images/products/Icon/instagram_Digial_Effect.png" alt="Instagram">
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank">
+        <img src="images/products/Icon/whatsapp_Digial_Effect.png" alt="WhatsApp">
+      </a>
+      <a href="https://t.me/+256775856965" target="_blank">
+        <img src="images/products/Icon/telegram_Digial_Effect.png" alt="Telegram">
+      </a>
+      <a href="https://in.pinterest.com/teamdigitaleffect/" target="_blank">
+        <img src="images/products/Icon/pinterest_Digial_Effect.png" alt="Pinterest">
+      </a>
+      <a href="https://x.com/digitaleffects4" target="_blank">
+        <img src="images/products/Icon/twitter_Digial_Effect.png" alt="Twitter">
+      </a>
+      <a href="https://www.linkedin.com/in/digital-effects-6a80ab267/" target="_blank">
+        <img src="images/products/Icon/linkedin_Digial_Effect.png" alt="LinkedIn">
+      </a>
+    </div>
+    
+    <!-- Policy Links -->
+    <div class="policy-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms & Conditions</a>
+      <a href="return-policy.html">Return Policy</a>
     </div>
   </footer>
-
 </body>
 </html>
