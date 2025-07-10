@@ -5,29 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Digital Effect - Footer</title>
   <style>
-    /* Font Family */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    /* Footer Styles */
+    /* Make the page take full height and use flex column */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Main content should take remaining space */
+    main {
+      flex: 1 0 auto; /* grow, don't shrink */
+      padding: 20px;
+    }
+
+    /* Footer styling */
     footer {
       background-color: #1c1c1c;
       color: #ccc;
       text-align: center;
       padding: 40px 20px 20px;
-      font-family: 'Poppins', sans-serif;
       font-size: 14px;
       box-sizing: border-box;
-      left: 0;
-      width: 100%;
-      /* Default is static */
-    }
-
-    /* Fixed footer on desktop */
-    @media (min-width: 768px) {
-      footer {
-        position: fixed;
-        bottom: 0;
-      }
+      flex-shrink: 0; /* don't shrink footer */
     }
 
     /* Logo + Name */
@@ -56,7 +62,6 @@
       margin: 0 8px;
     }
 
-    /* Increase icon size */
     .social-icons img {
       width: 48px;
       height: 48px;
@@ -74,86 +79,67 @@
       font-size: 12px;
     }
 
-    /* Remove default link styling */
     a {
       outline: none;
       text-decoration: none;
     }
 
-    /* Add space between icons in desktop view */
+    /* Responsive Social Icons */
     @media (min-width: 768px) {
       .social-icons {
         display: flex;
         justify-content: center;
-        gap: 20px; /* Add horizontal spacing */
+        gap: 20px;
       }
     }
 
-    /* Add vertical spacing for mobile view */
     @media (max-width: 767px) {
       .social-icons {
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 10px; /* Add vertical spacing */
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Content padding bottom to avoid footer overlap on desktop -->
-  <div style="padding-bottom: 180px;">
-    <!-- Your page content here -->
-  </div>
+  <main>
+    <!-- Replace this with your page content -->
+    <h1>Welcome to Digital Effect</h1>
+    <p>Here is some example content to show how footer behaves.</p>
+    <p>Add more content here to see the footer pushed down naturally.</p>
+  </main>
 
   <footer>
-    <!-- Logo + Name -->
     <div class="logo-container">
       <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" style="height: 100px;" />
       <span style="font-size: 25px; font-weight: bold; color: white;">Digital Effect</span>
     </div>
 
-    <!-- Description -->
     <p class="description">
       Since 2018, our team has been dedicated to creating designs that are not only visually stunning but also meaningful and valuable through true collaboration.
     </p>
 
-    <!-- Social Media Icons -->
     <div class="social-icons">
-      <a href="https://www.facebook.com/digitaleffects40" target="_blank">
-        <img src="images/products/Icon/facebook_Digial_Effect.png" alt="Facebook" />
-      </a>
-      <a href="https://www.youtube.com/@DigitalEffect" target="_blank">
-        <img src="images/products/Icon/youtube_Digial_Effect.png" alt="YouTube" />
-      </a>
-      <a href="https://www.instagram.com/digital_effectteam" target="_blank">
-        <img src="images/products/Icon/instagram_Digial_Effect.png" alt="Instagram" />
-      </a>
-      <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank">
-        <img src="images/products/Icon/whatsapp_Digial_Effect.png" alt="WhatsApp" />
-      </a>
-      <a href="https://t.me/+256775856965" target="_blank">
-        <img src="images/products/Icon/telegram_Digial_Effect.png" alt="Telegram" />
-      </a>
-      <a href="https://in.pinterest.com/teamdigitaleffect/" target="_blank">
-        <img src="images/products/Icon/pinterest_Digial_Effect.png" alt="Pinterest" />
-      </a>
-      <a href="https://x.com/digitaleffects4" target="_blank">
-        <img src="images/products/Icon/twitter_Digial_Effect.png" alt="Twitter" />
-      </a>
-      <a href="https://www.linkedin.com/in/digital-effects-6a80ab267/" target="_blank">
-        <img src="images/products/Icon/linkedin_Digial_Effect.png" alt="LinkedIn" />
-      </a>
+      <a href="https://www.facebook.com/digitaleffects40" target="_blank"><img src="images/products/Icon/facebook_Digial_Effect.png" alt="Facebook" /></a>
+      <a href="https://www.youtube.com/@DigitalEffect" target="_blank"><img src="images/products/Icon/youtube_Digial_Effect.png" alt="YouTube" /></a>
+      <a href="https://www.instagram.com/digital_effectteam" target="_blank"><img src="images/products/Icon/instagram_Digial_Effect.png" alt="Instagram" /></a>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text&type=phone_number&app_absent=0" target="_blank"><img src="images/products/Icon/whatsapp_Digial_Effect.png" alt="WhatsApp" /></a>
+      <a href="https://t.me/+256775856965" target="_blank"><img src="images/products/Icon/telegram_Digial_Effect.png" alt="Telegram" /></a>
+      <a href="https://in.pinterest.com/teamdigitaleffect/" target="_blank"><img src="images/products/Icon/pinterest_Digial_Effect.png" alt="Pinterest" /></a>
+      <a href="https://x.com/digitaleffects4" target="_blank"><img src="images/products/Icon/twitter_Digial_Effect.png" alt="Twitter" /></a>
+      <a href="https://www.linkedin.com/in/digital-effects-6a80ab267/" target="_blank"><img src="images/products/Icon/linkedin_Digial_Effect.png" alt="LinkedIn" /></a>
     </div>
 
-    <!-- Policy Links -->
     <div class="policy-links">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms & Conditions</a>
       <a href="return-policy.html">Return Policy</a>
     </div>
   </footer>
+
 </body>
 </html>
