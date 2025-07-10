@@ -2,288 +2,235 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Digital Effect - Products</title>
-
-  <!-- Google Font: Poppins -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bed Design - Digital Effect</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
     }
 
-    .page-container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #1c1c1c;
-      color: white;
-      flex-wrap: wrap;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-container img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .site-name {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a, .dropbtn {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover, .dropbtn:hover {
-      color: #00bcd4;
-    }
-
-    .search-box-wrapper {
-      margin-left: 20px;
-    }
-
-    .search-box {
-      padding: 6px 12px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      min-width: 200px;
-      border-radius: 4px;
-      z-index: 1000;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 16px;
-      color: white;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #00bcd4;
-      color: black;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    main {
-      flex: 1;
-      padding: 40px 20px;
-      max-width: 1000px;
+    .container {
+      max-width: 1200px;
       margin: auto;
+      padding: 40px 20px;
     }
 
-    main h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .subpage-list h2 {
-      font-size: 1.5rem;
-      margin: 30px 0 20px;
-    }
-
-    .subpage-list ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .subpage-list ul li {
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      color: #111;
       margin-bottom: 10px;
     }
 
-    .subpage-list ul li a {
-      color: #7f6000;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-    }
-
-    .subpage-list ul li a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background-color: #1c1c1c;
-      color: #ccc;
+    .subheading {
+      font-size: 1.1rem;
       text-align: center;
-      padding: 40px 20px 20px;
-      font-size: 14px;
+      color: #666;
+      margin-bottom: 35px;
     }
 
-    footer img {
-      height: 100px;
+    .subheading strong {
+      color: #000;
     }
 
-    footer span {
-      font-size: 25px;
-      font-weight: bold;
-      color: white;
+    .divider {
+      width: 80px;
+      height: 4px;
+      background-color: #7f6000;
+      margin: 0 auto 40px auto;
+      border-radius: 2px;
     }
 
-    footer p {
-      max-width: 700px;
-      margin: 15px auto;
-      color: #aaa;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
 
-    footer a img {
-      width: 28px;
-      height: 28px;
-      margin: 0 6px;
-      filter: brightness(0) invert(1);
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .policy-links a {
-      color: #aaa;
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-content p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .product-content .code-price {
+      font-weight: 600;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 12px;
+      background-color: #7f6000;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
       text-decoration: none;
-      margin: 0 10px;
-      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
 
-    .policy-links a:hover {
-      text-decoration: underline;
+    .buy-button:hover {
+      background-color: #5e4500;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+    .footer-note {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 1rem;
+      color: #888;
+    }
+
+    .footer-note strong {
+      color: #000;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
       }
 
-      nav {
-        margin-top: 10px;
-        flex-direction: column;
-        align-items: flex-start;
+      .subheading {
+        font-size: 1rem;
       }
 
-      nav a, .dropbtn {
-        margin: 6px 0;
-      }
-
-      .search-box-wrapper {
-        margin-left: 0;
-        margin-top: 10px;
+      .buy-button {
+        font-size: 0.95rem;
+        padding: 10px 18px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page-container">
-    <header>
-      <div class="logo-container">
-        <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
-        <div class="site-name">Digital Effect</div>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-          <span class="dropbtn">Product ▾</span>
-          <div class="dropdown-content">
-            <a href="bed-design.html">Bed Design</a>
-            <a href="flower-design.html">Flower Design</a>
-            <a href="door-design.html">Door Design</a>
-            <a href="frame-design.html">Frame Design</a>
-            <a href="jain-buddhist-design.html">Jain & Buddhist Design</a>
-            <a href="hindu-gods-design.html">Hindu Gods Design</a>
-            <a href="cross-jesus-design.html">Cross & Jesus Design</a>
-            <a href="animal-design.html">Animal Design</a>
-            <a href="birds-design.html">Birds Design</a>
-            <a href="tree-design.html">Tree Design</a>
-            <a href="mirror-design.html">Mirror Design</a>
-            <a href="clock-design.html">Clock Design</a>
-            <a href="pillar-column-stair-design.html">Pillar, Column & Stair Design</a>
-            <a href="heroes-of-india-design.html">Heros of India</a>
-            <a href="products-admin.html">All Products</a>
-          </div>
-        </div>
-        <a href="video.html">Video</a>
-        <a href="contact.html">Contact</a>
-        <div class="search-box-wrapper">
-          <input type="text" class="search-box" placeholder="Search..." />
-        </div>
-      </nav>
-    </header>
 
-    <main>
-      <h1>Digital Effect – Premium CNC & 3D Design Files for Every Project</h1>
-      <p>
-        Welcome to Digital Effect, your trusted source for high-quality STL, RLF, and TAP files crafted for CNC machining and 3D printing. From intricate furniture and stunning home decor to majestic animal reliefs and sacred religious art, explore our vast collection of ready-to-use designs. Perfect for professionals and hobbyists looking to bring creativity and precision to life.
-      </p>
-    </main>
 
-    <footer>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 15px;">
-        <img src="images/products/Logo/Logo-Digital-Effect.jpg" alt="Digital Effect Logo" />
-        <span>Digital Effect</span>
+
+  
+<!-- ✅ HEADER PLACEHOLDER -->
+  <div id="header-placeholder"></div>
+
+
+
+  
+
+  
+  <div class="container">
+    <h1>Bed Design</h1>
+    <p class="subheading">
+      Elegant Bed Relief Designs by <strong>Digital Effect</strong> – Premium STL, RLF & TAP files for luxurious and artistic furniture detailing.
+    </p>
+    <div class="divider"></div>
+
+    <div class="product-grid">
+      <!-- ⬇️ Paste product cards here ⬇️ -->
+      <div class="product-card">
+        <img src="path-to-image.jpg" alt="Bed Design 1">
+        <div class="product-content">
+          <h3>Bed Design 1</h3>
+          <p>Beautifully crafted bed design featuring intricate woodwork and luxurious upholstery.</p>
+          <p class="code-price">$199.99</p>
+          <a href="#" class="buy-button">Buy Now</a>
+        </div>
       </div>
-      <p>
-        Since 2018, our team has been dedicated to creating designs that are not only visually stunning but also meaningful and valuable through true collaboration.
-      </p>
-      <div>
-        <a href="#"><img src="images/products/Icon/facebook_Digial_Effect.png" alt="Facebook" /></a>
-        <a href="#"><img src="images/products/Icon/youtube_Digial_Effect.png" alt="YouTube" /></a>
-        <a href="#"><img src="images/products/Icon/instagram_Digial_Effect.png" alt="Instagram" /></a>
-        <a href="#"><img src="images/products/Icon/whatsapp_Digial_Effect.png" alt="WhatsApp" /></a>
-        <a href="#"><img src="images/products/Icon/telegram_Digial_Effect.png" alt="Telegram" /></a>
-        <a href="#"><img src="images/products/Icon/pinterest_Digial_Effect.png" alt="Pinterest" /></a>
-        <a href="#"><img src="images/products/Icon/twitter_Digial_Effect.png" alt="Twitter" /></a>
-        <a href="#"><img src="images/products/Icon/linkedin_Digial_Effect.png" alt="LinkedIn" /></a>
+      <div class="product-card">
+        <img src="path-to-image.jpg" alt="Bed Design 2">
+        <div class="product-content">
+          <h3>Bed Design 2</h3>
+          <p>Modern and sleek design with clean lines and high-quality materials.</p>
+          <p class="code-price">$249.99</p>
+          <a href="#" class="buy-button">Buy Now</a>
+        </div>
       </div>
-      <div class="policy-links" style="margin-top: 25px;">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-and-conditions.html">Terms & Conditions</a>
-        <a href="return-policy.html">Return Policy</a>
+      <div class="product-card">
+        <img src="path-to-image.jpg" alt="Bed Design 3">
+        <div class="product-content">
+          <h3>Bed Design 3</h3>
+          <p>Classic design with timeless elegance and comfort.</p>
+          <p class="code-price">$179.99</p>
+          <a href="#" class="buy-button">Buy Now</a>
+        </div>
       </div>
-    </footer>
+      <!-- 👆 Paste product cards here 👆 -->
+    </div>
+
+    <div class="divider" style="margin-top: 60px;"></div>
+    <div class="footer-note">
+      More elegant bed designs will be added soon. Stay creative with <strong>Digital Effect</strong>.
+    </div>
   </div>
+
+
+
+
+  
+<!-- ✅ FOOTER PLACEHOLDER -->
+  <div id="footer-placeholder"></div>
+
+
+
+
+
+  
+  <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+
+
+
+
+
+
+  
 </body>
 </html>
