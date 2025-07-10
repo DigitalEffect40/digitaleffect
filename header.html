@@ -132,9 +132,11 @@
       color: black;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+  .dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
 
     @media (max-width: 768px) {
       .menu-toggle {
@@ -223,7 +225,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <div class="dropdown">
-        <span class="dropbtn">Product ▾</span>
+      <a href="#" class="dropbtn">Product ▾</a>
         <div class="dropdown-content">
           <a href="bed-design.html">Bed Design</a>
           <a href="flower-design.html">Flower Design</a>
