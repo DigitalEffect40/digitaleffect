@@ -107,11 +107,19 @@
     .dropdown {
       position: relative;
     }
+    
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    .dropdown-content {
+  transition: all 0.2s ease;
+}
 
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 40px;
+      top: 100px;
       left: 0;
       background-color: #333;
       min-width: 200px;
