@@ -2,174 +2,261 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product Admin - Digital Effect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&display=swap" rel="stylesheet" />
+  <title>Product Admin Panel</title>
   <style>
-    body {
-      font-family: 'Comfortaa', cursive;
-      background: #f3f3f3;
-      margin: 0;
-      padding: 20px;
-    }
-    .admin-container {
-      background: #fff;
-      padding: 30px;
-      max-width: 700px;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.08);
-    }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #333;
-    }
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: 600;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Comfortaa', cursive;
-      box-sizing: border-box;
-    }
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: #7f6000;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #5f4700;
-    }
-    .output {
-      margin-top: 30px;
-      padding: 20px;
-      background: #fefefe;
-      border: 1px dashed #aaa;
-      white-space: pre-wrap;
-      border-radius: 10px;
-      overflow-x: auto;
-      position: relative;
-      font-family: monospace;
-    }
-    .copy-button {
-      margin-top: 10px;
-      background: #7f6000;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 8px 16px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      display: inline-block;
-    }
-    .copy-button:hover {
-      background-color: #5f4700;
-    }
+    body { font-family: 'Poppins', sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+    label, input, textarea { display: block; margin: 10px 0; width: 100%; }
+    input, textarea, select { padding: 8px; font-size: 14px; }
+    button { padding: 12px 20px; background: #7f6000; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    button:hover { background: #a67c00; }
+    #product-list { margin-top: 20px; }
+    .product-item { background: #f7f7f7; padding: 12px; margin-bottom: 10px; border-radius: 8px; }
+    textarea { height: 250px; font-family: monospace; }
   </style>
 </head>
 <body>
-  <div class="admin-container">
-    <h1>Product Admin Panel</h1>
+  <h2>Product Admin Panel</h2>
+  
+  <label>Image URL:</label>
+  <input type="text" id="image" placeholder="https://example.com/image.jpg" />
 
-    <label for="name">Product Name:</label>
-    <input type="text" id="name" placeholder="Enter product name" />
+  <label>Tag / Type:</label>
+  <input type="text" id="tag" placeholder="Door Design" />
 
-    <label for="description">Description:</label>
-    <textarea id="description" placeholder="Enter product description"></textarea>
+  <label>Code:</label>
+  <input type="text" id="code" placeholder="#DD1001" />
 
-    <label for="price">Price (USD):</label>
-    <input type="text" id="price" placeholder="Enter price" />
+  <label>Price (INR):</label>
+  <input type="number" id="price" placeholder="999" />
 
-    <label for="code">Product Code:</label>
-    <input type="text" id="code" placeholder="Enter product code" />
+  <label>Details:</label>
+  <textarea id="details" placeholder="Product description"></textarea>
 
-    <label for="likes">Like Count:</label>
-    <input type="number" id="likes" placeholder="Enter number of likes" />
+  <label>Likes:</label>
+  <input type="number" id="likes" placeholder="120" />
 
-    <label for="note">Note:</label>
-    <textarea id="note" placeholder="Enter any note"></textarea>
+  <label>Buy Now Link:</label>
+  <input type="text" id="buyLink" placeholder="https://yourstore.com/buy/door-design-1001" />
 
-    <label for="imageUrl">Image URL (1920x1080 recommended):</label>
-    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" />
+  <button onclick="addProduct()">Add Product</button>
 
-    <label for="buy">Buy Now Link:</label>
-    <input type="url" id="buy" placeholder="https://your-payment-link.com" />
+  <div id="product-list"></div>
 
-    <button onclick="generateProduct()">Generate Product Card</button>
+  <button onclick="generateHTML()">Generate product.html code</button>
 
-    <div class="output">
-      <pre id="output"></pre>
-      <button class="copy-button" onclick="copyToClipboard()">📋 Copy Code</button>
-    </div>
-  </div>
+  <h3>Generated HTML (copy and save as product.html):</h3>
+  <textarea id="output"></textarea>
 
   <script>
-    function escapeHtml(text) {
-      const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-      };
-      return text.replace(/[&<>"']/g, m => map[m]);
-    }
+    const products = [];
 
-    function generateProduct() {
-      const name = escapeHtml(document.getElementById('name').value.trim());
-      const desc = escapeHtml(document.getElementById('description').value.trim());
-      const price = escapeHtml(document.getElementById('price').value.trim());
-      const code = escapeHtml(document.getElementById('code').value.trim());
-      const likes = escapeHtml(document.getElementById('likes').value.trim());
-      const note = escapeHtml(document.getElementById('note').value.trim());
-      const imageUrl = escapeHtml(document.getElementById('imageUrl').value.trim());
-      const buy = escapeHtml(document.getElementById('buy').value.trim());
+    function addProduct() {
+      const image = document.getElementById('image').value.trim();
+      const tag = document.getElementById('tag').value.trim();
+      const code = document.getElementById('code').value.trim();
+      const price = parseInt(document.getElementById('price').value.trim());
+      const details = document.getElementById('details').value.trim();
+      const likes = parseInt(document.getElementById('likes').value.trim());
+      const buyLink = document.getElementById('buyLink').value.trim();
 
-      if (!name || !imageUrl || !buy) {
-        alert('Please fill in at least Product Name, Image URL, and Buy Now Link.');
+      if (!image || !tag || !code || isNaN(price) || !details || isNaN(likes) || !buyLink) {
+        alert('Please fill all fields correctly!');
         return;
       }
 
-      const html = `
-<div class="product-card">
-  <img src="${imageUrl}" alt="${name}" loading="lazy" />
-  <div class="product-info">
-    <h3>${name}</h3>
-    <p class="desc">${desc}</p>
-    <p class="code-price">Code: ${code} | Price: $${price}</p>
-    <a href="${buy}" target="_blank" class="buy-button">Buy Now</a>
-    <p class="likes">❤️ ${likes} Likes</p>
-    <p class="note"><strong>Note:</strong> ${note}</p>
-  </div>
-</div>`.trim();
-
-      document.getElementById('output').textContent = html;
+      products.push({ image, tag, code, price, details, likes, buyLink });
+      renderProductList();
+      clearInputs();
     }
 
-    function copyToClipboard() {
-      const output = document.getElementById('output');
-      if (!output) return;
-      navigator.clipboard.writeText(output.textContent).then(() => {
-        alert('✅ Code copied to clipboard!');
-      }).catch(() => {
-        alert('❌ Copy failed. Please try manually.');
+    function renderProductList() {
+      const list = document.getElementById('product-list');
+      list.innerHTML = '';
+      products.forEach((p, i) => {
+        list.innerHTML += `<div class="product-item"><b>${p.tag}</b> - ${p.code} - ₹${p.price}</div>`;
       });
+    }
+
+    function clearInputs() {
+      ['image','tag','code','price','details','likes','buyLink'].forEach(id => document.getElementById(id).value = '');
+    }
+
+    function generateHTML() {
+      if(products.length === 0) {
+        alert('Add at least one product!');
+        return;
+      }
+
+      const css = `
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f7f8fc, #e9eff5);
+    padding: 30px;
+  }
+  .product-card {
+    background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 360px;
+    margin: 20px auto;
+    padding: 25px;
+    position: relative;
+  }
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+  }
+  .product-image-container {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  .product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+  }
+  .product-card img:hover {
+    transform: scale(1.05);
+  }
+  .product-tags {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+  }
+  .tag, .code {
+    font-size: 13px;
+    font-weight: 600;
+    background: #fff3cd;
+    color: #7f6000;
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1px solid #ffeeba;
+  }
+  .price-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .product-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7f6000;
+  }
+  .price-currency {
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  .product-details {
+    font-size: 15px;
+    color: #444;
+    margin: 15px 0;
+    text-align: center;
+  }
+  .product-likes {
+    font-size: 14px;
+    color: #e63946;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .buy-now {
+    display: block;
+    text-align: center;
+    background-color: #7f6000;
+    color: white;
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .buy-now:hover {
+    background-color: #a67c00;
+    transform: scale(1.03);
+  }
+</style>
+      `;
+
+      const js = `
+<script>
+  const rates = { INR: 1, USD: 0.012, EUR: 0.011, GBP: 0.0095 };
+  function convertPrice(priceINR, currency) {
+    return Math.round(priceINR * rates[currency]);
+  }
+  function updatePrice(index, currency) {
+    const priceElem = document.getElementById('price-' + index);
+    const basePrice = parseInt(priceElem.getAttribute('data-baseprice'));
+    const converted = convertPrice(basePrice, currency);
+    const symbol = currency === 'INR' ? '₹' : currency === 'USD' ? '$' : currency === 'EUR' ? '€' : '£';
+    priceElem.innerText = symbol + converted;
+  }
+  function zoomImage(src) {
+    const modal = document.getElementById('zoomModal');
+    const zoomImg = document.getElementById('zoomImg');
+    zoomImg.src = src;
+    modal.style.display = 'flex';
+  }
+  document.getElementById('zoomModal').addEventListener('click', function () {
+    this.style.display = 'none';
+  });
+</script>
+<div id="zoomModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:999;">
+  <img id="zoomImg" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
+</div>
+      `;
+
+      let productCards = '';
+
+      products.forEach((p, i) => {
+        productCards += `
+<div class="product-card">
+  <div class="product-image-container">
+    <img src="${p.image}" onclick="zoomImage('${p.image}')" alt="Product Image">
+  </div>
+  <div class="product-tags">
+    <span class="tag">${p.tag}</span>
+    <span class="code">${p.code}</span>
+  </div>
+  <div class="price-row">
+    <div class="product-price" id="price-${i}" data-baseprice="${p.price}">₹${p.price}</div>
+    <select class="price-currency" onchange="updatePrice(${i}, this.value)">
+      <option value="INR">INR</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+    </select>
+  </div>
+  <p class="product-details">${p.details}</p>
+  <div class="product-likes">❤️ ${p.likes}</div>
+  <a href="${p.buyLink}" class="buy-now" target="_blank">Buy Now</a>
+</div>
+        `;
+      });
+
+      const fullHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products</title>
+  ${css}
+</head>
+<body>
+  ${productCards}
+  ${js}
+</body>
+</html>`;
+
+      document.getElementById('output').value = fullHTML;
     }
   </script>
 </body>
