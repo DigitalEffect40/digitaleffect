@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cross & Jesus Design - Digital Effect</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+
+
+  
+   <!-- Product card functionality (CSS) -->
+<link rel="stylesheet" href="style.css" />
+  <!-- Product card functionality (CSS) -->
+
+
+  
+  
   <style>
     * {
       box-sizing: border-box;
@@ -168,21 +179,68 @@
     <div class="product-grid">
       <!-- ⬇️ Add your product cards here ⬇️ -->
 
-      <!-- Example Product:
-      <div class="product-card">
-        <img src="https://yourgithubimagepath.com/cross001.jpg" alt="Cross Jesus Design" />
-        <div class="product-content">
-          <h3>3D Jesus Cross</h3>
-          <p>Beautifully sculpted cross design perfect for altar or wall decor.</p>
-          <p class="code-price">Code: JCROSS001 | Price: $10</p>
-          <a href="https://yourbuylink.com" class="buy-button" target="_blank">Buy Now</a>
-        </div>
-      </div>
-      -->
+
+
+      
+<div class="product-card">
+  <div class="product-image-container">
+    <img src="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-001.+Please+share+more+details.&type=phone_number&app_absent=0" alt="sasasa" aria-describedby="img-desc" loading="lazy" onclick="zoomImage('https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-001.+Please+share+more+details.&type=phone_number&app_absent=0')">
+    <span id="img-desc" style="display:none;">axax</span>
+  </div>
+  <div class="product-tags">
+    <span class="tag">cxcx</span>
+    <span class="code">xaxx</span>
+  </div>
+  <div class="price-row">
+    <div class="product-price" id="price">₹656.00</div>
+    <select id="currency" class="price-currency" onchange="convertPrice()">
+      <option value="INR" selected>INR</option>
+      <option value="USD" >USD</option>
+      <option value="EUR" >EUR</option>
+      <option value="GBP" >GBP</option>
+    </select>
+  </div>
+  <p class="product-details">axax</p>
+  <div class="product-likes">❤️ 0</div>
+  <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-001.+Please+share+more+details.&type=phone_number&app_absent=0" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
 
       <!-- 👆 Add product cards above 👆 -->
     </div>
 
+
+<!-- Zoom Modal -->
+<div id="zoomModal" onclick="closeZoom()">
+  <img id="zoomImg" src="" alt="Zoomed product image" />
+</div>
+
+
+
+    
+    
     <div class="divider" style="margin-top: 60px;"></div>
     <div class="footer-note">
       More sacred designs will be available soon. Stay inspired with <strong>Digital Effect</strong>.
@@ -220,6 +278,11 @@
 
 
 
+
+
+  <!-- Product card functionality (zoom, price) -->
+<script src="script.js" defer></script>
+  <!-- Product card functionality (zoom, price) -->
 
 
   
