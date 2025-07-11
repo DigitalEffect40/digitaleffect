@@ -1,132 +1,182 @@
-/* style.css */
-
+/* Global Styles */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #f7f8fc, #e9eff5);
-  padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #f7f8fc, #e9eff5);
+  padding: 30px;
+  margin: 0;
+  color: #222;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Product Grid Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Product Card */
 .product-card {
-  background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 25px;
-  position: relative;
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
 }
 
+/* Image */
 .product-image-container {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .product-image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: zoom-in;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: zoom-in;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
 }
 
 .product-image-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05);
 }
 
+/* Content Wrapper */
+.product-content {
+  flex: 1;
+}
+
+/* Tags */
 .product-tags {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 
 .tag, .code {
-  font-size: 13px;
-  font-weight: 600;
-  background: #fff3cd;
-  color: #7f6000;
-  padding: 6px 12px;
-  border-radius: 50px;
-  border: 1px solid #ffeeba;
+  font-size: 13px;
+  font-weight: 600;
+  background: #fff3cd;
+  color: #7f6000;
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: 1px solid #ffeeba;
 }
 
+/* Price Row */
 .price-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
 }
 
 .product-price {
-  font-size: 24px;
-  font-weight: 700;
-  color: #000000;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
 }
 
 .price-currency {
-  font-size: 14px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 
+/* Details */
 .product-details {
-  font-size: 15px;
-  color: #444;
-  margin: 15px 0;
-  text-align: center;
+  font-size: 15px;
+  color: #444;
+  text-align: center;
+  margin: 10px 0;
 }
 
+/* Likes */
 .product-likes {
-  font-size: 14px;
-  color: #000000;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 14px;
+  color: #e63946;
+  text-align: center;
+  margin-bottom: 18px;
 }
 
+/* Buy Now Button */
 .buy-now {
-  display: block;
-  text-align: center;
-  background-color: #000000;
-  color: white;
-  font-weight: 600;
-  padding: 14px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+  display: block;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .buy-now:hover {
-  background-color: #a67c00;
-  transform: scale(1.03);
+  background-color: #a67c00;
+  transform: scale(1.03);
 }
 
 /* Zoom Modal */
 #zoomModal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  cursor: zoom-out;
-
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: zoom-out;
 }
 
 #zoomImg {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .product-price {
+    font-size: 18px;
+  }
+
+  .price-currency {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .product-details {
+    font-size: 14px;
+  }
+
+  .buy-now {
+    padding: 12px;
+    font-size: 14px;
+  }
 }
