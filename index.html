@@ -280,24 +280,26 @@
  <!-- ✅ SLIDESHOW SCRIPT -->
 <script>
   document.querySelectorAll('.slider').forEach(slider => {
-    const folder = slider.dataset.folder;
     const link = slider.dataset.link;
     const img = slider.querySelector('img');
     let index = 1;
-    const totalImages = 5; // Change to total number of images in that folder
+    const totalImages = 5; // 🔁 Update if more/less images in folders
 
-   setInterval(() => {
+    // Get base image name without "-1.jpg"
+    const srcStart = img.getAttribute("src").replace(/-\d+\.jpg$/, "");
+
+    setInterval(() => {
       index = index % totalImages + 1;
-      img.src = `https://digitaleffect40.github.io/${folder}/${index}.jpg`;
+      img.src = `${srcStart}-${index}.jpg`;
     }, 2500);
 
-    // Clickable redirect
     slider.style.cursor = "pointer";
     slider.addEventListener("click", () => {
       window.location.href = link;
     });
   });
 </script>
+
 
 
   
