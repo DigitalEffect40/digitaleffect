@@ -153,6 +153,31 @@
         padding: 10px 18px;
       }
     }
+
+
+
+
+
+.slider img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.slider-card .product-content {
+  text-align: center;
+}
+
+.buy-button {
+  cursor: pointer;
+}
+
+
+    
+
+    
+    
   </style>
 </head>
 <body>
@@ -178,7 +203,22 @@
 
      
   <!-- Bed Design Slide -->
-  <div class="product-card slider-card">
+ <!-- START: Slideshow Card -->
+<div class="product-card slider-card">
+  <div class="slider" data-folder="images/products/products/jain-maheer" data-link="jain-maheer.html">
+    <img src="images/products/products/jain-maheer/1.jpg" alt="Jain Maheer Design" />
+  </div>
+  <div class="product-content">
+    <h3>Jain Maheer Design</h3>
+    <a href="jain-maheer.html" class="buy-button">Visit Page</a>
+  </div>
+</div>
+<!-- END: Slideshow Card -->
+
+     
+     
+     
+     <div class="product-card slider-card">
     <div class="slider" data-folder="images/bed-design" data-link="bed.html">
       <img src="images/bed-design/1.jpg" alt="Bed Design" />
     </div>
@@ -243,5 +283,32 @@
         document.getElementById("footer-placeholder").innerHTML = data;
       });
   </script>
+
+
+  
+ <!-- ✅ SLIDESHOW SCRIPT -->
+<script>
+  document.querySelectorAll('.slider').forEach(slider => {
+    const folder = slider.dataset.folder;
+    const link = slider.dataset.link;
+    const img = slider.querySelector('img');
+    let index = 1;
+    const totalImages = 5; // Change to total number of images in that folder
+
+    setInterval(() => {
+      index = index % totalImages + 1;
+      img.src = `${folder}/${index}.jpg`;
+    }, 2500); // changes every 2.5 seconds
+
+    // Clickable redirect
+    slider.style.cursor = "pointer";
+    slider.addEventListener("click", () => {
+      window.location.href = link;
+    });
+  });
+</script>
+
+
+  
 </body>
 </html>
