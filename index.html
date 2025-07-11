@@ -200,6 +200,24 @@
 
 
 
+<!-- ✅ Jain Maheer Design Slide -->
+<div class="product-card slider-card">
+  <div class="slider" 
+       data-folder="digitaleffect/images/products/products/jain-maheer" 
+       data-link="jain-maheer.html">
+    <img src="digitaleffect/images/products/products/jain-maheer/jain-buddhist-reliefs-artcam-design-digital-effect-1.jpg" 
+         alt="Jain Maheer Design" />
+  </div>
+  <div class="product-content">
+    <h3>Jain Maheer Design</h3>
+    <a href="jain-maheer.html" class="buy-button">Visit Page</a>
+  </div>
+</div>
+
+     
+
+     
+
 
      
   <!-- Bed Design Slide -->
@@ -275,10 +293,10 @@
     let index = 1;
     const totalImages = 5; // Change to total number of images in that folder
 
-    setInterval(() => {
+   setInterval(() => {
       index = index % totalImages + 1;
-      img.src = `${folder}/${index}.jpg`;
-    }, 2500); // changes every 2.5 seconds
+      img.src = `https://digitaleffect40.github.io/${folder}/jain-buddhist-reliefs-artcam-design-digital-effect-${index}.jpg`;
+    }, 2500);
 
     // Clickable redirect
     slider.style.cursor = "pointer";
