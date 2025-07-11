@@ -82,7 +82,7 @@
   <h1>Product Admin Panel</h1>
   <form id="productForm">
     <label>
-      Image Path:
+      Image URL:
       <input type="text" id="imageUrl" required placeholder="images/products/your-image.jpg" />
     </label>
 
@@ -160,6 +160,7 @@
         GBP: "£"
       };
 
+      // Generate product card HTML snippet
       const html = `
 <div class="product-card">
   <div class="product-image-container">
@@ -171,8 +172,8 @@
     <span class="code">${productCode}</span>
   </div>
   <div class="price-row">
-    <div class="product-price" data-inr="${priceINR}">${symbols[currency]}${priceINR.toFixed(2)}</div>
-    <select class="price-currency" onchange="convertPrice(this)">
+    <div class="product-price" id="price">${symbols[currency]}${priceINR.toFixed(2)}</div>
+    <select id="currency" class="price-currency" onchange="convertPrice()">
       <option value="INR" ${currency === 'INR' ? 'selected' : ''}>INR</option>
       <option value="USD" ${currency === 'USD' ? 'selected' : ''}>USD</option>
       <option value="EUR" ${currency === 'EUR' ? 'selected' : ''}>EUR</option>
@@ -181,7 +182,8 @@
   </div>
   <p class="product-details">${description}</p>
   <div class="product-likes">❤️ ${likes}</div>
-  <a href="${buyLink}" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
+  <a href="${buyLink}" 
+class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
 </div>`.trim();
 
       document.getElementById('generatedHTML').value = html;
@@ -190,3 +192,5 @@
 
 </body>
 </html>
+
+
