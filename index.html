@@ -282,15 +282,12 @@
   document.querySelectorAll('.slider').forEach(slider => {
     const link = slider.dataset.link;
     const img = slider.querySelector('img');
-    let index = 1;
-    const totalImages = 5; // 🔁 Update if more/less images in folders
-
-    // Get base image name without "-1.jpg"
     const srcStart = img.getAttribute("src").replace(/-\d+\.jpg$/, "");
+    const totalImages = 8; // ✅ Change to the total images in that folder
 
     setInterval(() => {
-      index = index % totalImages + 1;
-      img.src = `${srcStart}-${index}.jpg`;
+      const randomIndex = Math.floor(Math.random() * totalImages) + 1;
+      img.src = `${srcStart}-${randomIndex}.jpg`;
     }, 2500);
 
     slider.style.cursor = "pointer";
@@ -299,6 +296,7 @@
     });
   });
 </script>
+
 
 
 
