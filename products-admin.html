@@ -253,8 +253,8 @@
     <span class="code">${productCode}</span>
   </div>
   <div class="price-row">
-    <div class="product-price">${symbols[currency]}${priceINR.toFixed(2)}</div>
-    <select class="price-currency" onchange="convertPrice()">
+    <div class="product-price" data-inr="${priceINR}">${symbols[currency]}${priceINR.toFixed(2)}</div>                                           
+<select class="price-currency" onchange="convertPrice(this)">
       <option value="INR" ${currency === 'INR' ? 'selected' : ''}>INR</option>
       <option value="USD" ${currency === 'USD' ? 'selected' : ''}>USD</option>
       <option value="EUR" ${currency === 'EUR' ? 'selected' : ''}>EUR</option>
