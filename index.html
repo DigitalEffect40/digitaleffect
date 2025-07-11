@@ -283,7 +283,7 @@
     const link = slider.dataset.link;
     const img = slider.querySelector('img');
     const srcStart = img.getAttribute("src").replace(/-\d+\.jpg$/, "");
-    const totalImages = 8; // ✅ Change to the total images in that folder
+    const totalImages = 100; // ✅ Change to the total images in that folder
 
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * totalImages) + 1;
