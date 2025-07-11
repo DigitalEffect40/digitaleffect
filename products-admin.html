@@ -1,193 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product Admin Panel - Digital Effect</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f7f8fc;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-    h1 {
-      text-align: center;
-      color: #7f6000;
-    }
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: #444;
-    }
-    input[type="text"],
-    input[type="url"],
-    input[type="number"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      margin-top: 4px;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    textarea {
-      resize: vertical;
-    }
-    button {
-      background-color: #7f6000;
-      color: white;
-      border: none;
-      padding: 14px 20px;
-      font-size: 16px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 15px;
-      width: 100%;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #a67c00;
-    }
-    #generatedHTML {
-      margin-top: 20px;
-      font-family: monospace;
-      font-size: 14px;
-      white-space: pre-wrap;
-      background: #eee;
-      padding: 15px;
-      border-radius: 10px;
-      height: 250px;
-      overflow-y: auto;
-    }
-    small {
-      color: #666;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Admin Panel - Digital Effect</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f8fc;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #7f6000;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #444;
+    }
+    input[type="text"],
+    input[type="url"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      margin-top: 4px;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      background-color: #7f6000;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 15px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #a67c00;
+    }
+    #generatedHTML {
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      background: #eee;
+      padding: 15px;
+      border-radius: 10px;
+      height: 250px;
+      overflow-y: auto;
+    }
+    small {
+      color: #666;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Product Admin Panel</h1>
-  <form id="productForm">
-    <label>
-      Image URL:
-      <input type="text" id="imageUrl" required placeholder="images/products/your-image.jpg" />
-    </label>
+  <h1>Product Admin Panel</h1>
+  <form id="productForm">
+    <label>
+      Image Path:
+      <input type="text" id="imageUrl" required placeholder="images/products/your-image.jpg" />
+    </label>
 
-    <label>
-      Alt Text:
-      <input type="text" id="altText" required placeholder="Describe the product image" />
-    </label>
+    <label>
+      Alt Text:
+      <input type="text" id="altText" required placeholder="Describe the product image" />
+    </label>
 
-    <label>
-      Price (INR):
-      <input type="number" id="price" required min="0" placeholder="999" />
-    </label>
+    <label>
+      Price (INR):
+      <input type="number" id="price" required min="0" placeholder="999" />
+    </label>
 
-    <label>
-      Currency:
-      <select id="currency">
-        <option value="INR" selected>INR</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-      </select>
-    </label>
+    <label>
+      Currency:
+      <select id="currency">
+        <option value="INR" selected>INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </label>
 
-    <label>
-      Buy Button Link:
-      <input type="url" id="buyLink" required placeholder="https://yourstore.com/buy/product" />
-    </label>
+    <label>
+      Buy Button Link:
+      <input type="url" id="buyLink" required placeholder="https://yourstore.com/buy/product" />
+    </label>
 
-    <label>
-      Product Tag:
-      <input type="text" id="productTag" placeholder="e.g. Door Design" />
-      <small>Optional: Category or tag</small>
-    </label>
+    <label>
+      Product Tag:
+      <input type="text" id="productTag" placeholder="e.g. Door Design" />
+      <small>Optional: Category or tag</small>
+    </label>
 
-    <label>
-      Product Code:
-      <input type="text" id="productCode" placeholder="#DD1001" />
-      <small>Optional: Unique product code</small>
-    </label>
+    <label>
+      Product Code:
+      <input type="text" id="productCode" placeholder="#DD1001" />
+      <small>Optional: Unique product code</small>
+    </label>
 
-    <label>
-      Description:
-      <textarea id="description" rows="3" placeholder="Product description for details and alt text"></textarea>
-    </label>
+    <label>
+      Description:
+      <textarea id="description" rows="3" placeholder="Product description for details and alt text"></textarea>
+    </label>
 
-    <label>
-      Likes:
-      <input type="number" id="likes" min="0" value="0" />
-      <small>Optional: Number of likes or favorites</small>
-    </label>
+    <label>
+      Likes:
+      <input type="number" id="likes" min="0" value="0" />
+      <small>Optional: Number of likes or favorites</small>
+    </label>
 
-    <button type="submit">Generate HTML</button>
-  </form>
+    <button type="submit">Generate HTML</button>
+  </form>
 
-  <textarea id="generatedHTML" readonly placeholder="Your generated product card HTML will appear here..."></textarea>
+  <textarea id="generatedHTML" readonly placeholder="Your generated product card HTML will appear here..."></textarea>
 
-  <script>
-    document.getElementById('productForm').addEventListener('submit', function(e){
-      e.preventDefault();
+  <script>
+    document.getElementById('productForm').addEventListener('submit', function(e){
+      e.preventDefault();
 
-      const imageUrl = document.getElementById('imageUrl').value.trim();
-      const altText = document.getElementById('altText').value.trim();
-      const priceINR = Number(document.getElementById('price').value);
-      const currency = document.getElementById('currency').value;
-      const buyLink = document.getElementById('buyLink').value.trim();
-      const productTag = document.getElementById('productTag').value.trim() || 'Product';
-      const productCode = document.getElementById('productCode').value.trim() || '#CODE';
-      const description = document.getElementById('description').value.trim() || '';
-      const likes = Number(document.getElementById('likes').value) || 0;
+      const imageUrl = document.getElementById('imageUrl').value.trim();
+      const altText = document.getElementById('altText').value.trim();
+      const priceINR = Number(document.getElementById('price').value);
+      const currency = document.getElementById('currency').value;
+      const buyLink = document.getElementById('buyLink').value.trim();
+      const productTag = document.getElementById('productTag').value.trim() || 'Product';
+      const productCode = document.getElementById('productCode').value.trim() || '#CODE';
+      const description = document.getElementById('description').value.trim() || '';
+      const likes = Number(document.getElementById('likes').value) || 0;
 
-      const symbols = {
-        INR: "₹",
-        USD: "$",
-        EUR: "€",
-        GBP: "£"
-      };
+      const symbols = {
+        INR: "₹",
+        USD: "$",
+        EUR: "€",
+        GBP: "£"
+      };
 
-      // Generate product card HTML snippet
-      const html = `
+      const html = `
 <div class="product-card">
-  <div class="product-image-container">
-    <img src="${imageUrl}" alt="${altText}" aria-describedby="img-desc" loading="lazy" onclick="zoomImage('${imageUrl}')">
-    <span id="img-desc" style="display:none;">${description}</span>
-  </div>
-  <div class="product-tags">
-    <span class="tag">${productTag}</span>
-    <span class="code">${productCode}</span>
-  </div>
-  <div class="price-row">
-    <div class="product-price" id="price">${symbols[currency]}${priceINR.toFixed(2)}</div>
-    <select id="currency" class="price-currency" onchange="convertPrice()">
-      <option value="INR" ${currency === 'INR' ? 'selected' : ''}>INR</option>
-      <option value="USD" ${currency === 'USD' ? 'selected' : ''}>USD</option>
-      <option value="EUR" ${currency === 'EUR' ? 'selected' : ''}>EUR</option>
-      <option value="GBP" ${currency === 'GBP' ? 'selected' : ''}>GBP</option>
-    </select>
-  </div>
-  <p class="product-details">${description}</p>
-  <div class="product-likes">❤️ ${likes}</div>
-  <a href="${buyLink}" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
+  <div class="product-image-container">
+    <img src="${imageUrl}" alt="${altText}" aria-describedby="img-desc" loading="lazy" onclick="zoomImage('${imageUrl}')">
+    <span id="img-desc" style="display:none;">${description}</span>
+  </div>
+  <div class="product-tags">
+    <span class="tag">${productTag}</span>
+    <span class="code">${productCode}</span>
+  </div>
+  <div class="price-row">
+    <div class="product-price" data-inr="${priceINR}">${symbols[currency]}${priceINR.toFixed(2)}</div>
+    <select class="price-currency" onchange="convertPrice(this)">
+      <option value="INR" ${currency === 'INR' ? 'selected' : ''}>INR</option>
+      <option value="USD" ${currency === 'USD' ? 'selected' : ''}>USD</option>
+      <option value="EUR" ${currency === 'EUR' ? 'selected' : ''}>EUR</option>
+      <option value="GBP" ${currency === 'GBP' ? 'selected' : ''}>GBP</option>
+    </select>
+  </div>
+  <p class="product-details">${description}</p>
+  <div class="product-likes">❤️ ${likes}</div>
+  <a href="${buyLink}" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
 </div>`.trim();
 
-      document.getElementById('generatedHTML').value = html;
-    });
-  </script>
+      document.getElementById('generatedHTML').value = html;
+    });
+  </script>
 
 </body>
 </html>
