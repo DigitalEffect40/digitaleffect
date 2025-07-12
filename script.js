@@ -14,28 +14,25 @@ function toggleLike(el) {
   countSpan.textContent = count;
 }
 
-const fixedRates = {
-  INR: 1,
-  USD: 0.012,
-  EUR: 0.011,
-  GBP: 0.0095
-};
+function convertCurrency(selectElement) {
+  const rates = {
+    INR: 1,
+    USD: 0.012,  // Example rate: 1 INR = 0.012 USD
+    EUR: 0.011,  // Example rate: 1 INR = 0.011 EUR
+    GBP: 0.0095  // Example rate: 1 INR = 0.0095 GBP
+  };
 
-const currencySymbols = {
-  INR: "₹",
-  USD: "$",
-  EUR: "€",
-  GBP: "£"
-};
+  const card = selectElement.closest(".product-card");
+  const priceElement = card.querySelector(".product-price");
+  const inrValue = parseFloat(priceElement.dataset.inr); // use data-inr attribute
 
-function convertCurrency(selectElement, priceId) {
   const selectedCurrency = selectElement.value;
-  const priceEl = document.getElementById(priceId);
-  const inrValue = parseFloat(priceEl.getAttribute('data-inr'));
+  const converted = (inrValue * rates[selectedCurrency]).toFixed(2);
 
-  const rate = fixedRates[selectedCurrency];
-  const converted = (inrValue * rate).toFixed(2);
-  const symbol = currencySymbols[selectedCurrency];
+  let symbol = "₹";
+  if (selectedCurrency === "USD") symbol = "$";
+  if (selectedCurrency === "EUR") symbol = "€";
+  if (selectedCurrency === "GBP") symbol = "£";
 
-  priceEl.textContent = `${symbol}${converted}`;
+  priceElement.innerText = `${symbol}${converted}`;
 }
