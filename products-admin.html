@@ -1,279 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Admin Panel - Digital Effect</title>
-
-  <!-- Google Fonts Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f7f8fc;
+      background-color: #f4f4f4;
       padding: 20px;
-      max-width: 700px;
-      margin: auto;
     }
+
     h1 {
       text-align: center;
-      color: #7f6000;
-      margin-bottom: 25px;
+      color: #111;
     }
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+    .form-group {
+      margin-bottom: 20px;
     }
+
     label {
       display: block;
-      margin-bottom: 12px;
       font-weight: 600;
-      color: #444;
+      margin-bottom: 6px;
     }
-    input[type="text"],
-    input[type="url"],
-    input[type="number"],
-    select,
-    textarea {
+
+    input[type="text"], textarea, select {
       width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
+      padding: 10px;
       border-radius: 6px;
-      font-size: 15px;
-      margin-top: 4px;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      border: 1px solid #ccc;
+      font-size: 1rem;
     }
-    textarea {
-      resize: vertical;
-    }
+
     button {
-      background-color: #7f6000;
+      background-color: #000;
       color: white;
+      padding: 12px 20px;
       border: none;
-      padding: 14px 20px;
-      font-size: 16px;
-      border-radius: 10px;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
-      font-weight: 600;
-      margin-top: 15px;
-      width: 100%;
-      transition: background-color 0.3s ease;
     }
+
     button:hover {
-      background-color: #a67c00;
-    }
-    #generatedHTML {
-      margin-top: 20px;
-      font-family: monospace;
-      font-size: 14px;
-      white-space: pre-wrap;
-      background: #eee;
-      padding: 15px;
-      border-radius: 10px;
-      height: 250px;
-      overflow-y: auto;
-      resize: vertical;
-    }
-    small {
-      color: #666;
-    }
-    /* Styles for product card preview */
-    #preview {
-      margin-top: 30px;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .product-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-      padding: 15px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .product-image-container img {
-      max-width: 100%;
-      border-radius: 8px;
-      cursor: zoom-in;
-      display: block;
-      margin-bottom: 12px;
-    }
-    .product-tags {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-    .tag, .code {
-      background: #7f6000;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 12px;
-    }
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    .product-price {
-      font-size: 20px;
-      font-weight: 700;
-      color: #7f6000;
-    }
-    .price-currency {
-      padding: 5px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    .product-details {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-    .product-likes {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: #e63946;
-    }
-    .buy-now {
       background-color: #7f6000;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
     }
-    .buy-now:hover {
-      background-color: #a67c00;
+
+    .output {
+      background: #fff;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      background-color: #7f6000;
+      color: #fff;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
     }
   </style>
 </head>
 <body>
-
   <h1>Product Admin Panel</h1>
-  <form id="productForm">
-    <label>
-      Image URL:
-      <input type="text" id="imageUrl" required placeholder="images/products/your-image.jpg" />
-    </label>
 
-    <label>
-      Alt Text:
-      <input type="text" id="altText" required placeholder="Describe the product image" />
-    </label>
+  <div class="form-group">
+    <label>Image URL</label>
+    <input type="text" id="image">
+  </div>
 
-    <label>
-      Price (INR):
-      <input type="number" id="price" required min="0" placeholder="999" />
-    </label>
+  <div class="form-group">
+    <label>ALT Text</label>
+    <input type="text" id="alt">
+  </div>
 
-    <label>
-      Currency:
-      <select id="currency">
-        <option value="INR" selected>INR</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-      </select>
-    </label>
+  <div class="form-group">
+    <label>Product Title</label>
+    <input type="text" id="title">
+  </div>
 
-    <label>
-      Buy Button Link:
-      <input type="url" id="buyLink" required placeholder="https://yourstore.com/buy/product" />
-    </label>
+  <div class="form-group">
+    <label>Code</label>
+    <input type="text" id="code">
+  </div>
 
-    <label>
-      Product Tag:
-      <input type="text" id="productTag" placeholder="e.g. Door Design" />
-      <small>Optional: Category or tag</small>
-    </label>
+  <div class="form-group">
+    <label>Price (INR)</label>
+    <input type="text" id="price">
+  </div>
 
-    <label>
-      Product Code:
-      <input type="text" id="productCode" placeholder="#DD1001" />
-      <small>Optional: Unique product code</small>
-    </label>
+  <div class="form-group">
+    <label>Description (Bold/Main)</label>
+    <textarea id="descMain"></textarea>
+  </div>
 
-    <label>
-      Description:
-      <textarea id="description" rows="3" placeholder="Product description for details and alt text"></textarea>
-    </label>
+  <div class="form-group">
+    <label>Description (Small)</label>
+    <textarea id="descSmall"></textarea>
+  </div>
 
-    <label>
-      Likes:
-      <input type="number" id="likes" min="0" value="0" />
-      <small>Optional: Number of likes or favorites</small>
-    </label>
+  <div class="form-group">
+    <label>Buy Now Link</label>
+    <input type="text" id="buyLink">
+  </div>
 
-    <button type="submit">Generate HTML</button>
-  </form>
+  <button onclick="generateProduct()">Generate Product HTML</button>
+  <button class="copy-btn" onclick="copyOutput()">Copy to Clipboard</button>
 
-  <textarea id="generatedHTML" readonly placeholder="Your generated product card HTML will appear here..."></textarea>
-
-  <!-- Preview area -->
-  <div id="preview"></div>
+  <div class="output" id="output"></div>
 
   <script>
-    document.getElementById('productForm').addEventListener('submit', function(e){
-      e.preventDefault();
+    function generateProduct() {
+      const image = document.getElementById('image').value;
+      const alt = document.getElementById('alt').value;
+      const title = document.getElementById('title').value;
+      const code = document.getElementById('code').value;
+      const price = document.getElementById('price').value;
+      const descMain = document.getElementById('descMain').value;
+      const descSmall = document.getElementById('descSmall').value;
+      const buyLink = document.getElementById('buyLink').value;
 
-      const imageUrl = document.getElementById('imageUrl').value.trim();
-      const altText = document.getElementById('altText').value.trim();
-      const priceINR = Number(document.getElementById('price').value);
-      const currency = document.getElementById('currency').value;
-      const buyLink = document.getElementById('buyLink').value.trim();
-      const productTag = document.getElementById('productTag').value.trim() || 'Product';
-      const productCode = document.getElementById('productCode').value.trim() || '#CODE';
-      const description = document.getElementById('description').value.trim() || '';
-      const likes = Number(document.getElementById('likes').value) || 0;
-
-      const symbols = {
-        INR: "₹",
-        USD: "$",
-        EUR: "€",
-        GBP: "£"
-      };
-
-      // Generate product card HTML snippet
       const html = `
 <div class="product-card">
-  <div class="product-image-container">
-    <img src="${imageUrl}" alt="${altText}" aria-describedby="img-desc" loading="lazy" onclick="zoomImage('${imageUrl}')">
-    <span id="img-desc" style="display:none;">${description}</span>
+  <div class="image-wrapper" onclick=\"zoomImage('${image}')\">
+    <img src="${image}" alt="${alt}">
   </div>
-  <div class="product-tags">
-    <span class="tag">${productTag}</span>
-    <span class="code">${productCode}</span>
+  <div class="product-info">
+    <div class="product-title">${title}</div>
+    <div class="product-desc-main">${descMain}</div>
+    <div class="product-desc-small">${descSmall}</div>
+    <div class="code-price-row">
+      <div class="product-code">#${code}</div>
+      <div class="product-price">₹${price}</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange=\"convertCurrency(this)\">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick=\"toggleLike(this)\">❤️ <span>0</span></div>
+      <a href="${buyLink}" class="buy-now" target="_blank">Buy Now</a>
+    </div>
   </div>
-  <div class="price-row">
-    <div class="product-price" data-inr="${priceINR}">${symbols[currency]}${priceINR.toFixed(2)}</div>                                           
-<select class="price-currency" onchange="convertPrice(this)">
-      <option value="INR" ${currency === 'INR' ? 'selected' : ''}>INR</option>
-      <option value="USD" ${currency === 'USD' ? 'selected' : ''}>USD</option>
-      <option value="EUR" ${currency === 'EUR' ? 'selected' : ''}>EUR</option>
-      <option value="GBP" ${currency === 'GBP' ? 'selected' : ''}>GBP</option>
-    </select>
-  </div>
-  <p class="product-details">${description}</p>
-  <div class="product-likes">❤️ ${likes}</div>
-  <a href="${buyLink}" 
-class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
-</div>`.trim();
+</div>`;
 
-      // Show generated HTML in textarea
-      document.getElementById('generatedHTML').value = html;
+      document.getElementById('output').textContent = html;
+    }
 
-      // Show visual preview
-      document.getElementById('preview').innerHTML = html;
-    });
+    function copyOutput() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard!");
+      });
+    }
   </script>
-
 </body>
 </html>
