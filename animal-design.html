@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Animal Designs - Digital Effect</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+
+
+
+
+
+
+
+  
+
+  
+   <!-- Product card functionality (CSS) -->
+<link rel="stylesheet" href="style.css" />
+  
+  <!-- Product card functionality (CSS) -->
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
   <style>
     * {
       box-sizing: border-box;
@@ -143,9 +172,87 @@
     <div class="divider"></div>
 
     <div class="product-grid">
-      <!-- Add your product cards here -->
+
+
+
+
+      
+
+
+      
+       <!-- ⬇️ Add your product cards here ⬇️ -->
+
+
+
+<!-- ✅ Prduct Designs Slide -->
+<div class="product-card">
+  <div class="image-wrapper" onclick="zoomImage('images/products/products/animal-design/animal-relief-design-animal-art-digital-effect-1.jpg')">
+    <img src="images/products/products/animal-design/animal-relief-design-animal-art-digital-effect-1.jpg" alt="CNC Elephant Relief Design for Wall Art and Wood Carving – Digital Effect">
+  </div>
+  <div class="product-info">
+    <div class="product-title">Elephant CNC Relief Design for Wood Carving & Wall Art</div>
+    <div class="product-desc-main">STL/RLF/Tap • High-Quality Design</div>
+    <div class="product-desc-small">This Elephant CNC Relief Design brings together tradition, elegance, and power—ideal for CNC wood carving, wall panels, furniture accents, or temple art. Professionally crafted by Digital Effect, it’s optimized for clean CNC output and stunning detail.</div>
+    <div class="code-price-row">
+      <div class="product-code">#AA-001</div>
+      <div class="product-price">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+AA-009.+Please+share+more+details.&type=phone_number&app_absent=0" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- ✅ Prduct Designs Slide -->
+
+
+
+
+      
+
+
+      
+  <!-- 👆 Add product cards above 👆 -->
     </div>
 
+
+
+
+
+    
+
+
+
+    
+<!-- Zoom Modal -->
+<div id="zoomModal" onclick="closeZoom()">
+  <img id="zoomImg" src="" alt="Zoomed product image" />
+</div>
+<!-- Zoom Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <div class="divider" style="margin-top: 60px;"></div>
     <div class="footer-note">
       More inspiring animal designs coming soon. Explore your creativity with <strong>Digital Effect</strong>.
@@ -179,6 +286,14 @@
         document.getElementById("footer-placeholder").innerHTML = data;
       });
   </script>
+
+
+
+
+
+  <!-- Product card functionality (zoom, price) -->
+  <script src="script.js"></script>
+  <!-- Product card functionality (zoom, price) -->
 
 
 
