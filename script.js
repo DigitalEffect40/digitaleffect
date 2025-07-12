@@ -14,17 +14,14 @@ function toggleLike(el) {
   countSpan.textContent = count;
 }
 
-function convertCurrency(select) {
-  let price = 599;
-  const rate = {
-    INR: 1,
-    USD: 0.012,
-    EUR: 0.011,
-    GBP: 0.0095
-  };
-  const selected = select.value;
-  const parent = select.closest('.product-info');
-  const priceElement = parent.querySelector('.product-price');
-  const symbol = { INR: \"₹\", USD: \"$\", EUR: \"€\", GBP: \"£\" };
-  priceElement.innerHTML = `${symbol[selected]}${(price * rate[selected]).toFixed(2)}`;
+function convertCurrency(selectElement, priceId) {
+  const selectedCurrency = selectElement.value;
+  const priceEl = document.getElementById(priceId);
+  const inrValue = parseFloat(priceEl.getAttribute('data-inr'));
+
+  const rate = fixedRates[selectedCurrency];
+  const converted = (inrValue * rate).toFixed(2);
+  const symbol = currencySymbols[selectedCurrency];
+
+  priceEl.textContent = `${symbol}${converted}`;
 }
