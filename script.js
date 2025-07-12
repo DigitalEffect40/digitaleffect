@@ -14,6 +14,20 @@ function toggleLike(el) {
   countSpan.textContent = count;
 }
 
+const fixedRates = {
+  INR: 1,
+  USD: 0.012,
+  EUR: 0.011,
+  GBP: 0.0095
+};
+
+const currencySymbols = {
+  INR: "₹",
+  USD: "$",
+  EUR: "€",
+  GBP: "£"
+};
+
 function convertCurrency(selectElement, priceId) {
   const selectedCurrency = selectElement.value;
   const priceEl = document.getElementById(priceId);
