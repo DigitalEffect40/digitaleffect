@@ -1,47 +1,30 @@
-const rates = {
-  INR: 1,
-  USD: 0.012,
-  EUR: 0.011,
-  GBP: 0.0095
-};
-
-const symbols = {
-  INR: "₹",
-  USD: "$",
-  EUR: "€",
-  GBP: "£"
-};
-
-function convertPrice(selectElement) {
-  const productCard = selectElement.closest('.product-card');
-  const priceElement = productCard.querySelector('.product-price');
-
-  const selectedCurrency = selectElement.value;
-  const basePriceINR = parseFloat(priceElement.getAttribute('data-inr'));
-
-  const converted = (basePriceINR * rates[selectedCurrency]).toFixed(2);
-  const symbol = symbols[selectedCurrency] || "";
-
-  priceElement.innerText = `${symbol}${converted}`;
-}
-
 function zoomImage(src) {
-  const modal = document.getElementById('zoomModal');
-  const zoomImg = document.getElementById('zoomImg');
-  zoomImg.src = src;
-  modal.style.display = 'flex';
-  modal.setAttribute('tabindex', '-1');
-  modal.focus();
+  document.getElementById('zoomImg').src = src;
+  document.getElementById('zoomModal').style.display = 'flex';
 }
 
 function closeZoom() {
-  const modal = document.getElementById('zoomModal');
-  modal.style.display = 'none';
-  document.getElementById('zoomImg').src = '';
+  document.getElementById('zoomModal').style.display = 'none';
 }
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === "Escape") {
-    closeZoom();
-  }
-});
+function toggleLike(el) {
+  let countSpan = el.querySelector('span');
+  let count = parseInt(countSpan.textContent);
+  count++;
+  countSpan.textContent = count;
+}
+
+function convertCurrency(select) {
+  let price = 599;
+  const rate = {
+    INR: 1,
+    USD: 0.012,
+    EUR: 0.011,
+    GBP: 0.0095
+  };
+  const selected = select.value;
+  const parent = select.closest('.product-info');
+  const priceElement = parent.querySelector('.product-price');
+  const symbol = { INR: \"₹\", USD: \"$\", EUR: \"€\", GBP: \"£\" };
+  priceElement.innerHTML = `${symbol[selected]}${(price * rate[selected]).toFixed(2)}`;
+}
