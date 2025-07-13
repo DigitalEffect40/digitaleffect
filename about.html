@@ -4,111 +4,147 @@
   <meta charset="UTF-8" />
   <title>About - Digital Effect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      line-height: 1.6;
-      padding: 0 15px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      line-height: 1.8;
     }
+
     .container {
       max-width: 1200px;
       margin: auto;
       background: #fff;
-      padding: 25px 30px;
-      border-radius: 0;
-      box-shadow: none;
+      padding: 40px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
+
     h1 {
-      color: #1c1c1c;
-      margin-bottom: 0.5rem;
+      font-size: 2.6rem;
+      color: #111;
+      margin-bottom: 10px;
+      text-align: center;
     }
+
     hr.divider {
       border: none;
-      border-top: 2px solid #ddd;
-      margin: 30px 0;
+      border-top: 3px solid #7f6000;
+      width: 80px;
+      margin: 25px auto 40px auto;
+      border-radius: 2px;
     }
+
     p {
       font-size: 1rem;
-      margin: 0.8rem 0;
+      margin-bottom: 1.2rem;
+      color: #333;
     }
+
     ul {
-      margin: 0.5rem 0 1.5rem 20px;
+      margin-left: 20px;
+      padding-left: 10px;
     }
+
     ul li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 10px;
     }
+
+    ul li ul {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
     strong {
       font-weight: 600;
+      color: #000;
     }
+
+    a {
+      color: #7f6000;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     .profile-cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 25px;
       margin-top: 40px;
-      justify-content: space-around;
+      justify-content: center;
     }
+
     .profile-card {
-      background: #f0f0f0;
-      border-radius: 12px;
-      width: 300px;
+      background: #fdfdfd;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 280px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
     }
+
     .profile-photo {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid #1c1c1c;
+      margin-bottom: 12px;
+      border: 2px solid #7f6000;
     }
+
     .profile-name {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
+      color: #111;
       margin-bottom: 5px;
-      color: #1c1c1c;
     }
+
     .profile-role {
-      font-size: 1rem;
-      color: #555;
+      font-size: 0.95rem;
+      color: #666;
       margin-bottom: 10px;
     }
+
     .social-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px;
       margin-top: 10px;
     }
+
     .social-links a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: 600;
+      color: #7f6000;
+      font-size: 0.95rem;
       transition: color 0.3s;
     }
+
     .social-links a:hover {
-      color: #0056b3;
-      text-decoration: underline;
+      color: #5c4700;
     }
-    @media(max-width: 760px) {
-      body {
-        padding: 0 15px;
-      }
+
+    @media(max-width: 768px) {
       .container {
         padding: 20px 15px;
       }
-      .profile-cards {
-        flex-direction: column;
-        align-items: center;
+
+      h1 {
+        font-size: 2rem;
       }
+
       .profile-card {
         width: 100%;
       }
@@ -117,28 +153,18 @@
 </head>
 <body>
 
-
-
-
-
-  
-<!-- ✅ HEADER PLACEHOLDER -->
+  <!-- ✅ HEADER PLACEHOLDER -->
   <div id="header-placeholder"></div>
 
-
-
-  
-
-  
-  
   <div class="container">
     <h1>About</h1>
-    <p>At Digital Effect, we specialize in creating high-quality STL, RLF, and TAP design files tailored for CNC machining and 3D printing. With a focus on intricate furniture, home decor, animal reliefs, and religious art, we provide ready-to-use digital designs that help professionals and hobbyists bring their creative visions to life. Our passion is blending traditional craftsmanship with modern technology to deliver precise, detailed, and inspiring products.</p>
-
     <hr class="divider" />
 
+    <p>At <strong>Digital Effect</strong>, we specialize in creating high-quality STL, RLF, and TAP design files tailored for CNC machining and 3D printing. Our focus lies in intricate furniture, home decor, animal reliefs, and religious art. These digital files empower professionals and hobbyists to bring creativity to life.</p>
+
     <p><strong>Welcome to Digital Effect — Your Creative Partner in 3D Design and Education!</strong></p>
-    <p>At Digital Effect, we blend creativity with technology to bring you the best in 3D modeling, tutorials, and digital design education. Whether you're a designer, hobbyist, CNC machinist, or 3D artist, we’re here to support your journey.</p>
+
+    <p>We blend creativity with technology to offer the best in 3D modeling, tutorials, and digital design. Whether you're a designer, hobbyist, CNC machinist, or 3D artist, we’re here to support your creative journey.</p>
 
     <p>🎨 <strong>What We Offer</strong></p>
     <ul>
@@ -149,20 +175,21 @@
           <li>Architecture & Interior Decor</li>
           <li>Blender & Game Assets</li>
         </ul>
-        Each model is crafted with precision and available in formats like .stl, .obj, .art and more.
+        Each model is crafted with precision and available in .stl, .obj, .art and more.
       </li>
       <li>🎓 <strong>Educational Tutorials</strong>
         <ul>
           <li>ArtCAM 3D Design & Toolpaths</li>
-          <li>Blender Addons & 3D Scene Creation</li>
+          <li>Blender Addons & Scene Creation</li>
           <li>AutoCAD to Blender Workflows</li>
-          <li>Creative Project Builds for Beginners to Experts</li>
+          <li>Creative Projects from Beginner to Advanced</li>
         </ul>
       </li>
     </ul>
 
-    <p>🔔 Watch and learn on our YouTube channel:<br />
-    👉 <a href="https://youtube.com/@DigitalEffect" target="_blank">YouTube.com/@DigitalEffect</a></p>
+    <p>🔔 Watch & learn on our YouTube channel:<br>
+      👉 <a href="https://youtube.com/@DigitalEffect" target="_blank">YouTube.com/@DigitalEffect</a>
+    </p>
 
     <p>🛒 <strong>Why Choose Us?</strong></p>
     <ul>
@@ -172,15 +199,14 @@
       <li>✅ Trusted by Designers, Artists, and Small Businesses</li>
     </ul>
 
-    <p>🤝 <strong>Let's Connect</strong></p>
+    <p>🤝 <strong>Let’s Connect</strong></p>
     <p>
-      Have questions, custom model requests, or partnership ideas? We’d love to hear from you.<br />
-      📧 Email: <a href="mailto:teamdigitaleffect@gmail.com">teamdigitaleffect@gmail.com</a><br />
-      🌐 Website: <a href="https://www.digitaleffect.in" target="_blank">www.digitaleffect.in</a><br />
-      🛒 Shopping: Buy Products
+      Have questions or custom model requests? Contact us:<br>
+      📧 Email: <a href="mailto:teamdigitaleffect@gmail.com">teamdigitaleffect@gmail.com</a><br>
+      🌐 Website: <a href="https://www.digitaleffect.in" target="_blank">www.digitaleffect.in</a><br>
     </p>
 
-    <p>Thank you for choosing Digital Effect. Let’s create something amazing together!<br />
+    <p>Thank you for choosing Digital Effect.<br>
     – Team Digital Effect</p>
 
     <div class="profile-cards">
@@ -194,9 +220,10 @@
           <a href="#">Twitter</a>
         </div>
       </div>
+
       <div class="profile-card">
-        <img src="images/products/Photo/Ruchika_Digital_Effect.png" alt="Rcuhika Lalwani" class="profile-photo" />
-        <div class="profile-name">Rcuhika Lalwani</div>
+        <img src="images/products/Photo/Ruchika_Digital_Effect.png" alt="Ruchika Lalwani" class="profile-photo" />
+        <div class="profile-name">Ruchika Lalwani</div>
         <div class="profile-role">Managing Director: Social Media Handler</div>
         <div class="social-links">
           <a href="#">Facebook</a>
@@ -204,10 +231,11 @@
           <a href="#">Twitter</a>
         </div>
       </div>
+
       <div class="profile-card">
         <img src="images/products/Photo/Digital_Effect.jpg" alt="Digital Effect" class="profile-photo" />
         <div class="profile-name">Digital Effect</div>
-        <div class="profile-role">Managing Director: Social Media Handler</div>
+        <div class="profile-role">Creative Team</div>
         <div class="social-links">
           <a href="#">YouTube</a>
           <a href="#">WhatsApp</a>
@@ -218,20 +246,10 @@
     </div>
   </div>
 
-
-
-
-
-  
-<!-- ✅ FOOTER PLACEHOLDER -->
+  <!-- ✅ FOOTER PLACEHOLDER -->
   <div id="footer-placeholder"></div>
 
-
-
-
-
-  
-  <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
+  <!-- ✅ HEADER/FOOTER SCRIPT -->
   <script>
     fetch("header.html")
       .then(res => res.text())
@@ -246,12 +264,5 @@
       });
   </script>
 
-
-
-
-
-
-  
-  
 </body>
 </html>
