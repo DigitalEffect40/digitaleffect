@@ -1,1 +1,21 @@
-
+{
+  "name": "Digital Effect",
+  "short_name": "DigitalEffect",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Explore 3D Artcam Designs, Blender Addons, and CNC-ready tutorials.",
+  "icons": [
+    {
+      "src": "digitaleffect/images/products/Logo/Digital_Effect.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "digitaleffect/images/products/Logo/Logo-2.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
