@@ -148,20 +148,77 @@
 
 
   
-  <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
-  <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
-      });
+  <!-- ✅ HEADER/FOOTER SCRIPT -->
+<script>
+  // Fetch header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+      // Initialize hamburger menu functionality after header is loaded
+      initializeHeaderScripts();
+    })
+    .catch(error => console.error('Error loading header:', error));
 
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
+  // Fetch footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+
+  // Function to initialize header scripts
+  function initializeHeaderScripts() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('overlay');
+    const productDropdown = document.getElementById('productDropdown');
+
+    if (!menuToggle || !navMenu || !overlay || !productDropdown) {
+      console.error('One or more header elements not found');
+      return;
+    }
+
+    function toggleMenu() {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    overlay.addEventListener('click', () => {
+      if (navMenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+
+    productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      productDropdown.classList.toggle('active');
+      const expanded = productDropdown.getAttribute('aria-expanded') === 'true';
+      productDropdown.setAttribute('aria-expanded', !expanded);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
       });
-  </script>
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+  }
+</script>
+  <!-- ✅ HEADER/FOOTER SCRIPT -->
 
 
 
