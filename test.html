@@ -174,18 +174,20 @@
       }
 
       /* Click feedback when menu item is clicked */
-      nav a:active,
-      .dropdown-content a:active {
-        background-color: #00bcd4;
-        color: black;
-      }
+nav a:active,
+.dropdown-content a:active {
+  background-color: #00bcd4;
+  color: black;
+}
 
       nav a, .dropbtn {
         font-size: 18px;
         padding: 12px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* lighter line for visibility */
+        border-bottom: 1px solid #333;
         width: 100%;
       }
+
+      
 
       .dropdown-content {
         display: none;
@@ -288,7 +290,8 @@
   // Close menu when a nav link is clicked
   document.querySelectorAll('#navMenu a').forEach(link => {
     link.addEventListener('click', () => {
-      if (navMenu.classList.contains('active')) {
+    
+  if (navMenu.classList.contains('active')) {
         toggleMenu();
       }
     });
