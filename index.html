@@ -528,17 +528,17 @@
   <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
 <!-- ✅ FIXED SCRIPT TO LOAD HEADER AND FOOTER -->
 <script>
-  fetch("/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-    });
+  fetch("https://digitaleffect.in/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header-placeholder").innerHTML = data;
+  });
 
-  fetch("/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
+fetch("https://digitaleffect.in/footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
 </script>
 
 
