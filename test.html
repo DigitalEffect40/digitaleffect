@@ -6,7 +6,11 @@
   <title>Digital Effect</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -49,6 +53,7 @@
       font-size: 14px;
       max-width: 250px;
       width: 100%;
+      margin-top: 10px;
     }
 
     nav {
@@ -131,7 +136,7 @@
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.5);
-      z-index: 1040;
+      z-index: 900; /* behind the nav */
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -192,6 +197,12 @@
         position: absolute;
         top: 20px;
         right: 20px;
+      }
+
+      .search-box {
+        order: 3;
+        margin-top: 10px;
+        width: 100%;
       }
     }
   </style>
@@ -255,15 +266,28 @@
   }
 
   menuToggle.addEventListener('click', toggleMenu);
-  overlay.addEventListener('click', toggleMenu);
 
-  // Toggle dropdown on mobile
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) {
+      toggleMenu();
+    }
+  });
+
   productDropdown.addEventListener('click', function (e) {
     e.stopPropagation();
     this.classList.toggle('active');
   });
 
-  // Close menu on ESC
+  // Close menu when a nav link is clicked
+  document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // ESC key closes menu
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
       toggleMenu();
