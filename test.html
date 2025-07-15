@@ -173,12 +173,21 @@
         pointer-events: auto;
       }
 
+      /* Click feedback when menu item is clicked */
+nav a:active,
+.dropdown-content a:active {
+  background-color: #00bcd4;
+  color: black;
+}
+
       nav a, .dropbtn {
         font-size: 18px;
         padding: 12px 0;
         border-bottom: 1px solid #333;
         width: 100%;
       }
+
+      
 
       .dropdown-content {
         display: none;
