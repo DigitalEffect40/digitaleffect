@@ -528,13 +528,13 @@
   <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
 <!-- ✅ FIXED SCRIPT TO LOAD HEADER AND FOOTER -->
 <script>
-  fetch("https://digitaleffect.in/header.html")
+  fetch("header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
     });
 
-  fetch("https://digitaleffect.in/footer.html")
+  fetch("footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
