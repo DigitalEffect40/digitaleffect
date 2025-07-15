@@ -275,10 +275,17 @@
 <div class="overlay" id="overlay"></div>
 
 <script>
+  // /scripts/header.js
+function initializeHeaderScripts() {
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
   const overlay = document.getElementById('overlay');
   const productDropdown = document.getElementById('productDropdown');
+
+  if (!menuToggle || !navMenu || !overlay || !productDropdown) {
+    console.error('One or more header elements not found');
+    return;
+  }
 
   function toggleMenu() {
     const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -316,6 +323,7 @@
       toggleMenu();
     }
   });
+}
 </script>
 
 </body>
