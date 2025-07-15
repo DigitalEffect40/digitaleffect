@@ -229,6 +229,40 @@
   </style>
 </head>
 <body>
+
+<body>
+  <!-- ✅ DEBUG BLOCK START -->
+  <div id="fetch-test" style="position: fixed; top: 0; left: 0; background: rgba(255,255,255,0.8); padding: 8px; z-index: 9999;"></div>
+  <script>
+    fetch("https://digitaleffect.in/header.html")
+      .then(res => {
+        document.getElementById("fetch-test").innerText =
+          `${res.status} — ${res.ok ? 'OK' : 'Error'}`;
+        return res.text();
+      })
+      .then(html => {
+        console.log('HEADER LENGTH:', html.length);
+      })
+      .catch(err => {
+        document.getElementById("fetch-test").innerText =
+          `Fetch failed: ${err.message}`;
+        console.error('Fetch error:', err);
+      });
+  </script>
+  <!-- ✅ DEBUG BLOCK END -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <div class="page-wrapper">
     
     <!-- ✅ HEADER PLACEHOLDER -->
@@ -526,20 +560,20 @@
   </div>
 
   <!-- ✅ SCRIPT TO LOAD HEADER AND FOOTER -->
-<!-- ✅ FIXED SCRIPT TO LOAD HEADER AND FOOTER -->
 <script>
-  fetch("header.html")
+  fetch("https://digitaleffect.in/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
     });
 
-  fetch("footer.html")
+  fetch("https://digitaleffect.in/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
 </script>
+
   
 
 
