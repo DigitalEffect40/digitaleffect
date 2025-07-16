@@ -58,21 +58,21 @@ body {
 }
 
 .product-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 14px;
   color: #000;
 }
 
 .product-desc-main {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #444;
   margin-bottom: 10px;
 }
 
 .product-desc-small {
-  font-size: 0.95rem;
+  font-size: 0.90rem;
   color: #666;
   margin-bottom: 15px;
 }
@@ -166,9 +166,9 @@ body {
 }
 
 @media(max-width: 480px) {
-  .product-title { font-size: 1.7rem; }
-  .product-desc-main { font-size: 1rem; }
-  .product-desc-small { font-size: 0.9rem; }
+  .product-title { font-size: 1.5rem; }
+  .product-desc-main { font-size: 0.90rem; }
+  .product-desc-small { font-size: 0.8rem; }
   .buy-now { padding: 16px 26px; font-size: 1.1rem; }
   .product-code, .product-price { font-size: 1.2rem; }
 }
