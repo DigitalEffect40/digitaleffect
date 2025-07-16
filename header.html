@@ -220,11 +220,18 @@
       }
 
       .menu-toggle {
-        display: flex;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-      }
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+  z-index: 1100;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
     }
   </style>
 </head>
