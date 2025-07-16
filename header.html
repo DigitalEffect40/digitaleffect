@@ -299,16 +299,7 @@
 
 
     
-    const isMobile = window.matchMedia("(hover: none)").matches;
-
-if (isMobile) {
-  productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    productDropdown.classList.toggle('active');
-    const expanded = productDropdown.getAttribute('aria-expanded') === 'true';
-    productDropdown.setAttribute('aria-expanded', !expanded);
-  });
-}
+    
 
 
     
