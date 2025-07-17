@@ -1,115 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Product Card Generator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    input, textarea, button {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 8px;
-      font-size: 14px;
-    }
-    textarea {
-      height: 120px;
-    }
-    pre {
-      background: #fff;
-      padding: 10px;
-      border: 1px solid #ccc;
-      white-space: pre-wrap;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Admin Panel - Digital Effect</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #111;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7f6000;
+    }
+
+    .output {
+      background: #fff;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      background-color: #7f6000;
+      color: #fff;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
 </head>
 <body>
+  <h1>Product Admin Panel</h1>
 
-  <h2>Product Card Generator</h2>
+  <div class="form-group">
+    <label>Image URL</label>
+    <input type="text" id="image" />
+  </div>
 
-  <input type="text" id="imageURL" placeholder="Image URL" />
-  <input type="text" id="altText" placeholder="Alt Text" />
-  <input type="text" id="titleText" placeholder="Title" />
-  <input type="text" id="productCode" placeholder="Product Code" />
-  <input type="text" id="price" placeholder="Price (INR)" />
-  <input type="text" id="mainDesc" placeholder="Main Description" />
-  <input type="text" id="smallDesc" placeholder="Small Description" />
-  <input type="text" id="buyLink" placeholder="Buy Link (Full URL)" />
-  <input type="text" id="tags" placeholder="Tags (comma separated)" />
-  <input type="text" id="keywords" placeholder="Keywords for SEO" />
+  <div class="form-group">
+    <label>ALT Text</label>
+    <input type="text" id="alt" />
+  </div>
 
-  <button onclick="generateProduct()">Generate Product HTML</button>
-  <button onclick="copyOutput()">Copy to Clipboard</button>
+  <div class="form-group">
+    <label>Product Title</label>
+    <input type="text" id="title" />
+  </div>
 
-  <pre id="output"></pre>
+  <div class="form-group">
+    <label>Code</label>
+    <input type="text" id="code" />
+  </div>
 
-  <script>
-    function generateProduct() {
-  const imageURL = document.getElementById('imageURL').value.trim();
-  const altText = document.getElementById('altText').value.trim();
-  const titleText = document.getElementById('titleText').value.trim();
-  const productCode = document.getElementById('productCode').value.trim();
-  const price = document.getElementById('price').value.trim();
-  const mainDesc = document.getElementById('mainDesc').value.trim();
-  const smallDesc = document.getElementById('smallDesc').value.trim();
-  const buyLink = document.getElementById('buyLink').value.trim();
-  const tags = document.getElementById('tags').value.trim();
-  const keywords = document.getElementById('keywords').value.trim();
+  <div class="form-group">
+    <label>Price (INR)</label>
+    <input type="text" id="price" />
+  </div>
 
-  if (!titleText || !price || !buyLink) {
-    alert("Please fill in the Title, Price, and Buy Link fields.");
-    return;
+  <div class="form-group">
+    <label>Description (Bold/Main)</label>
+    <textarea id="descMain"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Description (Small)</label>
+    <textarea id="descSmall"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Buy Now Link</label>
+    <input type="text" id="buyLink" />
+  </div>
+
+  <!-- New SEO fields -->
+  <div class="form-group">
+    <label>Tags (comma separated)</label>
+    <input type="text" id="tags" />
+  </div>
+
+  <div class="form-group">
+    <label>Keywords (comma separated)</label>
+    <input type="text" id="keywords" />
+  </div>
+
+  <button onclick="generateProduct()">Generate Product HTML</button>
+  <button class="copy-btn" onclick="copyOutput()">Copy to Clipboard</button>
+
+  <div class="output" id="output"></div>
+
+
+<script>
+  function generateProduct() {
+    const image = document.getElementById('image').value;
+    const alt = document.getElementById('alt').value;
+    const title = document.getElementById('title').value;
+    const code = document.getElementById('code').value;
+    const price = document.getElementById('price').value;
+    const descMain = document.getElementById('descMain').value;
+    const descSmall = document.getElementById('descSmall').value;
+    const buyLink = document.getElementById('buyLink').value;
+    const tags = document.getElementById('tags').value;
+    const keywords = document.getElementById('keywords').value;
+
+    const html = `
+<!-- Product Card Start -->
+<div class="product-card" data-tags="${tags}">
+  <meta name="keywords" content="${keywords}">
+  <div class="image-wrapper" onclick="zoomImage('${image}')">
+    <img src="${image}" alt="${alt}" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">${title}</h3>
+    <div class="product-desc-main">${descMain}</div>
+    <div class="product-desc-small">${descSmall}</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: ${code}</div>
+      <div class="product-price" data-inr="${price}">₹${price}</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="${buyLink}" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+`;
+
+    document.getElementById('output').textContent = html;
   }
-
-  const productHTML = `
-<div class="product-card">
-  <img src="${imageURL}" alt="${altText}" loading="lazy" />
-  <h2>${titleText}</h2>
-  <p><strong>${mainDesc}</strong></p>
-  <p>${smallDesc}</p>
-  <p>Price: ₹${price}</p>
-  <p>Product Code: ${productCode}</p>
-  <a href="${buyLink}" class="buy-button">Buy Now</a>
-</div>`.trim();
-
-  const jsonLdHTML = `
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "${titleText}",
-  "image": "${imageURL}",
-  "description": "${mainDesc} - ${smallDesc}",
-  "sku": "${productCode}",
-  "brand": {
-    "@type": "Brand",
-    "name": "Digital Effect"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "${buyLink}",
-    "priceCurrency": "INR",
-    "price": "${price}",
-    "availability": "https://schema.org/InStock"
-  },
-  "keywords": "${keywords}"
-}
-</script>`.trim();
-
-  document.getElementById('output').textContent = productHTML + '\n\n' + jsonLdHTML;
-  }
-
-    function copyOutput() {
-      const text = document.getElementById('output').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard!");
-      });
-    }
-  </script>
+</script>
 
 </body>
 </html>
