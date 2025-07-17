@@ -49,18 +49,23 @@
 
   <script>
     function generateProduct() {
-      const imageURL = document.getElementById('imageURL').value;
-      const altText = document.getElementById('altText').value;
-      const titleText = document.getElementById('titleText').value;
-      const productCode = document.getElementById('productCode').value;
-      const price = document.getElementById('price').value;
-      const mainDesc = document.getElementById('mainDesc').value;
-      const smallDesc = document.getElementById('smallDesc').value;
-      const buyLink = document.getElementById('buyLink').value;
-      const tags = document.getElementById('tags').value;
-      const keywords = document.getElementById('keywords').value;
+  const imageURL = document.getElementById('imageURL').value.trim();
+  const altText = document.getElementById('altText').value.trim();
+  const titleText = document.getElementById('titleText').value.trim();
+  const productCode = document.getElementById('productCode').value.trim();
+  const price = document.getElementById('price').value.trim();
+  const mainDesc = document.getElementById('mainDesc').value.trim();
+  const smallDesc = document.getElementById('smallDesc').value.trim();
+  const buyLink = document.getElementById('buyLink').value.trim();
+  const tags = document.getElementById('tags').value.trim();
+  const keywords = document.getElementById('keywords').value.trim();
 
-      const productHTML = `
+  if (!titleText || !price || !buyLink) {
+    alert("Please fill in the Title, Price, and Buy Link fields.");
+    return;
+  }
+
+  const productHTML = `
 <div class="product-card">
   <img src="${imageURL}" alt="${altText}" loading="lazy" />
   <h2>${titleText}</h2>
@@ -71,7 +76,7 @@
   <a href="${buyLink}" class="buy-button">Buy Now</a>
 </div>`.trim();
 
-      const jsonLdHTML = `
+  const jsonLdHTML = `
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,8 +100,8 @@
 }
 </script>`.trim();
 
-      document.getElementById('output').textContent = productHTML + '\n\n' + jsonLdHTML;
-    }
+  document.getElementById('output').textContent = productHTML + '\n\n' + jsonLdHTML;
+  }
 
     function copyOutput() {
       const text = document.getElementById('output').textContent;
