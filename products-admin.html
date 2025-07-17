@@ -130,27 +130,27 @@
   <div class="output" id="output"></div>
 
   <script>
-    function generateProduct() {
-      const image = document.getElementById('image').value;
-      const alt = document.getElementById('alt').value;
-      const title = document.getElementById('title').value;
-      const code = document.getElementById('code').value;
-      const price = document.getElementById('price').value;
-      const descMain = document.getElementById('descMain').value;
-      const descSmall = document.getElementById('descSmall').value;
-      const buyLink = document.getElementById('buyLink').value;
-      const tags = document.getElementById('tags').value;
-      const keywords = document.getElementById('keywords').value;
+  function generateProduct() {
+    const image = document.getElementById('image').value;
+    const alt = document.getElementById('alt').value;
+    const title = document.getElementById('title').value;
+    const code = document.getElementById('code').value;
+    const price = document.getElementById('price').value;
+    const descMain = document.getElementById('descMain').value;
+    const descSmall = document.getElementById('descSmall').value;
+    const buyLink = document.getElementById('buyLink').value;
+    const tags = document.getElementById('tags').value;
+    const keywords = document.getElementById('keywords').value;
 
-      const html = `
+    const html = `
 <!-- Product Card Start -->
 <div class="product-card" data-tags="${tags}">
   <meta name="keywords" content="${keywords}">
   <div class="image-wrapper" onclick="zoomImage('${image}')">
-    <img src="${image}" alt="${alt}">
+    <img src="${image}" alt="${alt}" loading="lazy">
   </div>
   <div class="product-info">
-    <div class="product-title">${title}</div>
+    <h3 class="product-title">${title}</h3>
     <div class="product-desc-main">${descMain}</div>
     <div class="product-desc-small">${descSmall}</div>
     <div class="code-price-row">
@@ -177,15 +177,8 @@
 <!-- Product Card End -->
 `;
 
-      document.getElementById('output').textContent = html;
-    }
-
-    function copyOutput() {
-      const text = document.getElementById('output').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard!");
-      });
-    }
-  </script>
+    document.getElementById('output').textContent = html;
+  }
+</script>
 </body>
 </html>
