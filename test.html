@@ -2,150 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Admin Panel - Digital Effect</title>
+  <title>Product Card Generator</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
       padding: 20px;
     }
-
-    h1 {
-      text-align: center;
-      color: #111;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
     label {
       display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    input[type="text"], textarea, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #000;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #7f6000;
-    }
-
-    .output {
-      background: #fff;
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      white-space: pre-wrap;
-      font-family: monospace;
-    }
-
-    .copy-btn {
       margin-top: 10px;
-      background-color: #7f6000;
-      color: #fff;
-      padding: 8px 14px;
-      font-size: 0.9rem;
-      border-radius: 5px;
-      cursor: pointer;
-      border: none;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 5px;
+      margin-top: 4px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+    }
+    pre {
+      margin-top: 20px;
+      background: #f4f4f4;
+      padding: 10px;
+      white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
-  <h1>Product Admin Panel</h1>
 
-  <div class="form-group">
-    <label>Image URL</label>
-    <input type="text" id="image" />
-  </div>
+  <h2>Product Card Generator</h2>
 
-  <div class="form-group">
-    <label>ALT Text</label>
-    <input type="text" id="alt" />
-  </div>
-
-  <div class="form-group">
-    <label>Product Title</label>
-    <input type="text" id="title" />
-  </div>
-
-  <div class="form-group">
-    <label>Code</label>
-    <input type="text" id="code" />
-  </div>
-
-  <div class="form-group">
-    <label>Price (INR)</label>
-    <input type="text" id="price" />
-  </div>
-
-  <div class="form-group">
-    <label>Description (Bold/Main)</label>
-    <textarea id="descMain"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>Description (Small)</label>
-    <textarea id="descSmall"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>Buy Now Link</label>
-    <input type="text" id="buyLink" />
-  </div>
-
-  <!-- New SEO fields -->
-  <div class="form-group">
-    <label>Tags (comma separated)</label>
-    <input type="text" id="tags" />
-  </div>
-
-  <div class="form-group">
-    <label>Keywords (comma separated)</label>
-    <input type="text" id="keywords" />
-  </div>
+  <label>Image URL: <input id="image" type="text" /></label>
+  <label>Alt Text: <input id="alt" type="text" /></label>
+  <label>Title: <input id="title" type="text" /></label>
+  <label>Product Code: <input id="code" type="text" /></label>
+  <label>Price (INR): <input id="price" type="text" /></label>
+  <label>Main Description: <textarea id="descMain"></textarea></label>
+  <label>Small Description: <textarea id="descSmall"></textarea></label>
+  <label>Buy Link: <input id="buyLink" type="text" /></label>
+  <label>Tags (comma separated): <input id="tags" type="text" /></label>
+  <label>Keywords (for SEO): <input id="keywords" type="text" /></label>
 
   <button onclick="generateProduct()">Generate Product HTML</button>
-  <button class="copy-btn" onclick="copyOutput()">Copy to Clipboard</button>
+  <button onclick="copyOutput()">Copy to Clipboard</button>
 
-  <div class="output" id="output"></div>
+  <pre id="output"></pre>
 
+  <script>
+    function generateProduct() {
+      const image = document.getElementById('image').value.trim();
+      const alt = document.getElementById('alt').value.trim();
+      const title = document.getElementById('title').value.trim();
+      const code = document.getElementById('code').value.trim();
+      const price = document.getElementById('price').value.trim();
+      const descMain = document.getElementById('descMain').value.trim();
+      const descSmall = document.getElementById('descSmall').value.trim();
+      const buyLink = document.getElementById('buyLink').value.trim();
+      const tags = document.getElementById('tags').value.trim();
+      const keywords = document.getElementById('keywords').value.trim();
 
-
-<script>
-  function generateProduct() {
-    const image = document.getElementById('image').value.trim();
-    const alt = document.getElementById('alt').value.trim();
-    const title = document.getElementById('title').value.trim();
-    const code = document.getElementById('code').value.trim();
-    const price = document.getElementById('price').value.trim();
-    const descMain = document.getElementById('descMain').value.trim();
-    const descSmall = document.getElementById('descSmall').value.trim();
-    const buyLink = document.getElementById('buyLink').value.trim();
-    const tags = document.getElementById('tags').value.trim();
-    const keywords = document.getElementById('keywords').value.trim();
-
-    // Generate Product Card HTML with h3, loading="lazy" on img
-    const productHTML = `
+      const productHTML = `
 <!-- Product Card Start -->
 <div class="product-card" data-tags="${tags}">
   <meta name="keywords" content="${keywords}">
@@ -180,44 +97,42 @@
 <!-- Product Card End -->
 `;
 
-    // Generate JSON-LD structured data for product
-    const jsonLd = {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": title,
-      "image": [image],
-      "description": descMain,
-      "sku": code,
-      "offers": {
-        "@type": "Offer",
-        "url": buyLink,
-        "priceCurrency": "INR",
-        "price": price || "0",
-        "availability": "https://schema.org/InStock"
-      },
-      "brand": {
-        "@type": "Brand",
-        "name": "Digital Effect"
-      }
-    };
+      const jsonLd = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": title,
+        "image": [image],
+        "description": descMain,
+        "sku": code,
+        "offers": {
+          "@type": "Offer",
+          "url": buyLink,
+          "priceCurrency": "INR",
+          "price": price || "0",
+          "availability": "https://schema.org/InStock"
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "Digital Effect"
+        }
+      };
 
-    const jsonLdHTML = `
+      const jsonLdHTML = `
 <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
 </script>
 `;
 
-    // Output combined HTML + JSON-LD
-    document.getElementById('output').textContent = productHTML + '\n' + jsonLdHTML;
-  }
+      document.getElementById('output').textContent = productHTML + '\n' + jsonLdHTML;
+    }
 
-  function copyOutput() {
-    const text = document.getElementById('output').textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Copied to clipboard!");
-    });
-  }
-</script>
-  
+    function copyOutput() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard!");
+      });
+    }
+  </script>
+
 </body>
 </html>
