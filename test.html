@@ -1,81 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Product Card Generator</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
       padding: 20px;
-      background-color: #f8f8f8;
+      background-color: #f9f9f9;
     }
-    input, textarea {
+    input, textarea, button {
+      display: block;
       width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 14px;
+    }
+    textarea {
+      height: 120px;
+    }
+    pre {
+      background: #fff;
       padding: 10px;
-      margin: 8px 0;
-    }
-    label {
-      font-weight: bold;
-    }
-    button {
-      padding: 10px 20px;
-      margin-top: 10px;
-      background-color: #111;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #output {
-      white-space: pre-wrap;
-      background-color: #fff;
-      padding: 20px;
-      margin-top: 20px;
       border: 1px solid #ccc;
+      white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
 
-  <h1>Product Card Generator</h1>
+  <h2>Product Card Generator</h2>
 
-  <label>Image URL:</label>
-  <input type="text" id="imageURL">
+  <input type="text" id="imageURL" placeholder="Image URL" />
+  <input type="text" id="altText" placeholder="Alt Text" />
+  <input type="text" id="titleText" placeholder="Title" />
+  <input type="text" id="productCode" placeholder="Product Code" />
+  <input type="text" id="price" placeholder="Price (INR)" />
+  <input type="text" id="mainDesc" placeholder="Main Description" />
+  <input type="text" id="smallDesc" placeholder="Small Description" />
+  <input type="text" id="buyLink" placeholder="Buy Link (Full URL)" />
+  <input type="text" id="tags" placeholder="Tags (comma separated)" />
+  <input type="text" id="keywords" placeholder="Keywords for SEO" />
 
-  <label>Alt Text:</label>
-  <input type="text" id="altText">
-
-  <label>Title:</label>
-  <input type="text" id="titleText">
-
-  <label>Product Code:</label>
-  <input type="text" id="productCode">
-
-  <label>Price (INR):</label>
-  <input type="text" id="price">
-
-  <label>Main Description:</label>
-  <input type="text" id="mainDesc">
-
-  <label>Small Description:</label>
-  <input type="text" id="smallDesc">
-
-  <label>Buy Link:</label>
-  <input type="text" id="buyLink">
-
-  <label>Tags (comma separated):</label>
-  <input type="text" id="tags">
-
-  <label>Keywords (for SEO):</label>
-  <input type="text" id="keywords">
-
-  <button onclick="generateHTML()">Generate Product HTML</button>
+  <button onclick="generateProduct()">Generate Product HTML</button>
   <button onclick="copyOutput()">Copy to Clipboard</button>
 
-  <div id="output"></div>
+  <pre id="output"></pre>
 
   <script>
-    function generateHTML() {
+    function generateProduct() {
       const imageURL = document.getElementById('imageURL').value;
       const altText = document.getElementById('altText').value;
       const titleText = document.getElementById('titleText').value;
@@ -89,15 +62,14 @@
 
       const productHTML = `
 <div class="product-card">
-  <img src="${imageURL}" alt="${altText}" loading="lazy">
+  <img src="${imageURL}" alt="${altText}" loading="lazy" />
   <h2>${titleText}</h2>
   <p><strong>${mainDesc}</strong></p>
   <p>${smallDesc}</p>
-  <p>Product Code: ${productCode}</p>
   <p>Price: ₹${price}</p>
-  <a href="${buyLink}" target="_blank">Buy Now</a>
-  <p>Tags: ${tags}</p>
-</div>`;
+  <p>Product Code: ${productCode}</p>
+  <a href="${buyLink}" class="buy-button">Buy Now</a>
+</div>`.trim();
 
       const jsonLdHTML = `
 <script type="application/ld+json">
@@ -106,9 +78,8 @@
   "@type": "Product",
   "name": "${titleText}",
   "image": "${imageURL}",
-  "description": "${mainDesc} ${smallDesc}",
+  "description": "${mainDesc} - ${smallDesc}",
   "sku": "${productCode}",
-  "keywords": "${keywords}",
   "brand": {
     "@type": "Brand",
     "name": "Digital Effect"
@@ -119,11 +90,12 @@
     "priceCurrency": "INR",
     "price": "${price}",
     "availability": "https://schema.org/InStock"
-  }
+  },
+  "keywords": "${keywords}"
 }
-</script>`;
+</script>`.trim();
 
-      document.getElementById('output').textContent = productHTML.trim() + '\n\n' + jsonLdHTML.trim();
+      document.getElementById('output').textContent = productHTML + '\n\n' + jsonLdHTML;
     }
 
     function copyOutput() {
@@ -133,5 +105,6 @@
       });
     }
   </script>
+
 </body>
 </html>
