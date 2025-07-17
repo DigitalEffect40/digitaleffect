@@ -2,128 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Card Generator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
     label {
       display: block;
       margin-top: 10px;
     }
-    textarea, input {
+    input, textarea {
       width: 100%;
-      padding: 5px;
-      margin-top: 4px;
+      padding: 6px;
     }
     button {
-      margin-top: 10px;
-      padding: 8px 16px;
+      margin-top: 15px;
+      padding: 10px 20px;
     }
     pre {
-      margin-top: 20px;
-      background: #f4f4f4;
-      padding: 10px;
+      background-color: #f5f5f5;
+      padding: 15px;
       white-space: pre-wrap;
+      word-wrap: break-word;
+      border: 1px solid #ccc;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <h2>Product Card Generator</h2>
+  <h1>Product Card Generator</h1>
 
-  <label>Image URL: <input id="image" type="text" /></label>
-  <label>Alt Text: <input id="alt" type="text" /></label>
-  <label>Title: <input id="title" type="text" /></label>
-  <label>Product Code: <input id="code" type="text" /></label>
-  <label>Price (INR): <input id="price" type="text" /></label>
-  <label>Main Description: <textarea id="descMain"></textarea></label>
-  <label>Small Description: <textarea id="descSmall"></textarea></label>
-  <label>Buy Link: <input id="buyLink" type="text" /></label>
-  <label>Tags (comma separated): <input id="tags" type="text" /></label>
-  <label>Keywords (for SEO): <input id="keywords" type="text" /></label>
+  <label>Image URL:</label>
+  <input id="imgUrl" type="text" />
 
-  <button onclick="generateProduct()">Generate Product HTML</button>
+  <label>Alt Text:</label>
+  <input id="altText" type="text" />
+
+  <label>Title:</label>
+  <input id="title" type="text" />
+
+  <label>Product Code:</label>
+  <input id="code" type="text" />
+
+  <label>Price (INR):</label>
+  <input id="price" type="text" />
+
+  <label>Main Description (Bold):</label>
+  <input id="mainDesc" type="text" />
+
+  <label>Small Description (Mobile Friendly):</label>
+  <input id="smallDesc" type="text" />
+
+  <label>Buy Link (WhatsApp or Product Page):</label>
+  <input id="buyLink" type="text" />
+
+  <label>Tags (comma separated):</label>
+  <input id="tags" type="text" />
+
+  <label>Keywords (for SEO):</label>
+  <input id="keywords" type="text" />
+
+  <button onclick="generate()">Generate Product HTML</button>
   <button onclick="copyOutput()">Copy to Clipboard</button>
 
   <pre id="output"></pre>
 
   <script>
-    function generateProduct() {
-      const image = document.getElementById('image').value.trim();
-      const alt = document.getElementById('alt').value.trim();
-      const title = document.getElementById('title').value.trim();
-      const code = document.getElementById('code').value.trim();
-      const price = document.getElementById('price').value.trim();
-      const descMain = document.getElementById('descMain').value.trim();
-      const descSmall = document.getElementById('descSmall').value.trim();
-      const buyLink = document.getElementById('buyLink').value.trim();
-      const tags = document.getElementById('tags').value.trim();
-      const keywords = document.getElementById('keywords').value.trim();
+    function generate() {
+      const imgUrl = document.getElementById('imgUrl').value;
+      const altText = document.getElementById('altText').value;
+      const title = document.getElementById('title').value;
+      const code = document.getElementById('code').value;
+      const price = document.getElementById('price').value;
+      const mainDesc = document.getElementById('mainDesc').value;
+      const smallDesc = document.getElementById('smallDesc').value;
+      const buyLink = document.getElementById('buyLink').value;
+      const tags = document.getElementById('tags').value;
+      const keywords = document.getElementById('keywords').value;
 
       const productHTML = `
-<!-- Product Card Start -->
-<div class="product-card" data-tags="${tags}">
-  <meta name="keywords" content="${keywords}">
-  <div class="image-wrapper" onclick="zoomImage('${image}')">
-    <img src="${image}" alt="${alt}" loading="lazy" />
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">${title}</h3>
-    <div class="product-desc-main">${descMain}</div>
-    <div class="product-desc-small">${descSmall}</div>
-    <div class="code-price-row">
-      <div class="product-code">Code: ${code}</div>
-      <div class="product-price" data-inr="${price}">₹${price}</div>
-    </div>
-    <div class="price-convert">
-      <label>
-        Currency:
-        <select onchange="convertCurrency(this)">
-          <option value="INR">INR</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-        </select>
-      </label>
-    </div>
-    <div class="like-buy-row">
-      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-      <a href="${buyLink}" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
-    </div>
-  </div>
+<div class="product-card" data-tags="${tags}" data-keywords="${keywords}">
+  <img src="${imgUrl}" alt="${altText}" loading="lazy">
+  <h3>${title}</h3>
+  <p class="product-code">Code: ${code}</p>
+  <p class="product-price">₹${price}</p>
+  <p class="main-desc"><strong>${mainDesc}</strong></p>
+  <p class="small-desc">${smallDesc}</p>
+  <a href="${buyLink}" class="buy-btn" target="_blank">Buy Now</a>
 </div>
-<!-- Product Card End -->
 `;
-
-      const jsonLd = {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": title,
-        "image": [image],
-        "description": descMain,
-        "sku": code,
-        "offers": {
-          "@type": "Offer",
-          "url": buyLink,
-          "priceCurrency": "INR",
-          "price": price || "0",
-          "availability": "https://schema.org/InStock"
-        },
-        "brand": {
-          "@type": "Brand",
-          "name": "Digital Effect"
-        }
-      };
 
       const jsonLdHTML = `
 <script type="application/ld+json">
-${JSON.stringify(jsonLd, null, 2)}
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "${title}",
+  "image": "${imgUrl}",
+  "description": "${mainDesc} ${smallDesc}",
+  "sku": "${code}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Digital Effect"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "${buyLink}",
+    "priceCurrency": "INR",
+    "price": "${price}",
+    "availability": "https://schema.org/InStock"
+  }
+}
 </script>
 `;
 
-      document.getElementById('output').textContent = productHTML + '\n' + jsonLdHTML;
+      document.getElementById('output').textContent = productHTML + '\n\n' + jsonLdHTML;
     }
 
     function copyOutput() {
@@ -133,6 +131,5 @@ ${JSON.stringify(jsonLd, null, 2)}
       });
     }
   </script>
-
 </body>
 </html>
