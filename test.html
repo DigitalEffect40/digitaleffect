@@ -129,23 +129,23 @@
 
   <div class="output" id="output"></div>
 
-  <script>
 
 
-function generateProduct() {
-  const image = document.getElementById('image').value.trim();
-  const alt = document.getElementById('alt').value.trim();
-  const title = document.getElementById('title').value.trim();
-  const code = document.getElementById('code').value.trim();
-  const price = document.getElementById('price').value.trim();
-  const descMain = document.getElementById('descMain').value.trim();
-  const descSmall = document.getElementById('descSmall').value.trim();
-  const buyLink = document.getElementById('buyLink').value.trim();
-  const tags = document.getElementById('tags').value.trim();
-  const keywords = document.getElementById('keywords').value.trim();
+<script>
+  function generateProduct() {
+    const image = document.getElementById('image').value.trim();
+    const alt = document.getElementById('alt').value.trim();
+    const title = document.getElementById('title').value.trim();
+    const code = document.getElementById('code').value.trim();
+    const price = document.getElementById('price').value.trim();
+    const descMain = document.getElementById('descMain').value.trim();
+    const descSmall = document.getElementById('descSmall').value.trim();
+    const buyLink = document.getElementById('buyLink').value.trim();
+    const tags = document.getElementById('tags').value.trim();
+    const keywords = document.getElementById('keywords').value.trim();
 
-  // Generate Product Card HTML with h3, loading="lazy" on img
-  const productHTML = `
+    // Generate Product Card HTML with h3, loading="lazy" on img
+    const productHTML = `
 <!-- Product Card Start -->
 <div class="product-card" data-tags="${tags}">
   <meta name="keywords" content="${keywords}">
@@ -180,46 +180,44 @@ function generateProduct() {
 <!-- Product Card End -->
 `;
 
-  // Generate JSON-LD structured data for product
-  const jsonLd = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": title,
-    "image": [image],
-    "description": descMain,
-    "sku": code,
-    "offers": {
-      "@type": "Offer",
-      "url": buyLink,
-      "priceCurrency": "INR",
-      "price": price || "0",
-      "availability": "https://schema.org/InStock"
-    },
-    "brand": {
-      "@type": "Brand",
-      "name": "Digital Effect"
-    }
-  };
+    // Generate JSON-LD structured data for product
+    const jsonLd = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": title,
+      "image": [image],
+      "description": descMain,
+      "sku": code,
+      "offers": {
+        "@type": "Offer",
+        "url": buyLink,
+        "priceCurrency": "INR",
+        "price": price || "0",
+        "availability": "https://schema.org/InStock"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "Digital Effect"
+      }
+    };
 
-  const jsonLdHTML = `
+    const jsonLdHTML = `
 <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
 </script>
 `;
 
-  // Output combined HTML + JSON-LD
-  document.getElementById('output').textContent = productHTML + '\n' + jsonLdHTML;
-}
+    // Output combined HTML + JSON-LD
+    document.getElementById('output').textContent = productHTML + '\n' + jsonLdHTML;
+  }
 
-
-    
-
-    function copyOutput() {
-      const text = document.getElementById('output').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard!");
-      });
-    }
-  </script>
+  function copyOutput() {
+    const text = document.getElementById('output').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    });
+  }
+</script>
+  
 </body>
 </html>
