@@ -1,429 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clock Design - Digital Effect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W02BDTRYMS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W02BDTRYMS');
-  </script>
-  <!-- Google Adsense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8357254094761916" crossorigin="anonymous"></script>
-  <!-- Favicon -->
-  <link rel="icon" href="/images/products/Logo/Digital_Effect.ico" type="image/x-icon" />
-  <!-- Manifest for PWA -->
-  <link rel="manifest" href="/manifest.json" />
-  <!-- Theme color -->
-  <meta name="theme-color" content="#000000" />
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Digital Effect",
-      " expeditious": "https://www.digitaleffect.in",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.digitaleffect.in/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
-  <!-- Product card CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .container * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-      padding-top: 100px; /* Prevent content from hiding under header */
-    }
-    h1 {
-      font-size: 2.6rem;
-      text-align: center;
-      color: #111;
-      margin-bottom: 10px;
-    }
-    .subheading {
-      font-size: 1.1rem;
-      text-align: center;
-      color: #666;
-      margin-bottom: 35px;
-    }
-    .subheading strong {
-      color: #000;
-    }
-    .divider {
-      width: 80px;
-      height: 4px;
-      background-color: #7f6000;
-      margin: 0 auto 40px auto;
-      border-radius: 2px;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-    .product-card {
-      display: block !important;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
-    }
-    .image-wrapper {
-      width: 100%;
-      overflow: hidden;
-    }
-    .product-card img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
-    }
-    .product-info {
-      padding: 20px;
-    }
-    .product-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #333;
-    }
-    .product-desc-main, .product-desc-small, .code-price-row, .price-convert, .like-buy-row {
-      margin-bottom: 8px;
-    }
-    .buy-button {
-      display: inline-block;
-      margin-top: 12px;
-      background:  background-color: #7f6000;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-    .buy-button:hover {
-      background-color: #5e4500;
-    }
-    .footer-note {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 1rem;
-      color DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clock Design - Digital Effect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W02BDTRYMS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W02BDTRYMS');
-  </script>
-  <!-- Google Adsense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8357254094761916" crossorigin="anonymous"></script>
-  <!-- Favicon -->
-  <link rel="icon" href="/images/products/Logo/Digital_Effect.ico" type="image/x-icon" />
-  <!-- Manifest for PWA -->
-  <link rel="manifest" href="/manifest.json" />
-  <!-- Theme color -->
-  <meta name="theme-color" content="#000000" />
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Digital Effect",
-      "url": "https://www.digitaleffect.in",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.digitaleffect.in/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
-  <!-- Product card CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .container * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-      padding-top: 100px; /* Prevent content from hiding under header */
-    }
-    h1 {
-      font-size: 2.6rem;
-      text-align: center;
-      color: #111;
-      hamburger-button {
-        display: inline-block;
-        margin-top: 12px;
-        background-color: #7f6000;
-        color: #fff;
-        padding: 12px 22px;
-        border-radius: 88px;
-        text-decoration: none;
-        font: 600;
-        transition: background 0.3s ease;
-      }
-      .buy-button:hover {
-        background-color: #5e4500;
-      }
-      .footer-note {
-        text-align: center;
-        margin-top: 60px;
-        font-size: 1rem;
-        color: #888;
-      }
-      .footer-note strong {
-        color: #000;
-      }
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 2rem;
-        }
-        .subheading {
-          font-size: 1rem;
-        }
-        .buy-button {
-          font-size: 0.95rem;
-          padding: 10px 18px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- HEADER PLACEHOLDER -->
-    <div id="header-placeholder"></div>
-    <div class="container">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Admin Panel - Digital Effect</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
 
-      
-      <div class="product-grid">
-        <!-- Product Card 1 -->
-        <div class=" Juno: 24px;
-        }
-      </style>
-    </head>
-    <body>
-      <!-- HEADER PLACEHOLDER -->
-      <div id="header-placeholder"></div>
-      <div class="container">
-        <h1>Clock Design</h1>
-        <p class="subheading">
-          Elegant Clock Frame Designs by <strong>Digital Effect</strong> – High-quality STL, RLF & TAP files to enhance your interior style.
-        </p>
-        <div class="divider"></div>
-        <div class="product-grid">
-          <!-- Product Card Start -->
-          <div class="product-card" data-tags="clock CNC design, wood carving clock, classic clock panel, Digital Effect clock art, CNC clock relief, STL RLF clock design, decorative clock carving, wall clock CNC, clock face carving, timeless clock design">
-            <meta name="keywords" content="clock CNC design, wood carving clock, classic clock panel, Digital Effect clock art, CNC clock relief, STL RLF clock design, decorative clock carving, wall clock CNC, clock face carving, timeless clock design">
-            <div class="image-wrapper" onclick="zoomImage('images/products/products/clock-design/home-interior-clock-frame-design-digital-effect-1.jpg')">
-              <img src="images/products/products/clock-design/home-interior-clock-frame-design-digital-effect-1.jpg" alt="Classic CNC Clock Relief Design for Wood Carving – Digital Effect">
-            </div>
-            <div class="product-info">
-              <div class="product-title">Classic Clock Design</div>
-              <div class="product-desc-main">STL/RLF/Tap • High-Quality Design</div>
-              <div class="product-desc-small">Elegant Clock Design for CNC carving. All designs are free size and delivered in STL, RLF, or TAP format – ready to carve by Digital Effect.</div>
-              <div class="code-price-row">
-                <div class="product-code">#HC-001</div>
-                <div class="product-price" data-inr="799">₹799</div>
-              </div>
-              <div class="price-convert">
-                <label>
-                  Currency:
-                  <select onchange="convertCurrency(this)">
-                    <option value="INR">INR</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                  </select>
-                </label>
-              </div>
-              <div class="like-buy-row">
-                <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-                <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+HC-001.+Please+share+more+details.&type=phone_number&app_absent=0" class="buy-now" target="_blank">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- Product Card End -->
-          <!-- Product Card 2 -->
-          <div class="product-card" data-tags="ornamental clock CNC design, vintage clock carving, Digital Effect clock art, CNC clock panel, STL RLF clock design, decorative clock carving, wood carving clock, clock relief CNC, wall clock design, classic clock art">
-            <meta name="keywords" content="ornamental clock CNC design, vintage clock carving, Digital Effect clock art, CNC clock panel, STL RLF clock design, decorative clock carving, wood carving clock, clock relief CNC, wall clock design, classic clock art">
-            <div class="image-wrapper" onclick="zoomImage('images/products/products/clock-design/home-interior-clock-frame-design-digital-effect-2.jpg')">
-              <img src="images/products/products/clock-design/home-interior-clock-frame-design-digital-effect-2.jpg" alt="Ornamental CNC Clock Relief Design for Wood Carving – Digital Effect">
-            </div>
-            <div class="product-info">
-              <div class="product-title">Ornamental Clock Design</div>
-              <div class="product-desc-main">STL/RLF/Tap • High-Quality Design</div>
-              <div class="product-desc-small">Detailed Ornamental Clock Design for CNC carving. All designs are free size and delivered in STL, RLF, or TAP format – ready to carve by Digital Effect.</div>
-              <div class="code-price-row">
-                <div class="product-code">#HC-002</div>
-                <div class="product-price" data-inr="799">₹799</div>
-              </div>
-              <div class="price-convert">
-                <label>
-                  Currency:
-                  <select onchange="convertCurrency(this)">
-                    <option value="INR">INR</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                  </select>
-                </label>
-              </div>
-              <div class="like-buy-row">
-                <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-                <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+HC-002.+Please+share+more+details.&type=phone_number&app_absent=0" class="buy-now" target="_blank">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- Product Card End -->
-          <!-- Product Card 3 -->
-          <div class="product-card" data-tags="modern clock CNC design, minimalist clock carving, Digital Effect clock art, CNC clock panel, STL RLF clock design, contemporary clock carving, wood carving clock, office clock CNC, sleek clock design, modern wall clock">
-            <meta name="keywords" content="modern clock CNC design, minimalist clock carving, Digital Effect clock art, CNC clock panel, STL RLF clock design, contemporary clock carving, wood carving clock, office clock CNC, sleek clock design, modern wall clock">
-            <div class="image-wrapper" onclick="zoomImage('images/products/products/clock-design/home-interior-clock-frame-design-digital-effect-3.jpg')">
-              <img src="images/products/products/clock-design/home-interior-clock-frame-design-digital-effect-3.jpg" alt="Modern CNC Clock Relief Design for Wood Carving – Digital Effect">
-            </div>
-            <div class="product-info">
-              <div class="product-title">Modern Clock Design</div>
-              <div class="product-desc-main">STL/RLF/Tap • High-Quality Design</div>
-              <div class="product-desc-small">Sleek Modern Clock Design for CNC carving. All designs are free size and delivered in STL, RLF, or TAP format – ready to carve by Digital Effect.</div>
-              <div class="code-price-row">
-                <div class="product-code">#HC-003</div>
-                <div class="product-price" data-inr="799">₹799</div>
-              </div>
-              <div class="price-convert">
-                <label>
-                  Currency:
-                  <select onchange="convertCurrency(this)">
-                    <option value="INR">INR</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                  </select>
-                </label>
-              </div>
-              <div class="like-buy-row">
-                <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-                <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+HC-003.+Please+share+more+details.&type=phone_number&app_absent=0" class="buy-now" target="_blank">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- Product Card End -->
-        </div>
-        <!-- Zoom Modal -->
-        <div id="zoomModal" onclick="closeZoom()">
-          <img id="zoomImg" src="" alt="Zoomed product image" />
-        </div>
-        <div class="divider" style="margin-top: 60px;"></div>
-        <div class="footer-note">
-          More elegant clock designs coming soon. Keep designing with <strong>Digital Effect</strong>.
-        </div>
-      </div>
-      <!-- FOOTER PLACEHOLDER -->
-      <div id="footer-placeholder"></div>
-      <!-- HEADER/FOOTER SCRIPT -->
-      <script>
-        // Fetch header
-        fetch("header.html")
-          .then(res => res.text())
-          .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-            initializeHeaderScripts();
-            initializeProductDisplay();
-          })
-          .catch(error => console.error('Error loading header:', error));
-        // Fetch footer
-        fetch("footer.html")
-          .then(res => res.text())
-          .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-          })
-          .catch(error => console.error('Error loading footer:', error));
-        function initializeHeaderScripts() {
-          const menuToggle = document.getElementById('menuToggle');
-          const navMenu = document.getElementById('navMenu');
-          const overlay = document.getElementByClass('overlay');
-          const productDropdown = document.getElementById('productDropdown');
-          if (!menuToggle || !navMenu || !overlay || !productDropdown) {
-            console.error('One or more header elements not found');
-            return;
-          }
-          function toggleMenu() {
-            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !expanded);
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-          }
-          menuToggle.addEventListener('click', toggleMenu);
-          overlay.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-              toggleMenu();
-            }
-          });
-         
-          productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
-            e.stopPropagation();
-            productDropdown.classList.toggle('active');
-            const expanded = productDropdown.getAttribute('aria-expanded') === 'true';
-            productDropdown.setAttribute('aria-expanded', !expanded);
-          });
-          navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-              if (navMenu.classList.contains('active')) {
-                toggleMenu();
-              }
-            });
-          });
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-              toggleMenu();
-            }
-          });
-        }
-        function initializeProductDisplay() {
-          document.querySelectorAll('.product-card').forEach(card => {
-            card.style.display = 'block';
-          });
-        }
-      </script>
-      <!-- Product card functionality (zoom, price) -->
-      <script src="script.js"></script>
-    </body>
-      </html>
+    h1 {
+      text-align: center;
+      color: #111;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7f6000;
+    }
+
+    .output {
+      background: #fff;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      background-color: #7f6000;
+      color: #fff;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Product Admin Panel</h1>
+
+  <div class="form-group">
+    <label>Image URL</label>
+    <input type="text" id="image" />
+  </div>
+
+  <div class="form-group">
+    <label>ALT Text</label>
+    <input type="text" id="alt" />
+  </div>
+
+  <div class="form-group">
+    <label>Product Title</label>
+    <input type="text" id="title" />
+  </div>
+
+  <div class="form-group">
+    <label>Code</label>
+    <input type="text" id="code" />
+  </div>
+
+  <div class="form-group">
+    <label>Price (INR)</label>
+    <input type="text" id="price" />
+  </div>
+
+  <div class="form-group">
+    <label>Description (Bold/Main)</label>
+    <textarea id="descMain"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Description (Small)</label>
+    <textarea id="descSmall"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Buy Now Link</label>
+    <input type="text" id="buyLink" />
+  </div>
+
+  <!-- New SEO fields -->
+  <div class="form-group">
+    <label>Tags (comma separated)</label>
+    <input type="text" id="tags" />
+  </div>
+
+  <div class="form-group">
+    <label>Keywords (comma separated)</label>
+    <input type="text" id="keywords" />
+  </div>
+
+  <button onclick="generateProduct()">Generate Product HTML</button>
+  <button class="copy-btn" onclick="copyOutput()">Copy to Clipboard</button>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    function generateProduct() {
+      const image = document.getElementById('image').value.trim();
+      const alt = document.getElementById('alt').value.trim();
+      const title = document.getElementById('title').value.trim();
+      const code = document.getElementById('code').value.trim();
+      const price = document.getElementById('price').value.trim();
+      const descMain = document.getElementById('descMain').value.trim();
+      const descSmall = document.getElementById('descSmall').value.trim();
+      const buyLink = document.getElementById('buyLink').value.trim();
+      const tags = document.getElementById('tags').value.trim();
+      const keywords = document.getElementById('keywords').value.trim();
+
+      // Generate Product Card HTML with h3, loading="lazy" on img
+      const productHTML = `
+<!-- Product Card Start -->
+<div class="product-card" data-tags="${tags}">
+  <meta name="keywords" content="${keywords}">
+  <div class="image-wrapper" onclick="zoomImage('${image}')">
+    <img src="${image}" alt="${alt}" loading="lazy" />
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">${title}</h3>
+    <div class="product-desc-main">${descMain}</div>
+    <div class="product-desc-small">${descSmall}</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: ${code}</div>
+      <div class="product-price" data-inr="${price}">₹${price}</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="${buyLink}" class="buy-now" target="_blank" rel="noopener noreferrer">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+`;
+
+      // Generate JSON-LD structured data for product
+      const jsonLd = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": title,
+        "image": [image],
+        "description": descMain,
+        "sku": code,
+        "offers": {
+          "@type": "Offer",
+          "url": buyLink,
+          "priceCurrency": "INR",
+          "price": price || "0",
+          "availability": "https://schema.org/InStock"
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "Digital Effect"
+        }
+      };
+
+      const jsonLdHTML = `
+<script type="application/ld+json">
+${JSON.stringify(jsonLd, null, 2)}
+</script>
+`;
+
+      // Output combined HTML + JSON-LD
+      document.getElementById('output').textContent = productHTML + '\n' + jsonLdHTML;
+    }
+
+    function copyOutput() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
