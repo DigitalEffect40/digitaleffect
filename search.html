@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results</title>
+  <style>
+    body { font-family: Poppins, sans-serif; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; }
+    .result { margin-bottom: 15px; }
+    .result a { font-size: 18px; color: #007BFF; text-decoration: none; }
+    .result a:hover { text-decoration: underline; }
+    .no-result { color: #999; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Search Results</h1>
+  <div id="results">Searching...</div>
+
+  <script>
+    const query = new URLSearchParams(window.location.search).get('q')?.toLowerCase();
+    const resultsContainer = document.getElementById('results');
+
+    fetch('search-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(item =>
+          item.title.toLowerCase().includes(query) ||
+          item.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+
+        if (filtered.length === 0) {
+          resultsContainer.innerHTML = '<div class="no-result">No results found.</div>';
+        } else {
+          resultsContainer.innerHTML = '';
+          filtered.forEach(item => {
+            resultsContainer.innerHTML += `
+              <div class="result">
+                <a href="${item.url}">${item.title}</a>
+              </div>
+            `;
+          });
+        }
+      })
+      .catch(err => {
+        resultsContainer.innerHTML = 'Error loading search data.';
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
