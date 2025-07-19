@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search Results</title>
-  <style>
-    body { font-family: Poppins, sans-serif; padding: 20px; background: #fff; }
-    h1 { font-size: 24px; }
-    .result-item { margin-bottom: 15px; }
-    .result-item a { font-size: 18px; color: #007BFF; text-decoration: none; }
-    .result-item a:hover { text-decoration: underline; }
-    .no-result { color: #999; margin-top: 20px; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results</title>
+  <style>
+    body { font-family: Poppins, sans-serif; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; }
+    .result-item { margin-bottom: 15px; }
+    .result-item a { font-size: 18px; color: #007BFF; text-decoration: none; }
+    .result-item a:hover { text-decoration: underline; }
+    .no-result { color: #999; margin-top: 20px; }
+  </style>
 </head>
 <body>
 
-  <h1>Search Results</h1>
-  <div id="search-results">Loading...</div>
+  <h1>Search Results</h1>
+  <div id="search-results">Loading...</div>
 
-  <script>
-    // Helper to get 'q' from URL query string
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param) || '';
-    }
+  <script>
+    // Helper to get 'q' from URL query string
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param) || '';
+    }
 
-    const query = getQueryParam('q').trim().toLowerCase();
-    const resultsContainer = document.getElementById('search-results');
+    const query = getQueryParam('q').trim().toLowerCase();
+    const resultsContainer = document.getElementById('search-results');
 
-    if (!query) {
-      resultsContainer.innerHTML = '<p class="no-result">Please enter a search term.</p>';
-    } else {
-      fetch('search-data.json')
-        .then(response => {
-          if (!response.ok) throw new Error('Network response was not ok');
-          return response.json();
-        })
-        .then(data => {
-          const filtered = data.filter(item =>
-            item.title.toLowerCase().includes(query) ||
-            item.tags.toLowerCase().includes(query)
-          );
+    if (!query) {
+      resultsContainer.innerHTML = '<p class="no-result">Please enter a search term.</p>';
+    } else {
+      fetch('search-data.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.json();
+        })
+        .then(data => {
+          const filtered = data.filter(item =>
+            item.title.toLowerCase().includes(query) ||
+            item.tags.some(tag => tag.toLowerCase().includes(query))
+          );
 
-          if (filtered.length === 0) {
-            resultsContainer.innerHTML = '<p class="no-result">No results found for "' + query + '".</p>';
-            return;
-          }
+          if (filtered.length === 0) {
+            resultsContainer.innerHTML = '<p class="no-result">No results found for "' + query + '".</p>';
+            return;
+          }
 
-          resultsContainer.innerHTML = ''; // clear "Loading..."
+          resultsContainer.innerHTML = ''; // clear "Loading..."
 
-          filtered.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'result-item';
-            div.innerHTML = `
-              <h3><a href="${item.url}">${item.title}</a></h3>
-              <p>${item.description}</p>
-            `;
-            resultsContainer.appendChild(div);
-          });
-        })
-        .catch(error => {
-          resultsContainer.innerHTML = '<p style="color:red;">Error loading search data.</p>';
-          console.error('Search data load error:', error);
-        });
-    }
-  </script>
+          filtered.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'result-item';
+            div.innerHTML = `<h3><a href="${item.url}">${item.title}</a></h3>`;
+            resultsContainer.appendChild(div);
+          });
+        })
+        .catch(error => {
+          resultsContainer.innerHTML = '<p style="color:red;">Error loading search data.</p>';
+          console.error('Search data load error:', error);
+        });
+    }
+  </script>
 
 </body>
 </html>
