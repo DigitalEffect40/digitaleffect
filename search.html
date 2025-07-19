@@ -22,7 +22,7 @@
     const query = new URLSearchParams(window.location.search).get('q')?.toLowerCase();
     const resultsContainer = document.getElementById('results');
 
-    fetch('search-data.json')
+    fetch('data/search-data.json')
       .then(res => res.json())
       .then(data => {
         const filtered = data.filter(item =>
