@@ -19,35 +19,52 @@
   <div id="results">Searching...</div>
 
   <script>
-    const query = new URLSearchParams(window.location.search).get('q')?.toLowerCase();
-    const resultsContainer = document.getElementById('results');
+window.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('search-input');
+  const resultsContainer = document.getElementById('search-results');
 
-    fetch('search-data.json')
-      .then(res => res.json())
-      .then(data => {
-        const filtered = data.filter(item =>
-          item.title.toLowerCase().includes(query) ||
-          item.tags.some(tag => tag.toLowerCase().includes(query))
-        );
+  fetch('search-data.json')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      searchInput.addEventListener('input', function () {
+        const query = this.value.trim().toLowerCase();
+        resultsContainer.innerHTML = '';
 
-        if (filtered.length === 0) {
-          resultsContainer.innerHTML = '<div class="no-result">No results found.</div>';
-        } else {
-          resultsContainer.innerHTML = '';
-          filtered.forEach(item => {
-            resultsContainer.innerHTML += `
-              <div class="result">
-                <a href="${item.url}">${item.title}</a>
-              </div>
-            `;
-          });
-        }
-      })
-      .catch(err => {
-        resultsContainer.innerHTML = 'Error loading search data.';
-        console.error(err);
-      });
-  </script>
+        if (query.length === 0) return;
+
+        const filtered = data.filter(item =>
+          item.title.toLowerCase().includes(query) ||
+          item.tags.toLowerCase().includes(query)
+        );
+
+        if (filtered.length === 0) {
+          resultsContainer.innerHTML = '<p>No results found.</p>';
+          return;
+        }
+
+        filtered.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'result-item';
+          div.innerHTML = `
+            <h3><a href="${item.url}">${item.title}</a></h3>
+            <p>${item.description}</p>
+          `;
+          resultsContainer.appendChild(div);
+        });
+      });
+    })
+    .catch((error) => {
+      resultsContainer.innerHTML = '<p style="color:red;">Error loading search data.</p>';
+      console.error('Search data load error:', error);
+    });
+});
+  </script>
+  
 
 </body>
 </html>
