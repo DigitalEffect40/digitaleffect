@@ -1,20 +1,346 @@
 [
-  {
-    "title": "Wooden Bed Design",
-    "tags": ["bed", "wood", "modern"],
-    "url": "https://www.digitaleffect.in/flower-design.html",
-    "description": "A modern wooden bed design for your bedroom."
-  },
-  {
-    "title": "Flower Panel 3D",
-    "tags": ["flower", "panel", "decor"],
-    "url": "flower-design.html#flower-panel-3d",
-    "description": "3D flower panel for home decoration."
-  },
-  {
-    "title": "Door Design HD-001",
-    "tags": ["door", "home", "interior"],
-    "url": "door-design.html#hd-001",
-    "description": "Elegant HD-001 door design for interiors."
-  }
+      <!-- ⬇️ Paste product cards here ⬇️ -->
+
+
+
+<!-- Product Card Start -->
+<div class="product-card" data-tags="">
+  <meta name="keywords" content="">
+  <div class="image-wrapper" onclick="zoomImage('images/products/products/digital_effect-0.jpg')">
+    <img src="images/products/products/digital_effect-0.jpg" alt="Customize Design Available – Digital Effect">
+  </div>
+  <div class="product-info">
+    <div class="product-title">Customize Design Available</div>
+    <div class="product-desc-main">STL/RLF/Tap • High-Quality Design</div>
+    <div class="product-desc-small">All designs are free size and delivered in STL, RLF, or TAP format – ready to carve by Digital Effect.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: 00-000</div>
+      <div class="product-price" data-inr="00">₹00</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+00-000.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+<!-- Product Card Start -->
+<div class="product-card" data-tags="CNC bed panel design, classic headboard carving, Digital Effect bed STL, wooden bed CNC relief, luxury bed art, ornate headboard STL, furniture décor carving, elegant bedroom design, Indian style bed CNC">
+  <meta name="keywords" content="CNC bed panel design, classic headboard carving, Digital Effect bed STL, wooden bed CNC relief, luxury bed art, ornate headboard STL, furniture décor carving, elegant bedroom design, Indian style bed CNC">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-1.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-1.jpg" alt="Classic Ornate Bed Panel CNC Design – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Classic Ornate Bed Design</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Headboard Furniture Panel</div>
+    <div class="product-desc-small">Elegant CNC-ready bed panel featuring a traditional ornamental headboard design. Ideal for luxury bedroom sets, available in STL, RLF, and TAP formats by Digital Effect.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-001</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-001.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+
+<!-- Product Card Start -->
+<div class="product-card" data-tags="modern CNC bed design, decorative headboard 3D, Digital Effect bed STL, wooden furniture carving, bed frame CNC art, stylish bedroom panel, intricate bed STL, classic wood bed relief">
+  <meta name="keywords" content="modern CNC bed design, decorative headboard 3D, Digital Effect bed STL, wooden furniture carving, bed frame CNC art, stylish bedroom panel, intricate bed STL, classic wood bed relief">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-2.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-2.jpg" alt="Royal Floral Bed Headboard CNC Design – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Royal Floral Bed Panel</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Decorative Furniture Design</div>
+    <div class="product-desc-small">Intricate floral CNC headboard panel design perfect for luxurious furniture projects. Download in STL, RLF, or TAP formats. Crafted by Digital Effect.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-002</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-002.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+
+
+      <!-- Product Card Start -->
+<div class="product-card" data-tags="elegant CNC bed panel, classic headboard relief, Digital Effect STL bed design, luxury wood carving, CNC furniture 3D model, traditional bed artwork, ornate bed design STL">
+  <meta name="keywords" content="elegant CNC bed panel, classic headboard relief, Digital Effect STL bed design, luxury wood carving, CNC furniture 3D model, traditional bed artwork, ornate bed design STL">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-3.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-3.jpg" alt="Classic Ornamental Bed Frame Relief – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Classic Ornamental Bed</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Traditional Furniture Carving</div>
+    <div class="product-desc-small">Beautifully carved CNC bed design with traditional ornamental patterns. Available in STL, RLF, and TAP formats. Perfect for wooden bed projects.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-003</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-003.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+      
+      
+<!-- Product Card Start -->
+<div class="product-card" data-tags="luxury CNC bed design, premium wood carving bed, Digital Effect bed STL, CNC headboard panel, ornamental bedroom furniture, 3D relief bed model, classic bed decoration">
+  <meta name="keywords" content="luxury CNC bed design, premium wood carving bed, Digital Effect bed STL, CNC headboard panel, ornamental bedroom furniture, 3D relief bed model, classic bed decoration">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-4.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-4.jpg" alt="Royal Carved Bed Panel – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Royal Carved Bed Panel</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Decorative Bed Design</div>
+    <div class="product-desc-small">Luxuriously detailed bed panel relief suitable for CNC machining. Ideal for premium furniture makers. Provided in STL, RLF, and TAP formats.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-004</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-004.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+
+
+      <!-- Product Card Start -->
+<div class="product-card" data-tags="floral CNC bed headboard, carved bed panel relief, 3D ornamental bed design, Digital Effect STL bed, CNC furniture model, traditional woodwork panel">
+  <meta name="keywords" content="floral CNC bed headboard, carved bed panel relief, 3D ornamental bed design, Digital Effect STL bed, CNC furniture model, traditional woodwork panel">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-5.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-5.jpg" alt="Floral Ornate Headboard Panel – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Floral Ornate Headboard Panel</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Elegant CNC Bed Design</div>
+    <div class="product-desc-small">Classic floral carving bed headboard design perfect for CNC machining. Comes in STL, RLF, and TAP formats for ease of use in high-end furniture projects.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-005</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-005.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+
+<!-- Product Card Start -->
+<div class="product-card" data-tags="carved wooden bed panel, CNC luxury headboard design, classic furniture relief, Digital Effect bed STL, ornate wood carving, royal bed 3D model">
+  <meta name="keywords" content="carved wooden bed panel, CNC luxury headboard design, classic furniture relief, Digital Effect bed STL, ornate wood carving, royal bed 3D model">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-6.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-6.jpg" alt="Royal Carved Bed Panel – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Royal Carved Bed Panel</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Grand CNC Bed Design</div>
+    <div class="product-desc-small">Regal-style carved bed design for CNC, ideal for luxury furniture manufacturing. Provided in STL, RLF, and TAP formats for precise carving results.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-006</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-006.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+
+<!-- Product Card Start -->
+<div class="product-card" data-tags="ornamental CNC bed relief, headboard wood carving design, Digital Effect STL file, luxury furniture bed panel, floral bed 3D model, handcrafted bed decor">
+  <meta name="keywords" content="ornamental CNC bed relief, headboard wood carving design, Digital Effect STL file, luxury furniture bed panel, floral bed 3D model, handcrafted bed decor">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-7.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-7.jpg" alt="Floral Luxury Bed Panel – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Floral Luxury Bed Panel</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Ornamental Bed Design</div>
+    <div class="product-desc-small">Elegant floral-themed CNC bed headboard relief for premium wood furniture. Perfect for intricate carving work with STL, RLF, and TAP formats.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-007</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-007.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+
+
+      <!-- Product Card Start -->
+<div class="product-card" data-tags="classic CNC bed design, digital effect bed panel, antique bed headboard relief, RLF STL bed carving, luxurious wooden bed 3D model">
+  <meta name="keywords" content="classic CNC bed design, digital effect bed panel, antique bed headboard relief, RLF STL bed carving, luxurious wooden bed 3D model">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-8.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-8.jpg" alt="Classic Royal Bed Design – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Classic Royal Bed Design</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Bed Panel Relief</div>
+    <div class="product-desc-small">Royal-style CNC headboard design perfect for wooden bed panels. Provided in STL, RLF, and Tap formats for detailed furniture carving.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-008</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-008.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+      
+      <!-- Product Card Start -->
+<div class="product-card" data-tags="luxury CNC bed, decorative bed carving, ornate wood bed relief, Digital Effect bed STL, premium bed panel 3D model">
+  <meta name="keywords" content="luxury CNC bed, decorative bed carving, ornate wood bed relief, Digital Effect bed STL, premium bed panel 3D model">
+  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-9.jpg')">
+    <img src="https://www.digitaleffect.in/images/products/products/bed-design/bed-design-furniture-art-digital-effect-9.jpg" alt="Ornate Floral Bed Panel – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Ornate Floral Bed Panel</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Bed Panel Design</div>
+    <div class="product-desc-small">Intricate floral-themed CNC carving design ideal for luxurious bed panel decoration. Includes STL, RLF, and Tap formats.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FB-009</div>
+      <div class="product-price" data-inr="999">₹999</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FB-009.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
 ]
