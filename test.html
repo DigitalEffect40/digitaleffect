@@ -1,186 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Admin Panel - Digital Effect</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Search Inside Input Example</title>
+<style>
+  .search-form {
+    position: relative;
+    width: 250px;
+    margin: 50px auto;
+  }
 
-    h1 {
-      text-align: center;
-      color: #111;
-    }
+  .search-box {
+    width: 100%;
+    padding: 8px 40px 8px 12px; /* right padding for button */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+  .search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat center center;
+    background-size: 18px 18px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
 
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    input[type="text"], textarea, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #000;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #7f6000;
-    }
-
-    .output {
-      background: #fff;
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      white-space: pre-wrap;
-      font-family: monospace;
-    }
-
-    .copy-btn {
-      margin-top: 10px;
-      background-color: #7f6000;
-      color: #fff;
-      padding: 8px 14px;
-      font-size: 0.9rem;
-      border-radius: 5px;
-      cursor: pointer;
-      border: none;
-    }
-  </style>
+  .search-btn:hover {
+    opacity: 1;
+  }
+</style>
 </head>
 <body>
-  <h1>Product Admin Panel</h1>
 
-  <div class="form-group">
-    <label>Image URL</label>
-    <input type="text" id="image" />
-  </div>
-
-  <div class="form-group">
-    <label>ALT Text</label>
-    <input type="text" id="alt" />
-  </div>
-
-  <div class="form-group">
-    <label>Product Title</label>
-    <input type="text" id="title" />
-  </div>
-
-  <div class="form-group">
-    <label>Code</label>
-    <input type="text" id="code" />
-  </div>
-
-  <div class="form-group">
-    <label>Price (INR)</label>
-    <input type="text" id="price" />
-  </div>
-
-  <div class="form-group">
-    <label>Description (Bold/Main)</label>
-    <textarea id="descMain"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>Description (Small)</label>
-    <textarea id="descSmall"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>Buy Now Link</label>
-    <input type="text" id="buyLink" />
-  </div>
-
-  <!-- New SEO fields -->
-  <div class="form-group">
-    <label>Tags (comma separated)</label>
-    <input type="text" id="tags" />
-  </div>
-
-  <div class="form-group">
-    <label>Keywords (comma separated)</label>
-    <input type="text" id="keywords" />
-  </div>
-
-  <button onclick="generateProduct()">Generate Product HTML</button>
-  <button class="copy-btn" onclick="copyOutput()">Copy to Clipboard</button>
-
-  <div class="output" id="output"></div>
-
-
-<script>
-  function generateProduct() {
-    const image = document.getElementById('image').value;
-    const alt = document.getElementById('alt').value;
-    const title = document.getElementById('title').value;
-    const code = document.getElementById('code').value;
-    const price = document.getElementById('price').value;
-    const descMain = document.getElementById('descMain').value;
-    const descSmall = document.getElementById('descSmall').value;
-    const buyLink = document.getElementById('buyLink').value;
-    const tags = document.getElementById('tags').value;
-    const keywords = document.getElementById('keywords').value;
-
-    const html = `
-<!-- Product Card Start -->
-<div class="product-card" data-tags="${tags}">
-  <meta name="keywords" content="${keywords}">
-  <div class="image-wrapper" onclick="zoomImage('${image}')">
-    <img src="${image}" alt="${alt}" loading="lazy">
-  </div>
-  <div class="product-info">
-    <h3 class="product-title">${title}</h3>
-    <div class="product-desc-main">${descMain}</div>
-    <div class="product-desc-small">${descSmall}</div>
-    <div class="code-price-row">
-      <div class="product-code">Code: ${code}</div>
-      <div class="product-price" data-inr="${price}">₹${price}</div>
-    </div>
-    <div class="price-convert">
-      <label>
-        Currency:
-        <select onchange="convertCurrency(this)">
-          <option value="INR">INR</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-        </select>
-      </label>
-    </div>
-    <div class="like-buy-row">
-      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-      <a href="${buyLink}" class="buy-now" target="_blank">Buy Now</a>
-    </div>
-  </div>
-</div>
-<!-- Product Card End -->
-`;
-
-    document.getElementById('output').textContent = html;
-  }
-</script>
+<form action="search.html" method="GET" class="search-form">
+  <input type="text" name="q" class="search-box" placeholder="Search..." required />
+  <button type="submit" class="search-btn" aria-label="Search"></button>
+</form>
 
 </body>
 </html>
