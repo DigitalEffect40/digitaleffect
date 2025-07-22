@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Google Analytics -->
+  <!-- Google tag (analytics) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W02BDTRYMS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,16 +15,16 @@
     gtag('config', 'G-W02BDTRYMS');
   </script>
 
-  <!-- Google Adsense -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8357254094761916" crossorigin="anonymous"></script>
 
   <!-- Favicon -->
   <link rel="icon" href="/images/products/Logo/Digital_Effect.ico" type="image/x-icon" />
 
-  <!-- PWA Manifest -->
+  <!-- Manifest for PWA -->
   <link rel="manifest" href="/manifest.json" />
 
-  <!-- Theme Color -->
+  <!-- Theme color for browsers -->
   <meta name="theme-color" content="#000000" />
 
   <!-- Schema.org Structured Data -->
@@ -42,185 +42,153 @@
   }
   </script>
 
-  <!-- Custom Styles -->
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f2f2f0;
+      background-color: #f9f9f9;
       color: #222;
+      line-height: 1.6;
     }
-
-    #header-placeholder,
-    #footer-placeholder {
-      width: 100%;
-    }
-
-    .spacer {
-      height: 70px;
-    }
-
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 30px;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 30px 25px;
       background-color: #fff;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
-
     h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: #1c1c1c;
       text-align: center;
-      font-size: 2.5rem;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-      font-weight: 700;
     }
-
     .subheading {
-      text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      margin-bottom: 25px;
       color: #555;
-      max-width: 750px;
-      margin: 0 auto 30px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
     hr.divider {
       border: none;
-      border-top: 4px solid #7f6000;
+      border-top: 3px solid #7f6000;
       width: 80px;
       margin: 30px auto;
       border-radius: 2px;
     }
-
-    .section-title {
+    h2 {
       font-size: 1.6rem;
       color: #111;
-      margin: 45px 0 20px;
-      border-left: 6px solid #7f6000;
-      padding-left: 12px;
+      margin-bottom: 18px;
+      margin-top: 35px;
     }
-
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-bottom: 40px;
     }
-
-    .video-card {
-      background-color: #fdfdfd;
+    iframe {
+      width: 100%;
+      height: 240px;
+      border: none;
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-
-    .video-card:hover {
-      transform: translateY(-5px);
+    iframe:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-
-    .video-card iframe {
-      width: 100%;
-      height: 220px;
-      border: none;
-      display: block;
-    }
-
-    .cta, .download-link {
-      text-align: center;
-      font-size: 1.1rem;
+    .cta {
       margin: 30px 0;
+      font-size: 1.1rem;
+      text-align: center;
     }
-
-    .cta a, .download-link a {
+    .cta a {
+      color: #7f6000;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .cta a:hover {
+      text-decoration: underline;
+      color: #5c4600;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #7f6000;
+      padding-bottom: 6px;
+      max-width: max-content;
+    }
+    .download-link {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    .download-link a {
       color: #7f6000;
       font-weight: 600;
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
-    .cta a:hover, .download-link a:hover {
+    .download-link a:hover {
       color: #5c4600;
       text-decoration: underline;
     }
-
     @media (min-width: 768px) {
-      .video-card iframe {
-        height: 260px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 40px 20px;
-        border-radius: 0;
+      iframe {
+        height: 280px;
       }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- ✅ HEADER PLACEHOLDER -->
   <div id="header-placeholder"></div>
-
-  <!-- Spacer -->
-  <div class="spacer"></div>
-
-  <!-- ✅ MAIN CONTAINER -->
-  <div class="container">
+  <div style="height: 70px;"></div>
+  <div class="container" style="padding-top: 100px;">
     <h1>Watch Our Design Tutorials</h1>
     <p class="subheading">
-      Explore our YouTube tutorials from Digital Effect — Learn STL, RLF & TAP file workflows, Artcam techniques, and CNC-ready designs. Ideal for beginners and professionals!
+      Explore our latest YouTube videos from Digital Effect — learn how to use STL, RLF, and TAP files, master Artcam techniques, and discover CNC-ready design workflows. Perfect for beginners and professionals!
     </p>
-
     <hr class="divider" />
 
-    <!-- Artcam Tutorials Section -->
-    <p class="section-title">🎨 Artcam Tutorials</p>
+    <h2>Artcam Tutorial</h2>
     <div class="video-grid">
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/BzSx7VKYPw4?si=VdDQH6ige250oVM3" allowfullscreen></iframe>
-      </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/q3cTQZacGKE?si=TC-vg_3L8CxTgruD" allowfullscreen></iframe>
-      </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/xTF9R5Rnr-g?si=6wk0JZ12SyiEoK1M" allowfullscreen></iframe>
-      </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/gxtQG3Ji5qw?si=ONleS9jhRH1s65JD" allowfullscreen></iframe>
-      </div>
+      <iframe src="https://www.youtube.com/embed/BzSx7VKYPw4?si=VdDQH6ige250oVM3" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/q3cTQZacGKE?si=TC-vg_3L8CxTgruD" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/xTF9R5Rnr-g?si=6wk0JZ12SyiEoK1M" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/gxtQG3Ji5qw?si=ONleS9jhRH1s65JD" allowfullscreen></iframe>
     </div>
 
     <hr class="divider" />
 
-    <!-- Full Playlist -->
-    <p class="section-title">📺 Explore More on YouTube</p>
+    <p class="section-title">🎥 Explore More YouTube Videos</p>
     <p class="cta">
-      👉 <a href="https://youtube.com/playlist?list=PL0_kDFlIIB-x0-BdAZCYMbDzCCoOMwa3s&si=I1Bg8wgaNd_hODVc" target="_blank">Click here to watch the full playlist</a>
+      👉 <a href="https://youtube.com/playlist?list=PL0_kDFlIIB-x0-BdAZCYMbDzCCoOMwa3s&si=I1Bg8wgaNd_hODVc" target="_blank">Click here to watch the full playlist on YouTube</a>
     </p>
 
     <hr class="divider" />
 
-    <!-- Downloads -->
-    <p class="section-title">📁 Download Practice Files</p>
+    <p class="section-title">📁 Download Practice Images</p>
     <p class="download-link">
       👉 <a href="https://drive.google.com/drive/folders/15m-ah7rx5kSkzhQyBh_zVzVl74D4phAD?usp=sharing" target="_blank">Click here to download from Google Drive</a>
     </p>
   </div>
-
-  <!-- ✅ FOOTER PLACEHOLDER -->
   <div id="footer-placeholder"></div>
-
-  <!-- ✅ HEADER/FOOTER Script -->
   <script>
-    // Load header
     fetch("header.html")
       .then(res => res.text())
       .then(data => {
@@ -229,7 +197,6 @@
       })
       .catch(error => console.error('Error loading header:', error));
 
-    // Load footer
     fetch("footer.html")
       .then(res => res.text())
       .then(data => {
@@ -243,10 +210,7 @@
       const overlay = document.getElementById('overlay');
       const productDropdown = document.getElementById('productDropdown');
 
-      if (!menuToggle || !navMenu || !overlay || !productDropdown) {
-        console.error('One or more header elements not found');
-        return;
-      }
+      if (!menuToggle || !navMenu || !overlay || !productDropdown) return;
 
       function toggleMenu() {
         const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -257,6 +221,7 @@
       }
 
       menuToggle.addEventListener('click', toggleMenu);
+
       overlay.addEventListener('click', () => {
         if (navMenu.classList.contains('active')) toggleMenu();
       });
@@ -279,6 +244,5 @@
       });
     }
   </script>
-
 </body>
 </html>
