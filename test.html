@@ -1,248 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Video Tutorials - Digital Effect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Google tag (analytics) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W02BDTRYMS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W02BDTRYMS');
-  </script>
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8357254094761916" crossorigin="anonymous"></script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/products/Logo/Digital_Effect.ico" type="image/x-icon" />
-
-  <!-- Manifest for PWA -->
-  <link rel="manifest" href="/manifest.json" />
-
-  <!-- Theme color for browsers -->
-  <meta name="theme-color" content="#000000" />
-
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Digital Effect",
-    "url": "https://www.digitaleffect.in",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.digitaleffect.in/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
+  <title>Video Tutorials - Digital Effect</title>
+  <meta name="description" content="Watch all Digital Effect ArtCAM 3D video tutorials in one place. Practice files included." />
+  <meta name="keywords" content="ArtCAM 3D Tutorials, Digital Effect, CNC Relief Videos, Practice Files, ArtCAM Hindi Tutorials" />
+  <meta name="author" content="Digital Effect" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 30px 25px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-      color: #1c1c1c;
-      text-align: center;
-    }
-    .subheading {
-      font-size: 1.15rem;
-      margin-bottom: 25px;
-      color: #555;
-      text-align: center;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    hr.divider {
-      border: none;
-      border-top: 3px solid #7f6000;
-      width: 80px;
-      margin: 30px auto;
-      border-radius: 2px;
-    }
-    h2 {
-      font-size: 1.6rem;
+      background-color: #ffffff;
       color: #111;
-      margin-bottom: 18px;
-      margin-top: 35px;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
-    iframe {
+
+    .video-item {
+      background: #f8f8f8;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .video-box {
       width: 100%;
-      height: 240px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
     }
-    iframe:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .cta {
-      margin: 30px 0;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    .cta a {
-      color: #7f6000;
-      font-weight: 700;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .cta a:hover {
-      text-decoration: underline;
-      color: #5c4600;
-    }
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #000;
-      margin-top: 40px;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #7f6000;
-      padding-bottom: 6px;
-      max-width: max-content;
-    }
-    .download-link {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    .download-link a {
-      color: #7f6000;
+
+    .video-title {
+      font-size: 16px;
       font-weight: 600;
+      margin-top: 10px;
+      text-align: center;
+      color: #333;
+    }
+
+    .practice-section {
+      margin-top: 40px;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .practice-section a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
-    .download-link a:hover {
-      color: #5c4600;
-      text-decoration: underline;
-    }
-    @media (min-width: 768px) {
-      iframe {
-        height: 280px;
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
       }
     }
   </style>
-</head>
-<body>
-  <div id="header-placeholder"></div>
-  <div style="height: 70px;"></div>
-  <div class="container" style="padding-top: 100px;">
-    <h1>Watch Our Design Tutorials</h1>
-    <p class="subheading">
-      Explore our latest YouTube videos from Digital Effect — learn how to use STL, RLF, and TAP files, master Artcam techniques, and discover CNC-ready design workflows. Perfect for beginners and professionals!
-    </p>
-    <hr class="divider" />
 
-    <h2>Artcam Tutorial</h2>
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Digital Effect",
+    "url": "https://www.digitaleffect.in",
+    "sameAs": [
+      "https://www.youtube.com/@digitaleffect"
+    ]
+  }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9583950933765951"
+    crossorigin="anonymous"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY7V36M9L4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TY7V36M9L4');
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div class="container">
+    <h1>ArtCAM 3D Video Tutorials</h1>
+
     <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/BzSx7VKYPw4?si=VdDQH6ige250oVM3" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/q3cTQZacGKE?si=TC-vg_3L8CxTgruD" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/xTF9R5Rnr-g?si=6wk0JZ12SyiEoK1M" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/gxtQG3Ji5qw?si=ONleS9jhRH1s65JD" allowfullscreen></iframe>
+      <div class="video-item">
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/4R6enW7H8gA" allowfullscreen></iframe>
+        </div>
+        <h3 class="video-title">Part 1: ArtCAM 3D Basic Introduction</h3>
+      </div>
+
+      <div class="video-item">
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/pUj8KZrRZCo" allowfullscreen></iframe>
+        </div>
+        <h3 class="video-title">Part 2: Create a Simple Relief</h3>
+      </div>
+
+      <div class="video-item">
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/ULnY-ESWZ2k" allowfullscreen></iframe>
+        </div>
+        <h3 class="video-title">Part 3: Turn & Two Rail Sweep</h3>
+      </div>
     </div>
 
-    <hr class="divider" />
-
-    <p class="section-title">🎥 Explore More YouTube Videos</p>
-    <p class="cta">
-      👉 <a href="https://youtube.com/playlist?list=PL0_kDFlIIB-x0-BdAZCYMbDzCCoOMwa3s&si=I1Bg8wgaNd_hODVc" target="_blank">Click here to watch the full playlist on YouTube</a>
-    </p>
-
-    <hr class="divider" />
-
-    <p class="section-title">📁 Download Practice Images</p>
-    <p class="download-link">
-      👉 <a href="https://drive.google.com/drive/folders/15m-ah7rx5kSkzhQyBh_zVzVl74D4phAD?usp=sharing" target="_blank">Click here to download from Google Drive</a>
-    </p>
+    <div class="practice-section">
+      <h2>Download Practice Files</h2>
+      <a href="https://www.digitaleffect.in/downloads/artcam3d-practice.zip" download>Download ZIP</a>
+      <p>Practice along with our tutorials using these free files.</p>
+      <p>Watch full playlist on <a href="https://www.youtube.com/playlist?list=PLzQUPg87nNYe0Fl0ZMJdfGg7GQ5YElOE0" target="_blank">YouTube</a>.</p>
+    </div>
   </div>
-  <div id="footer-placeholder"></div>
+
+  <div id="footer"></div>
   <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
-        initializeHeaderScripts();
-      })
-      .catch(error => console.error('Error loading header:', error));
+    // Load header and footer dynamically
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
 
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      })
-      .catch(error => console.error('Error loading footer:', error));
-
-    function initializeHeaderScripts() {
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      const overlay = document.getElementById('overlay');
-      const productDropdown = document.getElementById('productDropdown');
-
-      if (!menuToggle || !navMenu || !overlay || !productDropdown) return;
-
-      function toggleMenu() {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !expanded);
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-      }
-
-      menuToggle.addEventListener('click', toggleMenu);
-
-      overlay.addEventListener('click', () => {
-        if (navMenu.classList.contains('active')) toggleMenu();
-      });
-
-      productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        productDropdown.classList.toggle('active');
-        const expanded = productDropdown.getAttribute('aria-expanded') === 'true';
-        productDropdown.setAttribute('aria-expanded', !expanded);
-      });
-
-      navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (navMenu.classList.contains('active')) toggleMenu();
-        });
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) toggleMenu();
-      });
-    }
-  </script>
-</body>
-</html>
+      fetch("/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        }
