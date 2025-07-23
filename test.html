@@ -23,10 +23,20 @@
       padding: 40px 20px;
     }
 
-    h1 {
+    .page-title {
       text-align: center;
       font-size: 32px;
-      margin-bottom: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      text-align: center;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+      color: #555;
     }
 
     .video-grid {
@@ -68,9 +78,10 @@
       background: #f4f4f4;
       padding: 20px;
       border-radius: 10px;
+      text-align: center;
     }
 
-    .practice-section a {
+    .practice-section a.download-btn {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
@@ -78,11 +89,26 @@
       color: #fff;
       border-radius: 5px;
       text-decoration: none;
+      font-weight: 500;
+    }
+
+    .practice-section a.download-btn:hover {
+      background-color: #000;
+    }
+
+    .practice-section p {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #444;
     }
 
     @media (max-width: 768px) {
-      h1 {
+      .page-title {
         font-size: 24px;
+      }
+
+      .subheading {
+        font-size: 16px;
       }
     }
   </style>
@@ -116,11 +142,11 @@
 
 <body>
   <div id="header"></div>
-  <div class="container">
-    <h1>Watch Our Design Tutorials</h1>
- <h2>Explore our latest YouTube videos from Digital Effect — learn how to use STL, RLF, and TAP files, master Artcam techniques, and discover CNC-ready design workflows. Perfect for beginners and professionals!
 
-</h2>
+  <div class="container">
+    <h1 class="page-title">🎥 Watch Our Design Tutorials</h1>
+    <p class="subheading">Explore our latest YouTube videos from <strong>Digital Effect</strong> — learn how to use <strong>STL</strong>, <strong>RLF</strong>, and <strong>TAP</strong> files, master <strong>ArtCAM techniques</strong>, and discover <strong>CNC-ready workflows</strong>. Perfect for beginners and professionals!</p>
+
     <div class="video-grid">
       <div class="video-item">
         <div class="video-box">
@@ -145,14 +171,15 @@
     </div>
 
     <div class="practice-section">
-      <h2>Download Practice Files From Google Drive</h2>
-      <a href="https://www.digitaleffect.in/downloads/artcam3d-practice.zip" download>Click Here</a>
+      <h2>Download Practice Files from Google Drive</h2>
+      <a href="https://www.digitaleffect.in/downloads/artcam3d-practice.zip" download class="download-btn">Click Here</a>
       <p>Practice along with our tutorials using these free files.</p>
-      <p>Watch full playlist on <a href="https://www.youtube.com/playlist?list=PLzQUPg87nNYe0Fl0ZMJdfGg7GQ5YElOE0" target="_blank">YouTube</a>.</p>
+      <p>📺 Watch full playlist on <a href="https://www.youtube.com/playlist?list=PLzQUPg87nNYe0Fl0ZMJdfGg7GQ5YElOE0" target="_blank">YouTube</a>.</p>
     </div>
   </div>
 
   <div id="footer"></div>
+
   <script>
     // Load header and footer dynamically
     document.addEventListener("DOMContentLoaded", function () {
