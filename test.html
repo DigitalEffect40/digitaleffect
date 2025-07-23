@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Tutorials - Digital Effect</title>
-  <meta name="description" content="Watch all Digital Effect ArtCAM 3D video tutorials in one place. Practice files included." />
-  <meta name="keywords" content="ArtCAM 3D Tutorials, Digital Effect, CNC Relief Videos, Practice Files, ArtCAM Hindi Tutorials" />
-  <meta name="author" content="Digital Effect" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Our Design Tutorials | Digital Effect</title>
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background-color: #f4f4f4;
       color: #111;
     }
 
@@ -23,7 +18,7 @@
       padding: 40px 20px;
     }
 
-    .page-title {
+    h1.page-title {
       text-align: center;
       font-size: 32px;
       font-weight: 700;
@@ -34,175 +29,98 @@
       text-align: center;
       font-size: 18px;
       max-width: 800px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 40px auto;
       line-height: 1.6;
       color: #555;
     }
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    .divider {
+      height: 2px;
+      background-color: #ccc;
+      margin: 40px 0;
     }
 
-    .video-item {
-      background: #f8f8f8;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
     .video-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
+      flex: 1 1 300px;
+      max-width: 400px;
+      background-color: white;
+      border-radius: 10px;
       overflow: hidden;
-      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .video-box iframe {
       width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .video-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 10px;
-      text-align: center;
-      color: #333;
+      height: 220px;
+      display: block;
     }
 
     .practice-section {
-      margin-top: 40px;
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 10px;
       text-align: center;
+      margin-top: 50px;
     }
 
-    .practice-section a.download-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .practice-section a.download-btn:hover {
-      background-color: #000;
+    .practice-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
     .practice-section p {
-      margin-top: 10px;
-      font-size: 15px;
-      color: #444;
+      font-size: 16px;
+      color: #333;
     }
 
-    @media (max-width: 768px) {
-      .page-title {
-        font-size: 24px;
-      }
+    .download-btn {
+      display: inline-block;
+      margin: 15px 0;
+      padding: 12px 24px;
+      background-color: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
 
-      .subheading {
-        font-size: 16px;
-      }
+    .download-btn:hover {
+      background-color: #444;
     }
   </style>
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Digital Effect",
-    "url": "https://www.digitaleffect.in",
-    "sameAs": [
-      "https://www.youtube.com/@digitaleffect"
-    ]
-  }
-  </script>
-
-  <!-- Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9583950933765951"
-    crossorigin="anonymous"></script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY7V36M9L4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-TY7V36M9L4');
-  </script>
 </head>
-
 <body>
-  <div id="header"></div>
-
   <div class="container">
     <h1 class="page-title">🎥 Watch Our Design Tutorials</h1>
     <p class="subheading">Explore our latest YouTube videos from <strong>Digital Effect</strong> — learn how to use <strong>STL</strong>, <strong>RLF</strong>, and <strong>TAP</strong> files, master <strong>ArtCAM techniques</strong>, and discover <strong>CNC-ready workflows</strong>. Perfect for beginners and professionals!</p>
 
-    <div class="video-grid">
-      <div class="video-item">
-        <div class="video-box">
-          <iframe src="https://www.youtube.com/embed/4R6enW7H8gA" allowfullscreen></iframe>
-        </div>
-        <h3 class="video-title">Part 1: ArtCAM 3D Basic Introduction</h3>
-      </div>
+    <div class="divider"></div>
 
-      <div class="video-item">
-        <div class="video-box">
-          <iframe src="https://www.youtube.com/embed/pUj8KZrRZCo" allowfullscreen></iframe>
-        </div>
-        <h3 class="video-title">Part 2: Create a Simple Relief</h3>
+    <div class="video-section">
+      <!-- Replace with actual embedded YouTube videos -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
       </div>
-
-      <div class="video-item">
-        <div class="video-box">
-          <iframe src="https://www.youtube.com/embed/ULnY-ESWZ2k" allowfullscreen></iframe>
-        </div>
-        <h3 class="video-title">Part 3: Turn & Two Rail Sweep</h3>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 
     <div class="practice-section">
-      <h2>📺 Watch Full Playlist on YouTube</h2>
-      <p>
-        Explore the complete tutorial series on our 
-        <a href="https://www.youtube.com/playlist?list=PLzQUPg87nNYe0Fl0ZMJdfGg7GQ5YElOE0" target="_blank">YouTube Playlist</a>.
-      </p>
+      <h2>Watch Full Playlist on YouTube</h2>
+      <p>📺 Explore the complete tutorial series on our <a href="https://www.youtube.com/playlist?list=PLzQUPg87nNYe0Fl0ZMJdfGg7GQ5YElOE0" target="_blank">YouTube Playlist</a>.</p>
 
-      <h2 style="margin-top: 30px;">📁 Download Practice Files from Google Drive</h2>
+      <h2 style="margin-top: 30px;">Download Practice Files from Google Drive</h2>
       <a href="https://www.digitaleffect.in/downloads/artcam3d-practice.zip" download class="download-btn">Click Here</a>
       <p>Practice along with our tutorials using these free files.</p>
     </div>
   </div>
-
-  <div id="footer"></div>
-
-  <script>
-    // Load header and footer dynamically
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading header:", error));
-
-      fetch("/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading footer:", error));
-    });
-  </script>
 </body>
-
 </html>
