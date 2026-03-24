@@ -224,6 +224,20 @@
         font-size: 0.95rem;
         padding: 10px 18px;
       }
+      .bundle-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.image-wrapper {
+  position: relative;
+}
     }
   </style>
 </head>
@@ -292,8 +306,6 @@
 </div>
 <!-- Product Card End -->
 
-      https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg"
-  
       
       <!-- Product Card Start -->
 <div class="product-card" data-tags="3D flower relief design, floral CNC art, STL RLF flower model, Digital Effect flower carving, wood flower pattern">
@@ -307,57 +319,53 @@
     <div class="product-desc-small">Beautiful 3D flower carving relief design for CNC woodwork. Comes in STL, RLF, and TAP formats suitable for artistic floral panels.</div>
     <div class="code-price-row">
       <div class="product-code">Code: FD-001</div>
-      <div class="product-price" data-inr="699">₹699</div>
-    </div>
-    <div class="price-convert">
-      <label>
-        Currency:
-        <select onchange="convertCurrency(this)">
-          <option value="INR">INR</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-        </select>
-      </label>
-    </div>
-    <div class="like-buy-row">
-      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FD-001.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
-    </div>
-  </div>
-</div>
-<!-- Product Card End -->
-      
+<!-- 🔥 30 Design Bundle Card -->
+<div class="product-card">
 
-      <!-- Product Card Start -->
-<div class="product-card" data-tags="3D flower relief design, CNC floral panel, flower wall art STL, wood carving flower model, Digital Effect floral design">
-  <meta name="keywords" content="3D flower relief design, CNC floral panel, flower wall art STL, wood carving flower model, Digital Effect floral design">
-  <div class="image-wrapper" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-2.jpg')">
-    <img src="https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-2.jpg" alt="Beautiful floral 3D relief panel design for CNC carving – Digital Effect" loading="lazy">
+  <!-- 🔥 Image Slider -->
+  <div class="image-wrapper">
+    <img id="slider1" src="https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg">
+    
+    <div class="bundle-badge">🔥 30 Designs Pack</div>
   </div>
+
   <div class="product-info">
-    <h3 class="product-title">Floral Relief Design</h3>
-    <div class="product-desc-main">STL/RLF/Tap • CNC Ready</div>
-    <div class="product-desc-small">Elegant floral relief for CNC carving. Ideal for panels, headboards, and wood decor. Delivered in STL, RLF, and TAP formats.</div>
+    <h3 class="product-title">30 Flower Design Bundle</h3>
+
+    <div class="product-desc-main">
+      30 STL/RLF/TAP Designs • CNC Ready
+    </div>
+
+    <div class="product-desc-small">
+      Get 30 premium 3D flower designs in one bundle. Perfect for CNC carving, panels, furniture & decoration.
+    </div>
+
     <div class="code-price-row">
-      <div class="product-code">Code: FD-002</div>
-      <div class="product-price" data-inr="699">₹699</div>
+      <div class="product-code">Code: FD-BUNDLE-01</div>
+      <div class="product-price" data-inr="200">₹200</div>
     </div>
-    <div class="price-convert">
-      <label>
-        Currency:
-        <select onchange="convertCurrency(this)">
-          <option value="INR">INR</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-        </select>
-      </label>
-    </div>
+
     <div class="like-buy-row">
-      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
-      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+FD-002.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello! I'm interested in 30 Flower Design Bundle (₹200). Please share details." class="buy-now" target="_blank">Buy Now</a>
     </div>
   </div>
+<script>
+const sliderImages = [
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-2.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-3.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-4.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-5.jpg"
+  // 👉 Add up to 30 images here
+];
+
+let i = 0;
+
+setInterval(() => {
+  i = (i + 1) % sliderImages.length;
+  document.getElementById("slider1").src = sliderImages[i];
+}, 1500);
+</script>
+  
+  
 </div>
-<!-- Product Card End -->
