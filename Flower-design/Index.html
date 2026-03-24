@@ -402,91 +402,58 @@ setInterval(() => {
 
 
 
-  
-  <!-- ✅ HEADER/FOOTER SCRIPT -->
+  <!-- HEADER/FOOTER SCRIPT -->
 <script>
-<!-- ✅ HEADER/FOOTER SCRIPT -->
-<script>
-  // Fetch header (go up one folder)
   fetch("../header.html")
     .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-      initializeHeaderScripts(); // keeps your menu working
+    .then(data => { 
+      document.getElementById("header-placeholder").innerHTML = data; 
+      initializeHeaderScripts(); 
     })
-    .catch(error => console.error('Error loading header:', error));
+    .catch(err => console.error('Header load error:', err));
 
-  // Fetch footer (go up one folder)
   fetch("../footer.html")
     .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    })
-    .catch(error => console.error('Error loading footer:', error));
-
-  
-  function initializeHeaderScripts() {
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const overlay = document.getElementById('overlay');
-    const productDropdown = document.getElementById('productDropdown');
-
-    if (!menuToggle || !navMenu || !overlay || !productDropdown) {
-      console.error('One or more header elements not found');
-      return;
-    }
-
-    function toggleMenu() {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      overlay.classList.toggle('active');
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-
-    overlay.addEventListener('click', () => {
-      if (navMenu.classList.contains('active')) {
-        toggleMenu();
-      }
-    });
-
-    productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
-      e.stopPropagation();
-      productDropdown.classList.toggle('active');
-      const expanded = productDropdown.getAttribute('aria-expanded') === 'true';
-      productDropdown.setAttribute('aria-expanded', !expanded);
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navMenu.classList.contains('active')) {
-          toggleMenu();
-        }
-      });
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        toggleMenu();
-      }
-    });
-  }
+    .then(data => { document.getElementById("footer-placeholder").innerHTML = data; })
+    .catch(err => console.error('Footer load error:', err));
 </script>
-  <!-- ✅ HEADER/FOOTER SCRIPT -->
+
+<!-- SLIDER + ZOOM JS -->
+<script>
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+
+  // Auto slider
+  function showNextSlide() {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+  setInterval(showNextSlide, 2000);
+
+  // Zoom modal
+  const zoomModal = document.getElementById('zoomModal');
+  const zoomImg = document.getElementById('zoomImg');
+  const sliderImages = document.querySelectorAll('.slides img');
+
+  sliderImages.forEach(img => {
+    img.addEventListener('click', () => {
+      zoomImg.src = img.src;
+      zoomModal.style.display = 'flex';
+    });
+  });
+
+  zoomModal.addEventListener('click', () => {
+    zoomModal.style.display = 'none';
+  });
+</script>
+  
 
 
 
 
 
 
-
-
-
-  <!-- Product card functionality (zoom, price) -->
-  <script src="script.js"></script>
-  <!-- Product card functionality (zoom, price) -->
 
 
 
