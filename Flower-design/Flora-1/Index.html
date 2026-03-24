@@ -1,123 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flora 1 Combo Pack – 30 CNC Flower Designs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flora 1 Combo Pack – 30 CNC Flower Designs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
 
-        /* PRODUCT SECTION - FORCING SIDE-BY-SIDE */
-        .product {
-            display: flex;
-            flex-direction: row; /* Desktop: Image Left, Text Right */
-            gap: 50px;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
+/* Product section: flex left image, right details */
+.product {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 
-        /* LEFT SIDE: IMAGE SLIDER */
-        .slider {
-            flex: 0 0 55%; /* Fixed width for image container */
-            max-width: 55%;
-        }
-        .image-container {
-            width: 100%;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        #mainImage {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            transition: opacity 0.3s ease-in-out;
-        }
+/* Image container */
+.slider {
+  flex: 1;
+  min-width: 300px;
+}
+.image-container {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#mainImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
-        /* RIGHT SIDE: DETAILS */
-        .details {
-            flex: 0 0 40%; /* Fixed width for text area */
-            max-width: 40%;
-            display: flex;
-            flex-direction: column;
-        }
-        h1 { font-size: 2.2rem; margin: 0 0 10px 0; color: #111; }
-        .price { font-size: 2rem; color: #7f6000; font-weight: 600; margin: 10px 0; }
-        
-        .buy-btn { 
-            display: block; 
-            text-align: center;
-            padding: 15px 25px; 
-            background: #e91e63; 
-            color: #fff; 
-            font-size: 1.1rem; 
-            font-weight: 600;
-            border-radius: 8px; 
-            text-decoration: none; 
-            margin-bottom: 12px;
-            transition: transform 0.2s;
-        }
-        .buy-btn:hover { transform: translateY(-2px); }
-        .buy-btn.pdf { background: #333; }
+/* Details section */
+.details {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.details h1 { font-size: 2rem; margin-bottom: 10px; }
+.details p { margin-bottom: 15px; }
+.price { font-size: 1.8rem; color: #7f6000; margin-bottom: 15px; }
+.buy-btn { display: inline-block; padding: 15px 25px; background: #e91e63; color: #fff; font-size: 1.1rem; border-radius: 8px; text-decoration: none; margin-bottom: 10px; }
+.buy-btn.pdf { background: #333; }
+.features { margin-top: 20px; }
 
-        .features { margin-top: 30px; border-top: 1px solid #ddd; pt: 20px; }
-        .features h3 { margin-bottom: 15px; font-size: 1.2rem; }
-        .features ul { list-style: none; padding: 0; }
-        .features li { margin-bottom: 10px; font-size: 0.95rem; display: flex; align-items: center; }
-        .features li::before { content: "✔"; color: #4caf50; font-weight: bold; margin-right: 10px; }
+/* Related products */
+.related-section { margin-top: 50px; }
+.related-section h2 { font-size: 1.5rem; margin-bottom: 20px; color: #333; text-align: center; }
+.related { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap:15px; }
+.related img { width:100%; border-radius:8px; }
+.related a { text-decoration:none; color:black; text-align:center; }
 
-        /* RELATED PRODUCTS */
-        .related-section { margin-top: 80px; }
-        .related-section h2 { font-size: 1.5rem; margin-bottom: 30px; text-align: center; }
-        .related { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .related-item { 
-            background: #fff; 
-            padding: 10px; 
-            border-radius: 10px; 
-            text-decoration: none; 
-            color: #333; 
-            text-align: center; 
-            transition: box-shadow 0.3s;
-        }
-        .related-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .related img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
-
-        /* RESPONSIVE: STACK ON MOBILE */
-        @media (max-width: 900px) {
-            .product { flex-direction: column; align-items: center; }
-            .slider, .details { max-width: 100%; flex: 0 0 100%; width: 100%; }
-            .details { text-align: center; margin-top: 30px; }
-            .image-container { height: 350px; }
-        }
-    </style>
+/* Mobile responsive */
+@media(max-width:768px){
+  .product {
+    flex-direction: column;
+    text-align: center;
+  }
+  .details { margin-top:20px; text-align:center; }
+  .image-container { height: auto; }
+}
+</style>
 </head>
 <body>
-
 <div class="container">
-    <div class="product">
-        <div class="slider">
-            <div class="image-container">
-                <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
-            </div>
-        </div>
 
-        <div class="details">
-            <h1>Flora 1 Combo Pack</h1>
-            <p>30 premium 3D flower designs for CNC carving. Perfect for wood panels, furniture, and decorative interior projects.</p>
-            <div class="price">₹200
+<!-- Product section -->
+<div class="product">
+  <div class="slider">
+    <div class="image-container">
+      <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
+    </div>
+  </div>
+
+  <div class="details">
+    <h1>Flora 1 Combo Pack</h1>
+    <p>30 premium 3D flower designs for CNC carving. Perfect for wood panels and decorative projects.</p>
+    <div class="price">₹200 Only</div>
+    <a href="https://wa.me/XXXXXXXXXXX" class="buy-btn">Buy Now via WhatsApp</a>
+    <a href="flora-1-preview.pdf" class="buy-btn pdf">Download Preview PDF</a>
+    <div class="features">
+      <h3>What You Get</h3>
+      <ul>
+        <li>✔ 30 Unique Designs</li>
+        <li>✔ High Quality PNG Preview</li>
+        <li>✔ Ready for CNC Carving</li>
+        <li>✔ Preview Only – Files sent after payment</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Related products -->
+<div class="related-section">
+  <h2>You May Also Like</h2>
+  <div class="related">
+    <a href="../Flora-2/flora-2.html"><img src="../Flora-2/flower-design-3d-relief-digital-effect1.png" alt="Flora 2"><p>Flora 2 Pack</p></a>
+    <a href="../Flora-5/flora-5.html"><img src="../Flora-5/flower-design-3d-relief-digital-effect1.png" alt="Flora 5"><p>Flora 5 Pack</p></a>
+    <a href="../Flora-3/flora-3.html"><img src="../Flora-3/flower-design-3d-relief-digital-effect1.png" alt="Flora 3"><p>Flora 3 Pack</p></a>
+  </div>
+</div>
+
+</div>
+
+<script>
+// Images for auto slider
+let images = [
+"flower-design-3d-relief-digital-effect1.png",
+"flower-design-3d-relief-digital-effect2.png",
+"flower-design-3d-relief-digital-effect3.png",
+"flower-design-3d-relief-digital-effect4.png",
+"flower-design-3d-relief-digital-effect5.png",
+"flower-design-3d-relief-digital-effect6.png",
+"flower-design-3d-relief-digital-effect7.png",
+"flower-design-3d-relief-digital-effect8.png",
+"flower-design-3d-relief-digital-effect9.png",
+"flower-design-3d-relief-digital-effect10.png",
+"flower-design-3d-relief-digital-effect11.png",
+"flower-design-3d-relief-digital-effect12.png"
+];
+
+let index = 0;
+function autoSlide(){
+  index = (index + 1) % images.length;
+  document.getElementById("mainImage").src = images[index];
+}
+setInterval(autoSlide,1200);
+</script>
+</body>
+</html>
