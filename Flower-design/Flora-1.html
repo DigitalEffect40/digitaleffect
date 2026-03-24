@@ -311,21 +311,21 @@ setInterval(autoSlide, 1200);
 
 <script>
   // Load header
-  fetch("../../header.html")
+  fetch("../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
-      initializeHeaderScripts();
     })
-    .catch(error => console.error('Error loading header:', error));
+    .catch(err => console.error("Error loading header:", err));
 
   // Load footer
-  fetch("../../footer.html")
+  fetch("../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     })
-    .catch(error => console.error('Error loading footer:', error));
+    .catch(err => console.error("Error loading footer:", err));
+</script>
 
   // Initialize header JS (menu toggles, dropdowns, etc.)
   function initializeHeaderScripts() {
