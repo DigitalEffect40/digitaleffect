@@ -29,6 +29,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* Main Slider */
 .slider {
   flex: 1;
 }
@@ -38,6 +39,60 @@ body {
   border-radius: 10px;
 }
 
+/* Thumbnails Wrapper */
+.thumbnails-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  flex: 1;
+  padding-bottom: 5px;
+}
+
+.thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.thumb-arrow {
+  background: #e91e63;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.thumb-arrow:hover {
+  background: #c2185b;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.1);
+}
+
+.thumbnails img.selected {
+  border-color: #e91e63; /* Highlight color */
+}
+
+/* PRODUCT DETAILS */
 .details {
   flex: 1;
 }
@@ -64,33 +119,11 @@ h1 {
   margin-top: 10px;
 }
 
-/* THUMBNAILS */
-.thumbnails {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+.buy-btn.pdf {
+  background: #333;
 }
 
-.thumbnails img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.thumbnails img:hover {
-  transform: scale(1.1);
-}
-
-.thumbnails img.selected {
-  border-color: #e91e63; /* Highlight color */
-}
-
+/* FEATURES */
 .features {
   margin-top: 20px;
 }
@@ -127,54 +160,19 @@ h1 {
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .product {
-    flex-direction: column !important;
-    text-align: center !important;
+    flex-direction: column;
+    text-align: center;
   }
   .details {
-    text-align: center !important;
-  }
-  .related-section {
-    text-align: center !important;
+    text-align: center;
   }
   .slider {
     width: 100%;
     margin-bottom: 20px;
   }
-  
-.thumbnails-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-top: 10px;
-}
-
-.thumbnails {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 10px;
-  padding-bottom: 5px;
-}
-
-.thumbnails::-webkit-scrollbar {
-  display: none; /* hide scrollbar */
-}
-
-.thumb-arrow {
-  background: #e91e63;
-  color: white;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px 12px;
-  border-radius: 5px;
-  margin: 0 5px;
-}
-
-.thumb-arrow:hover {
-  background: #c2185b;
-}
-  
+  .thumbnails-wrapper {
+    justify-content: center;
+  }
 }
 </style>
 </head>
@@ -185,45 +183,23 @@ h1 {
   <!-- PRODUCT SECTION -->
   <div class="product">
 
-    <!-- IMAGE SLIDER WITH THUMBNAILS -->
+    <!-- IMAGE SLIDER -->
     <div class="slider">
       <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
 
-     <div class="thumbnails-wrapper">
-  <button class="thumb-arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
-        <img src="flower-design-3d-relief-digital-effect1.png" class="thumb selected" onclick="changeImage(this)" alt="Design 1">
-        <img src="flower-design-3d-relief-digital-effect2.png" class="thumb" onclick="changeImage(this)" alt="Design 2">
-        <img src="flower-design-3d-relief-digital-effect3.png" class="thumb" onclick="changeImage(this)" alt="Design 3">
-        <img src="flower-design-3d-relief-digital-effect4.png" class="thumb" onclick="changeImage(this)" alt="Design 4">
-        <img src="flower-design-3d-relief-digital-effect5.png" class="thumb" onclick="changeImage(this)" alt="Design 5">
-        <img src="flower-design-3d-relief-digital-effect6.png" class="thumb" onclick="changeImage(this)" alt="Design 6">
-         <img src="flower-design-3d-relief-digital-effect7.png" class="thumb" onclick="changeImage(this)" alt="Design 7">
-         <img src="flower-design-3d-relief-digital-effect8.png" class="thumb" onclick="changeImage(this)" alt="Design 8">
-         <img src="flower-design-3d-relief-digital-effect9.png" class="thumb" onclick="changeImage(this)" alt="Design 9">
-         <img src="flower-design-3d-relief-digital-effect10.png" class="thumb" onclick="changeImage(this)" alt="Design 10">
-         <img src="flower-design-3d-relief-digital-effect11.png" class="thumb" onclick="changeImage(this)" alt="Design 11">
-         <img src="flower-design-3d-relief-digital-effect12.png" class="thumb" onclick="changeImage(this)" alt="Design 12">
-         <img src="flower-design-3d-relief-digital-effect13.png" class="thumb" onclick="changeImage(this)" alt="Design 13">
-         <img src="flower-design-3d-relief-digital-effect14.png" class="thumb" onclick="changeImage(this)" alt="Design 14">
-         <img src="flower-design-3d-relief-digital-effect15.png" class="thumb" onclick="changeImage(this)" alt="Design 15">
-         <img src="flower-design-3d-relief-digital-effect16.png" class="thumb" onclick="changeImage(this)" alt="Design 16">
-         <img src="flower-design-3d-relief-digital-effect17.png" class="thumb" onclick="changeImage(this)" alt="Design 17">
-         <img src="flower-design-3d-relief-digital-effect18.png" class="thumb" onclick="changeImage(this)" alt="Design 18">
-          <img src="flower-design-3d-relief-digital-effect19.png" class="thumb" onclick="changeImage(this)" alt="Design 19">
-          <img src="flower-design-3d-relief-digital-effect20.png" class="thumb" onclick="changeImage(this)" alt="Design 20">
-          <img src="flower-design-3d-relief-digital-effect21.png" class="thumb" onclick="changeImage(this)" alt="Design 21">
-          <img src="flower-design-3d-relief-digital-effect22.png" class="thumb" onclick="changeImage(this)" alt="Design 22">
-          <img src="flower-design-3d-relief-digital-effect23.png" class="thumb" onclick="changeImage(this)" alt="Design 23">
-          <img src="flower-design-3d-relief-digital-effect24.png" class="thumb" onclick="changeImage(this)" alt="Design 24">
-          <img src="flower-design-3d-relief-digital-effect25.png" class="thumb" onclick="changeImage(this)" alt="Design 25">
-          <img src="flower-design-3d-relief-digital-effect26.png" class="thumb" onclick="changeImage(this)" alt="Design 26">
-          <img src="flower-design-3d-relief-digital-effect27.png" class="thumb" onclick="changeImage(this)" alt="Design 27">
-          <img src="flower-design-3d-relief-digital-effect28.png" class="thumb" onclick="changeImage(this)" alt="Design 28">
-          <img src="flower-design-3d-relief-digital-effect29.png" class="thumb" onclick="changeImage(this)" alt="Design 29">
-          <img src="flower-design-3d-relief-digital-effect30.png" class="thumb" onclick="changeImage(this)" alt="Design 30">
-        <!-- Add all 30 images here in the same format -->
+      <!-- THUMBNAILS -->
+      <div class="thumbnails-wrapper">
+        <button class="thumb-arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
+        <div class="thumbnails">
+          <img src="flower-design-3d-relief-digital-effect1.png" class="thumb selected" onclick="changeImage(this)" alt="Design 1">
+          <img src="flower-design-3d-relief-digital-effect2.png" class="thumb" onclick="changeImage(this)" alt="Design 2">
+          <img src="flower-design-3d-relief-digital-effect3.png" class="thumb" onclick="changeImage(this)" alt="Design 3">
+          <img src="flower-design-3d-relief-digital-effect4.png" class="thumb" onclick="changeImage(this)" alt="Design 4">
+          <img src="flower-design-3d-relief-digital-effect5.png" class="thumb" onclick="changeImage(this)" alt="Design 5">
+          <!-- Add up to 30 thumbnails -->
+        </div>
+        <button class="thumb-arrow right" onclick="scrollThumbs(1)">&#10095;</button>
       </div>
-       <button class="thumb-arrow right" onclick="scrollThumbs(1)">&#10095;</button>
     </div>
 
     <!-- PRODUCT DETAILS -->
@@ -233,13 +209,8 @@ h1 {
 
       <div class="price">₹200 Only</div>
 
-      <!-- Buy via WhatsApp -->
       <a href="https://wa.me/XXXXXXXXXXX" class="buy-btn">Buy Now via WhatsApp</a>
-
-      <!-- PDF Preview -->
-      <a href="flora-1-preview.pdf" class="buy-btn" style="background:#333; margin-top:10px;">
-        Download Preview PDF
-      </a>
+      <a href="flora-1-preview.pdf" class="buy-btn pdf">Download Preview PDF</a>
 
       <div class="features">
         <h3>What You Get</h3>
@@ -278,79 +249,71 @@ h1 {
 </div>
 
 <script>
-// List all images for auto slider
+// Images for auto slider
 let images = [
 "flower-design-3d-relief-digital-effect1.png",
 "flower-design-3d-relief-digital-effect2.png",
 "flower-design-3d-relief-digital-effect3.png",
 "flower-design-3d-relief-digital-effect4.png",
 "flower-design-3d-relief-digital-effect5.png",
-"flower-design-3d-relief-digital-effect6.png"
-  "flower-design-3d-relief-digital-effect7.png"
-  "flower-design-3d-relief-digital-effect8.png"
-  "flower-design-3d-relief-digital-effect9.png"
-  "flower-design-3d-relief-digital-effect10.png"
-  "flower-design-3d-relief-digital-effect11.png"
-  "flower-design-3d-relief-digital-effect12.png"
-  "flower-design-3d-relief-digital-effect13.png"
-  "flower-design-3d-relief-digital-effect14.png"
-  "flower-design-3d-relief-digital-effect15.png"
-  "flower-design-3d-relief-digital-effect16.png"
-  "flower-design-3d-relief-digital-effect17.png"
-  "flower-design-3d-relief-digital-effect18.png"
-  "flower-design-3d-relief-digital-effect19.png"
-  "flower-design-3d-relief-digital-effect20.png"
-"flower-design-3d-relief-digital-effect21.png"
-  "flower-design-3d-relief-digital-effect22.png"
-  "flower-design-3d-relief-digital-effect23.png"
-  "flower-design-3d-relief-digital-effect24.png"
-  "flower-design-3d-relief-digital-effect25.png"
-  "flower-design-3d-relief-digital-effect26.png"
-  "flower-design-3d-relief-digital-effect27.png"
-  "flower-design-3d-relief-digital-effect28.png"
-  "flower-design-3d-relief-digital-effect29.png"
-  "flower-design-3d-relief-digital-effect30.png"
-
-  
-  
-  // Add all 30 images here
+"flower-design-3d-relief-digital-effect6.png",
+"flower-design-3d-relief-digital-effect7.png",
+"flower-design-3d-relief-digital-effect8.png",
+"flower-design-3d-relief-digital-effect9.png",
+"flower-design-3d-relief-digital-effect10.png",
+"flower-design-3d-relief-digital-effect11.png",
+"flower-design-3d-relief-digital-effect12.png",
+"flower-design-3d-relief-digital-effect13.png",
+"flower-design-3d-relief-digital-effect14.png",
+"flower-design-3d-relief-digital-effect15.png",
+"flower-design-3d-relief-digital-effect16.png",
+"flower-design-3d-relief-digital-effect17.png",
+"flower-design-3d-relief-digital-effect18.png",
+"flower-design-3d-relief-digital-effect19.png",
+"flower-design-3d-relief-digital-effect20.png",
+"flower-design-3d-relief-digital-effect21.png",
+"flower-design-3d-relief-digital-effect22.png",
+"flower-design-3d-relief-digital-effect23.png",
+"flower-design-3d-relief-digital-effect24.png",
+"flower-design-3d-relief-digital-effect25.png",
+"flower-design-3d-relief-digital-effect26.png",
+"flower-design-3d-relief-digital-effect27.png",
+"flower-design-3d-relief-digital-effect28.png",
+"flower-design-3d-relief-digital-effect29.png",
+"flower-design-3d-relief-digital-effect30.png"
 ];
 
 let index = 0;
 
-// Auto slide function
 function autoSlide() {
   index = (index + 1) % images.length;
   document.getElementById("mainImage").src = images[index];
 
-  // Highlight thumbnail
   let thumbs = document.querySelectorAll(".thumbnails img");
   thumbs.forEach(t => t.classList.remove("selected"));
-  if(thumbs[index]) thumbs[index].classList.add("selected");
+  if (thumbs[index]) thumbs[index].classList.add("selected");
 }
 
-// Change image on thumbnail click
+// Change main image when thumbnail clicked
 function changeImage(img) {
   document.getElementById("mainImage").src = img.src;
-
   let thumbs = document.querySelectorAll(".thumbnails img");
   thumbs.forEach(t => t.classList.remove("selected"));
   img.classList.add("selected");
-
-  // Update index for auto slide
   index = Array.from(thumbs).indexOf(img);
 }
 
+// Scroll thumbnails horizontally
 function scrollThumbs(direction) {
   const thumbs = document.querySelector(".thumbnails");
-  const scrollAmount = 200; // pixels to scroll
+  const scrollAmount = 200;
   thumbs.scrollBy({
     left: direction * scrollAmount,
     behavior: 'smooth'
   });
 }
-  
-// Slider speed: lower = faster
+
+// Start auto slider
 setInterval(autoSlide, 1200);
 </script>
 
