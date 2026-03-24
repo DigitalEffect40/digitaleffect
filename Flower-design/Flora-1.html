@@ -1,1 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower Design - Digital Effect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5RSRHGNR');
+</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- -- Google tag (analytics) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W02BDTRYMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W02BDTRYMS');
+</script>
+<!-- Google tag (analytics) -->
+
+
+  
+<!-- Google Adsen) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8357254094761916"
+     crossorigin="anonymous"></script>
+  <!-- Google Adsen) -
+
+
+  
+  <!-- Favicon -->
+<link rel="icon" href="/images/products/Logo/Digital_Effect.ico" type="image/x-icon" />
+<!-- Favicon -->
+
+
+<!-- Manifest for PWA -->
+<link rel="manifest" href="/manifest.json" />
+<!-- Manifest for PWA -->
+
+  
+<!-- Theme color for browsers -->
+<meta name="theme-color" content="#000000" />
+<!-- Theme color for browsers -->
+  
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Digital Effect",
+  "url": "https://www.digitaleffect.in",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.digitaleffect.in/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+  </script>
+<!-- Schema.org Structured Data -->
+  
+
+  
+
+  
+   <!-- Product card functionality (CSS) -->
+<link rel="stylesheet" href="style.css" />
+  
+  <!-- Product card functionality (CSS) -->
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+
+
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 1.1rem;
+      text-align: center;
+      color: #666;
+      margin-bottom: 35px;
+    }
+
+    .subheading strong {
+      color: #000;
+    }
+
+    .divider {
+      width: 80px;
+      height: 4px;
+      background-color: #7f6000;
+      margin: 0 auto 40px auto;
+      border-radius: 2px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-content p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .product-content .code-price {
+      font-weight: 600;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 12px;
+      background-color: #7f6000;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #5e4500;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 1rem;
+      color: #888;
+    }
+
+    .footer-note strong {
+      color: #000;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subheading {
+        font-size: 1rem;
+      }
+
+      .buy-button {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+      }
+      .bundle-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.image-wrapper {
+  position: relative;
+}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RSRHGNR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  
+<!-- ✅ HEADER PLACEHOLDER -->
+ 
+
+  
+
+  
+
+  
+  <div class="container">
+    <h1>Flower Design</h1>
+    <p class="subheading">
+      Floral Relief Designs by <strong>Digital Effect</strong> – Beautiful STL, RLF & TAP files for elegant and nature-inspired creations.
+    </p>
+    <div class="divider"></div>
+
+    <div class="product-grid">
+      <!-- ⬇️ Paste flower product cards here ⬇️ -->
+
+
+
+<!-- Product Card Start -->
+<div class="product-card" data-tags="">
+  <meta name="keywords" content="">
+  <div class="image-wrapper" onclick="zoomImage('images/products/products/digital_effect-0.jpg')">
+    <img src="images/products/products/digital_effect-0.jpg" alt="Customize Design Available – Digital Effect">
+  </div>
+  <div class="product-info">
+    <div class="product-title">Customize Design Available</div>
+    <div class="product-desc-main">STL/RLF/Tap • High-Quality Design</div>
+    <div class="product-desc-small">All designs are free size and delivered in STL, RLF, or TAP format – ready to carve by Digital Effect.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: 00-000</div>
+      <div class="product-price" data-inr="00">₹00</div>
+    </div>
+    <div class="price-convert">
+      <label>
+        Currency:
+        <select onchange="convertCurrency(this)">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </label>
+    </div>
+    <div class="like-buy-row">
+      <div class="like-button" onclick="toggleLike(this)">❤️ <span>0</span></div>
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello%21+I%27m+interested+in+Product+Number+00-000.+Please+share+more+details.&type=p" class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+<!-- Product Card End -->
+
+      
+      <!-- Product Card Start -->
+<div class="product-card" data-tags="3D flower relief design, floral CNC art, STL RLF flower model, Digital Effect flower carving, wood flower pattern">
+  <meta name="keywords" content="3D flower relief design, floral CNC art, STL RLF flower model, Digital Effect flower carving, wood flower pattern">
+  <div class="image-slider" onclick="zoomImage('https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg')">
+    <img id="slider src="https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg" alt="Flower Design – Digital Effect" loading="lazy">
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">Flower Design Relief</h3>
+    <div class="product-desc-main">STL/RLF/Tap • Floral Carving</div>
+    <div class="product-desc-small">Beautiful 3D flower carving relief design for CNC woodwork. Comes in STL, RLF, and TAP formats suitable for artistic floral panels.</div>
+    <div class="code-price-row">
+      <div class="product-code">Code: FD-001</div>
+<!-- 🔥 30 Design Bundle Card -->
+<div class="product-card">
+
+  <!-- 🔥 Image Slider -->
+  <div class="image-wrapper">
+    <img id="slider1" src="https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg">
+    
+    <div class="bundle-badge">🔥 30 Designs Pack</div>
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-title">30 Flower Design Bundle</h3>
+
+    <div class="product-desc-main">
+      30 STL/RLF/TAP Designs • CNC Ready
+    </div>
+
+    <div class="product-desc-small">
+      Get 30 premium 3D flower designs in one bundle. Perfect for CNC carving, panels, furniture & decoration.
+    </div>
+
+    <div class="code-price-row">
+      <div class="product-code">Code: FD-BUNDLE-01</div>
+      <div class="product-price" data-inr="200">₹200</div>
+    </div>
+
+    <div class="like-buy-row">
+      <a href="https://api.whatsapp.com/send/?phone=256775856965&text=Hello! I'm interested in 30 Flower Design Bundle (₹200). Please share details." class="buy-now" target="_blank">Buy Now</a>
+    </div>
+  </div>
+<script>
+const sliderImages = [
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-1.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-2.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-3.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-4.jpg",
+  "https://www.digitaleffect.in/images/products/products/flower-design/flower-design-3d-relief-digital-effect-5.jpg"
+  // 👉 Add up to 30 images here
+];
+
+let i = 0;
+
+setInterval(() => {
+  i = (i + 1) % sliderImages.length;
+  document.getElementById("slider1").src = sliderImages[i];
+}, 1500);
+</script>
+  
+  
+</div>
+    
+<!-- Zoom Modal -->
+<div id="zoomModal" onclick="closeZoom()">
+  <img id="zoomImg" src="" alt="Zoomed product image" />
+</div>
+<!-- Zoom Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="divider" style="margin-top: 60px;"></div>
+    <div class="footer-note">
+      More floral-inspired designs are on the way. Stay creative with <strong>Digital Effect</strong>.
+    </div>
+  </div>
+
+  
+
+
+
+  
+<!-- ✅ FOOTER PLACEHOLDER -->
+  
+
+
+
+  <!-- HEADER/FOOTER SCRIPT -->
+<script>
+  fetch("../header.html")
+    .then(res => res.text())
+    .then(data => { 
+      document.getElementById("header-placeholder").innerHTML = data; 
+      initializeHeaderScripts(); 
+    })
+    .catch(err => console.error('Header load error:', err));
+
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => { document.getElementById("footer-placeholder").innerHTML = data; })
+    .catch(err => console.error('Footer load error:', err));
+</script>
+
+<!-- SLIDER + ZOOM JS -->
+<script>
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+
+  // Auto slider
+  function showNextSlide() {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+  setInterval(showNextSlide, 2000);
+
+  // Zoom modal
+  const zoomModal = document.getElementById('zoomModal');
+  const zoomImg = document.getElementById('zoomImg');
+  const sliderImages = document.querySelectorAll('.slides img');
+
+  sliderImages.forEach(img => {
+    img.addEventListener('click', () => {
+      zoomImg.src = img.src;
+      zoomModal.style.display = 'flex';
+    });
+  });
+
+  zoomModal.addEventListener('click', () => {
+    zoomModal.style.display = 'none';
+  });
+</script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
+
+
+  
+  </body>
+          </html>
