@@ -20,24 +20,24 @@ body {
 /* PRODUCT SECTION */
 .product {
   display: flex;
+  flex-wrap: nowrap; /* force row on desktop */
   gap: 40px;
-  flex-wrap: wrap;
   align-items: flex-start;
 }
 
-/* Slider */
+/* SLIDER */
 .slider {
-  flex: 1;
+  flex: 0 0 50%; /* take 50% width */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .slider img#mainImage {
-  max-width: 100%;
-  max-height: 500px;
-  border-radius: 10px;
+  width: 100%;
+  max-height: 400px;
   object-fit: contain;
+  border-radius: 10px;
 }
 
 /* Thumbnails */
@@ -90,14 +90,14 @@ body {
   border-color: #e91e63;
 }
 
-/* Product Details */
+/* DETAILS */
 .details {
-  flex: 1;
+  flex: 1; /* take remaining width */
 }
 
 h1 { font-size: 2rem; margin-bottom: 10px; }
 .price { font-size: 1.8rem; color: #7f6000; margin: 15px 0; }
-.buy-btn { display: inline-block; padding: 15px 25px; background: #e91e63; color: #fff; font-size: 1.1rem; border-radius: 8px; text-decoration: none; margin-top: 10px;}
+.buy-btn { display: inline-block; padding: 15px 25px; background: #e91e63; color: #fff; font-size: 1.1rem; border-radius: 8px; text-decoration: none; margin-top: 10px; }
 .buy-btn.pdf { background: #333; }
 .features { margin-top: 20px; }
 
@@ -108,7 +108,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 .related img { width:100%; border-radius:8px;}
 .related a { text-decoration:none; color:black; text-align:center; }
 
-/* RESPONSIVE */
+/* RESPONSIVE MOBILE */
 @media (max-width:768px){
   .product { flex-direction: column; text-align:center; }
   .details { text-align:center; margin-top:20px; }
@@ -185,7 +185,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 </div>
 
 <script>
-let images = [
+let images=[
 "flower-design-3d-relief-digital-effect1.png",
 "flower-design-3d-relief-digital-effect2.png",
 "flower-design-3d-relief-digital-effect3.png",
@@ -200,7 +200,8 @@ let images = [
 "flower-design-3d-relief-digital-effect12.png"
 ];
 
-let index = 0;
+let index=0;
+
 function autoSlide(){
   index=(index+1)%images.length;
   document.getElementById("mainImage").src=images[index];
@@ -222,7 +223,7 @@ function scrollThumbs(direction){
   thumbs.scrollBy({left:direction*200, behavior:'smooth'});
 }
 
-setInterval(autoSlide, 1200);
+setInterval(autoSlide,1200);
 </script>
 </body>
 </html>
