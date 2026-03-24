@@ -20,24 +20,35 @@ body {
 /* PRODUCT SECTION */
 .product {
   display: flex;
-  flex-wrap: nowrap; /* force row on desktop */
   gap: 40px;
   align-items: flex-start;
+  flex-wrap: nowrap;
 }
 
 /* SLIDER */
 .slider {
-  flex: 0 0 50%; /* take 50% width */
+  flex: 0 0 55%; /* 55% width */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.slider img#mainImage {
+/* Image container to limit height */
+.image-container {
   width: 100%;
-  max-height: 400px;
-  object-fit: contain;
+  height: 400px; /* max height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   border-radius: 10px;
+  background: #fff;
+}
+
+.slider img#mainImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* Thumbnails */
@@ -57,9 +68,7 @@ body {
   padding-bottom: 5px;
 }
 
-.thumbnails::-webkit-scrollbar {
-  display: none;
-}
+.thumbnails::-webkit-scrollbar { display: none; }
 
 .thumb-arrow {
   background: #e91e63;
@@ -72,9 +81,7 @@ body {
   margin: 0 5px;
 }
 
-.thumb-arrow:hover {
-  background: #c2185b;
-}
+.thumb-arrow:hover { background: #c2185b; }
 
 .thumbnails img {
   width: 60px;
@@ -92,7 +99,10 @@ body {
 
 /* DETAILS */
 .details {
-  flex: 1; /* take remaining width */
+  flex: 1; /* remaining width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* align middle vertically */
 }
 
 h1 { font-size: 2rem; margin-bottom: 10px; }
@@ -113,6 +123,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
   .product { flex-direction: column; text-align:center; }
   .details { text-align:center; margin-top:20px; }
   .slider { width: 100%; }
+  .image-container { height: auto; }
   .thumbnails-wrapper { justify-content: center; }
 }
 </style>
@@ -123,7 +134,9 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 <div class="product">
   <!-- Slider -->
   <div class="slider">
-    <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
+    <div class="image-container">
+      <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
+    </div>
     <div class="thumbnails-wrapper">
       <button class="thumb-arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
       <div class="thumbnails">
@@ -201,7 +214,6 @@ let images=[
 ];
 
 let index=0;
-
 function autoSlide(){
   index=(index+1)%images.length;
   document.getElementById("mainImage").src=images[index];
@@ -209,7 +221,6 @@ function autoSlide(){
   thumbs.forEach(t=>t.classList.remove("selected"));
   if(thumbs[index]) thumbs[index].classList.add("selected");
 }
-
 function changeImage(img){
   document.getElementById("mainImage").src=img.src;
   let thumbs=document.querySelectorAll(".thumbnails img");
@@ -217,12 +228,10 @@ function changeImage(img){
   img.classList.add("selected");
   index=Array.from(thumbs).indexOf(img);
 }
-
 function scrollThumbs(direction){
   const thumbs=document.querySelector(".thumbnails");
   thumbs.scrollBy({left:direction*200, behavior:'smooth'});
 }
-
 setInterval(autoSlide,1200);
 </script>
 </body>
