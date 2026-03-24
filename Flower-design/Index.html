@@ -369,3 +369,136 @@ setInterval(() => {
   
   
 </div>
+    
+<!-- Zoom Modal -->
+<div id="zoomModal" onclick="closeZoom()">
+  <img id="zoomImg" src="" alt="Zoomed product image" />
+</div>
+<!-- Zoom Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="divider" style="margin-top: 60px;"></div>
+    <div class="footer-note">
+      More floral-inspired designs are on the way. Stay creative with <strong>Digital Effect</strong>.
+    </div>
+  </div>
+
+  
+
+
+
+  
+<!-- ✅ FOOTER PLACEHOLDER -->
+  <div id="footer-placeholder"></div>
+
+
+
+
+
+  
+  <!-- ✅ HEADER/FOOTER SCRIPT -->
+<script>
+  // Fetch header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+      initializeHeaderScripts();
+    })
+    .catch(error => console.error('Error loading header:', error));
+
+  // Fetch footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+  
+  function initializeHeaderScripts() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('overlay');
+    const productDropdown = document.getElementById('productDropdown');
+
+    if (!menuToggle || !navMenu || !overlay || !productDropdown) {
+      console.error('One or more header elements not found');
+      return;
+    }
+
+    function toggleMenu() {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    overlay.addEventListener('click', () => {
+      if (navMenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+
+    productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      productDropdown.classList.toggle('active');
+      const expanded = productDropdown.getAttribute('aria-expanded') === 'true';
+      productDropdown.setAttribute('aria-expanded', !expanded);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+  }
+</script>
+  <!-- ✅ HEADER/FOOTER SCRIPT -->
+
+
+
+
+
+
+
+
+
+  <!-- Product card functionality (zoom, price) -->
+  <script src="script.js"></script>
+  <!-- Product card functionality (zoom, price) -->
+
+
+
+
+
+
+  
+
+ 
+
+
+  
+  </body>
+  </html>
