@@ -302,11 +302,16 @@ setInterval(autoSlide, 1200);
 </script>
 
 
+  
+  <!-- Header placeholder -->
+<div id="header-placeholder"></div>
 
-  <!-- ✅ HEADER/FOOTER SCRIPT -->
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
 <script>
-  // Fetch header
-  fetch("header.html")
+  // Load header
+  fetch("../../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
@@ -314,24 +319,22 @@ setInterval(autoSlide, 1200);
     })
     .catch(error => console.error('Error loading header:', error));
 
-  // Fetch footer
-  fetch("footer.html")
+  // Load footer
+  fetch("../../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     })
     .catch(error => console.error('Error loading footer:', error));
-  
+
+  // Initialize header JS (menu toggles, dropdowns, etc.)
   function initializeHeaderScripts() {
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const overlay = document.getElementById('overlay');
     const productDropdown = document.getElementById('productDropdown');
 
-    if (!menuToggle || !navMenu || !overlay || !productDropdown) {
-      console.error('One or more header elements not found');
-      return;
-    }
+    if (!menuToggle || !navMenu || !overlay || !productDropdown) return;
 
     function toggleMenu() {
       const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -342,11 +345,8 @@ setInterval(autoSlide, 1200);
     }
 
     menuToggle.addEventListener('click', toggleMenu);
-
     overlay.addEventListener('click', () => {
-      if (navMenu.classList.contains('active')) {
-        toggleMenu();
-      }
+      if (navMenu.classList.contains('active')) toggleMenu();
     });
 
     productDropdown.querySelector('.dropbtn').addEventListener('click', (e) => {
@@ -358,22 +358,15 @@ setInterval(autoSlide, 1200);
 
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        if (navMenu.classList.contains('active')) {
-          toggleMenu();
-        }
+        if (navMenu.classList.contains('active')) toggleMenu();
       });
     });
-    
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        toggleMenu();
-      }
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) toggleMenu();
     });
   }
 </script>
-  <!-- ✅ HEADER/FOOTER SCRIPT -->
-
-
 
 
 
