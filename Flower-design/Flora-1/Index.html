@@ -21,19 +21,20 @@ body {
 .product {
   display: flex;
   gap: 40px;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
-/* SLIDER */
+/* IMAGE SLIDER */
 .slider {
-  flex: 0 0 55%;
+  flex: 0 0 55%; /* left side */
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .image-container {
   width: 100%;
-  height: 450px; /* fixed height */
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +50,7 @@ body {
 
 /* DETAILS */
 .details {
-  flex: 0 0 45%;
+  flex: 0 0 45%; /* right side */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +72,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 @media(max-width:768px){
   .product { flex-direction: column; text-align:center; }
   .details { text-align:center; margin-top:20px; }
-  .slider { width:100%; }
+  .slider { width:100%; margin-bottom:20px; }
   .image-container { height: auto; }
 }
 </style>
@@ -80,14 +81,14 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 <div class="container">
 
 <div class="product">
-  <!-- Slider -->
+  <!-- IMAGE SLIDER -->
   <div class="slider">
     <div class="image-container">
       <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
     </div>
   </div>
 
-  <!-- Details -->
+  <!-- DETAILS -->
   <div class="details">
     <h1>Flora 1 Combo Pack</h1>
     <p>30 premium 3D flower designs for CNC carving. Perfect for wood panels and decorative projects.</p>
@@ -106,7 +107,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
   </div>
 </div>
 
-<!-- Related -->
+<!-- RELATED PRODUCTS -->
 <div class="related-section">
   <h2>You May Also Like</h2>
   <div class="related">
@@ -119,6 +120,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 </div>
 
 <script>
+// Images for auto slider
 let images = [
 "flower-design-3d-relief-digital-effect1.png",
 "flower-design-3d-relief-digital-effect2.png",
