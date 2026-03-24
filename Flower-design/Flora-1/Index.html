@@ -21,7 +21,7 @@ body {
 .product {
   display: flex;
   gap: 40px;
-  align-items: center; /* center details vertically */
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -31,8 +31,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* IMAGE CONTAINER */
 .image-container {
   width: 100%;
   height: 450px; /* fixed height */
@@ -43,56 +41,11 @@ body {
   background: #fff;
   border-radius: 10px;
 }
-
 #mainImage {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
-
-/* THUMBNAILS */
-.thumbnails-wrapper {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.thumbnails {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 10px;
-  flex: 1;
-  padding-bottom: 5px;
-}
-
-.thumbnails::-webkit-scrollbar { display: none; }
-
-.thumb-arrow {
-  background: #e91e63;
-  color: white;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px 12px;
-  border-radius: 5px;
-  margin: 0 5px;
-}
-
-.thumb-arrow:hover { background: #c2185b; }
-
-.thumbnails img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.thumbnails img.selected { border-color: #e91e63; }
 
 /* DETAILS */
 .details {
@@ -101,7 +54,6 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-
 h1 { font-size: 2rem; margin-bottom: 10px; }
 .price { font-size: 1.8rem; color: #7f6000; margin: 15px 0; }
 .buy-btn { display: inline-block; padding: 15px 25px; background: #e91e63; color: #fff; font-size: 1.1rem; border-radius: 8px; text-decoration: none; margin-top: 10px; }
@@ -121,7 +73,6 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
   .details { text-align:center; margin-top:20px; }
   .slider { width:100%; }
   .image-container { height: auto; }
-  .thumbnails-wrapper { justify-content: center; }
 }
 </style>
 </head>
@@ -133,44 +84,6 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
   <div class="slider">
     <div class="image-container">
       <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
-    </div>
-
-    <div class="thumbnails-wrapper">
-      <button class="thumb-arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
-      <div class="thumbnails">
-        <img src="flower-design-3d-relief-digital-effect1.png" class="thumb selected" onclick="changeImage(this)" alt="Design 1">
-        <img src="flower-design-3d-relief-digital-effect2.png" class="thumb" onclick="changeImage(this)" alt="Design 2">
-        <img src="flower-design-3d-relief-digital-effect3.png" class="thumb" onclick="changeImage(this)" alt="Design 3">
-        <img src="flower-design-3d-relief-digital-effect4.png" class="thumb" onclick="changeImage(this)" alt="Design 4">
-        <img src="flower-design-3d-relief-digital-effect5.png" class="thumb" onclick="changeImage(this)" alt="Design 5">
-        <img src="flower-design-3d-relief-digital-effect6.png" class="thumb" onclick="changeImage(this)" alt="Design 6">
-        <img src="flower-design-3d-relief-digital-effect7.png" class="thumb" onclick="changeImage(this)" alt="Design 7">
-        <img src="flower-design-3d-relief-digital-effect8.png" class="thumb" onclick="changeImage(this)" alt="Design 8">
-        <img src="flower-design-3d-relief-digital-effect9.png" class="thumb" onclick="changeImage(this)" alt="Design 9">
-        <img src="flower-design-3d-relief-digital-effect10.png" class="thumb" onclick="changeImage(this)" alt="Design 10">
-        <img src="flower-design-3d-relief-digital-effect11.png" class="thumb" onclick="changeImage(this)" alt="Design 11">
-        <img src="flower-design-3d-relief-digital-effect12.png" class="thumb" onclick="changeImage(this)" alt="Design 12">
-          <img src="flower-design-3d-relief-digital-effect13.png" class="thumb" onclick="changeImage(this)" alt="Design 13">
-          <img src="flower-design-3d-relief-digital-effect14.png" class="thumb" onclick="changeImage(this)" alt="Design 14">
-          <img src="flower-design-3d-relief-digital-effect15.png" class="thumb" onclick="changeImage(this)" alt="Design 15">
-          <img src="flower-design-3d-relief-digital-effect16.png" class="thumb" onclick="changeImage(this)" alt="Design 16">
-          <img src="flower-design-3d-relief-digital-effect17.png" class="thumb" onclick="changeImage(this)" alt="Design 17">
-          <img src="flower-design-3d-relief-digital-effect18.png" class="thumb" onclick="changeImage(this)" alt="Design 18">
-          <img src="flower-design-3d-relief-digital-effect19.png" class="thumb" onclick="changeImage(this)" alt="Design 19">
-          <img src="flower-design-3d-relief-digital-effect20.png" class="thumb" onclick="changeImage(this)" alt="Design 20">
-          <img src="flower-design-3d-relief-digital-effect21.png" class="thumb" onclick="changeImage(this)" alt="Design 21">
-          <img src="flower-design-3d-relief-digital-effect22.png" class="thumb" onclick="changeImage(this)" alt="Design 22">
-          <img src="flower-design-3d-relief-digital-effect23.png" class="thumb" onclick="changeImage(this)" alt="Design 23">
-          <img src="flower-design-3d-relief-digital-effect24.png" class="thumb" onclick="changeImage(this)" alt="Design 24">
-          <img src="flower-design-3d-relief-digital-effect25.png" class="thumb" onclick="changeImage(this)" alt="Design 25">
-          <img src="flower-design-3d-relief-digital-effect26.png" class="thumb" onclick="changeImage(this)" alt="Design 26">
-          <img src="flower-design-3d-relief-digital-effect27.png" class="thumb" onclick="changeImage(this)" alt="Design 27">
-          <img src="flower-design-3d-relief-digital-effect28.png" class="thumb" onclick="changeImage(this)" alt="Design 28">
-          <img src="flower-design-3d-relief-digital-effect29.png" class="thumb" onclick="changeImage(this)" alt="Design 29">
-          <img src="flower-design-3d-relief-digital-effect30.png" class="thumb" onclick="changeImage(this)" alt="Design 30">
-        
-      </div>
-      <button class="thumb-arrow right" onclick="scrollThumbs(1)">&#10095;</button>
     </div>
   </div>
 
@@ -225,19 +138,6 @@ let index=0;
 function autoSlide(){
   index=(index+1)%images.length;
   document.getElementById("mainImage").src=images[index];
-  let thumbs=document.querySelectorAll(".thumbnails img");
-  thumbs.forEach(t=>t.classList.remove("selected"));
-  if(thumbs[index]) thumbs[index].classList.add("selected");
-}
-function changeImage(img){
-  document.getElementById("mainImage").src=img.src;
-  let thumbs=document.querySelectorAll(".thumbnails img");
-  thumbs.forEach(t=>t.classList.remove("selected"));
-  img.classList.add("selected");
-  index=Array.from(thumbs).indexOf(img);
-}
-function scrollThumbs(direction){
-  document.querySelector(".thumbnails").scrollBy({left:direction*200, behavior:'smooth'});
 }
 setInterval(autoSlide,1200);
 </script>
