@@ -252,8 +252,11 @@
 
   
 <!-- ✅ HEADER PLACEHOLDER -->
-  <div id="header-placeholder"></div>
-
+  <script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header-placeholder").innerHTML = data)
+  .catch(err => console.error("Header load error:", err));
 
 
   
@@ -400,31 +403,37 @@ setInterval(() => {
 
   
 <!-- ✅ FOOTER PLACEHOLDER -->
-  <div id="footer-placeholder"></div>
-
-
+  <script>
+fetch("../footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer-placeholder").innerHTML = data)
+  .catch(err => console.error("Footer load error:", err));
+</script>
 
 
 
   
   <!-- ✅ HEADER/FOOTER SCRIPT -->
 <script>
-  // Fetch header
-  fetch("header.html")
+<!-- ✅ HEADER/FOOTER SCRIPT -->
+<script>
+  // Fetch header (go up one folder)
+  fetch("../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
-      initializeHeaderScripts();
+      initializeHeaderScripts(); // keeps your menu working
     })
     .catch(error => console.error('Error loading header:', error));
 
-  // Fetch footer
-  fetch("footer.html")
+  // Fetch footer (go up one folder)
+  fetch("../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     })
     .catch(error => console.error('Error loading footer:', error));
+
   
   function initializeHeaderScripts() {
     const menuToggle = document.getElementById('menuToggle');
