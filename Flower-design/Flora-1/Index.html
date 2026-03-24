@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flora 1 Combo Pack – 30 CNC Flower Designs</title>
-<meta name="description" content="Flora 1 Combo Pack – 30 premium 3D flower designs for CNC carving. Preview images, Buy via WhatsApp.">
+<meta name="description" content="Flora 1 Combo Pack – 30 premium 3D flower designs for CNC carving. Preview images. Buy via WhatsApp.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -25,7 +25,7 @@ body {
 .product {
   display: flex;
   gap: 40px;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -114,9 +114,13 @@ h1 {
     margin-bottom: 20px;
   }
 }
+</style>
+</head>
+<body>
 
-  
-  <!-- PRODUCT -->
+<div class="container">
+
+  <!-- PRODUCT SECTION -->
   <div class="product">
 
     <!-- IMAGE SLIDER -->
@@ -124,29 +128,31 @@ h1 {
       <img id="slideImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
     </div>
 
-    <!-- DETAILS -->
-  <div class="details">
-  <h1>Flora 1 Combo Pack</h1>
-  <p>30 premium 3D flower designs for CNC carving. Perfect for wood panels and decorative projects.</p>
+    <!-- PRODUCT DETAILS -->
+    <div class="details">
+      <h1>Flora 1 Combo Pack</h1>
+      <p>30 premium 3D flower designs for CNC carving. Perfect for wood panels and decorative projects.</p>
 
-  <div class="price">₹200 Only</div>
+      <div class="price">₹200 Only</div>
 
-  <a href="https://wa.me/XXXXXXXXXXX" class="buy-btn">Buy Now via WhatsApp</a>
+      <!-- Buy via WhatsApp -->
+      <a href="https://wa.me/XXXXXXXXXXX" class="buy-btn">Buy Now via WhatsApp</a>
 
-  <a href="flora-1-preview.pdf" class="buy-btn" style="background:#333; margin-top:10px;">
-    Download Preview PDF
-  </a>
+      <!-- PDF Preview -->
+      <a href="flora-1-preview.pdf" class="buy-btn" style="background:#333; margin-top:10px;">
+        Download Preview PDF
+      </a>
 
-  <div class="features">
-    <h3>What You Get</h3>
-    <ul>
-      <li>✔ 30 Unique Designs</li>
-      <li>✔ High Quality PNG Preview</li>
-      <li>✔ Ready for CNC Carving</li>
-      <li>✔ Preview Only – Files sent after payment</li>
-    </ul>
-  </div>
-</div>
+      <div class="features">
+        <h3>What You Get</h3>
+        <ul>
+          <li>✔ 30 Unique Designs</li>
+          <li>✔ High Quality PNG Preview</li>
+          <li>✔ Ready for CNC Carving</li>
+          <li>✔ Preview Only – Files sent after payment</li>
+        </ul>
+      </div>
+    </div>
 
   </div>
 
@@ -191,7 +197,7 @@ function autoSlide() {
   document.getElementById("slideImage").src = images[index];
 }
 
-/* Faster sliding = change 1200ms */
+/* Slider speed: lower = faster */
 setInterval(autoSlide, 1200);
 </script>
 
