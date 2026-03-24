@@ -64,6 +64,34 @@ h1 {
   margin-top: 10px;
 }
 
+  /* THUMBNAILS */
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.1);
+}
+
+.thumbnails img.selected {
+  border-color: #e91e63; /* Highlight color */
+}
+  
+
 .features {
   margin-top: 20px;
 }
@@ -197,9 +225,46 @@ function autoSlide() {
   document.getElementById("slideImage").src = images[index];
 }
 
+<div class="slider">
+  <img id="mainImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
+
+  <!-- THUMBNAILS -->
+  <div class="thumbnails">
+    <img src="flower-design-3d-relief-digital-effect1.png" class="thumb selected" onclick="changeImage(this)" alt="Design 1">
+    <img src="flower-design-3d-relief-digital-effect2.png" class="thumb" onclick="changeImage(this)" alt="Design 2">
+    <img src="flower-design-3d-relief-digital-effect3.png" class="thumb" onclick="changeImage(this)" alt="Design 3">
+    <img src="flower-design-3d-relief-digital-effect4.png" class="thumb" onclick="changeImage(this)" alt="Design 4">
+    <img src="flower-design-3d-relief-digital-effect5.png" class="thumb" onclick="changeImage(this)" alt="Design 5">
+    <!-- Add all 30 images here -->
+  </div>
+</div>
+
+
+  
 /* Slider speed: lower = faster */
 setInterval(autoSlide, 1200);
+
+
+
+function changeImage(img) {
+  // Change main image
+  document.getElementById("mainImage").src = img.src;
+
+  // Remove 'selected' from all thumbnails
+  let thumbs = document.querySelectorAll(".thumbnails img");
+  thumbs.forEach(t => t.classList.remove("selected"));
+
+  // Add 'selected' to clicked thumbnail
+  img.classList.add("selected");
+}
+
+  
 </script>
 
+
+
+
+
+  
 </body>
 </html>
