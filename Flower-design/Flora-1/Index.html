@@ -6,16 +6,8 @@
 
 <title>30 3D Flower Designs for CNC | Flora 1 Pack (₹200)</title>
 
-<meta name="description" content="Buy Flora 1 Combo Pack – 30 premium 3D flower designs for CNC carving. Instant download. Perfect for wood panels and decorative projects.">
+<meta name="description" content="Buy Flora 1 Combo Pack – 30 premium 3D flower designs for CNC carving. Instant download.">
 
-<link rel="canonical" href="https://www.digitaleffect.in/Flower-design/Flora-1/flora-1.html">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Flora 1 - 30 CNC Flower Designs">
-<meta property="og:description" content="30 beautiful 3D flower designs for CNC carving. Only ₹200.">
-<meta property="og:image" content="https://www.digitaleffect.in/Flower-design/Flora-1/flower-design-3d-relief-digital-effect1.png">
-
-<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -25,21 +17,23 @@ body {
   background: #f5f5f5;
 }
 
+/* MAIN LAYOUT */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 20px;
-  text-align: center;
 }
 
-h1 {
-  font-size: 2.2rem;
+/* FLEX FOR PC */
+.product {
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
+/* IMAGE SIDE */
 .slider {
-  position: relative;
-  max-width: 600px;
-  margin: 30px auto;
+  flex: 1;
 }
 
 .slider img {
@@ -47,39 +41,46 @@ h1 {
   border-radius: 10px;
 }
 
-.buttons {
-  margin-top: 10px;
+/* DETAILS SIDE */
+.details {
+  flex: 1;
 }
 
-.buttons button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  background: #7f6000;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
+h1 {
+  font-size: 2rem;
 }
 
 .price {
   font-size: 1.8rem;
   color: #7f6000;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .buy-btn {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 15px 25px;
   background: #e91e63;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-radius: 8px;
   text-decoration: none;
+  margin-top: 10px;
 }
 
 .features {
-  text-align: left;
-  margin-top: 30px;
+  margin-top: 20px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .details {
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -88,36 +89,37 @@ h1 {
 
 <div class="container">
 
-<h1>30 3D Flower Designs for CNC – Flora 1 Pack</h1>
+  <div class="product">
 
-<p>High-quality floral relief designs for CNC carving. Perfect for wood panels and decoration.</p>
+    <!-- LEFT IMAGE (AUTO SLIDER) -->
+    <div class="slider">
+      <img id="slideImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
+    </div>
 
-<!-- SLIDER -->
-<div class="slider">
-  <img id="slideImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
-  
-  <div class="buttons">
-    <button onclick="prevSlide()">Prev</button>
-    <button onclick="nextSlide()">Next</button>
+    <!-- RIGHT DETAILS -->
+    <div class="details">
+
+      <h1>Flora 1 Combo Pack</h1>
+
+      <p>30 beautiful 3D flower designs for CNC carving. Perfect for wood panels and decoration.</p>
+
+      <div class="price">₹200 Only</div>
+
+      <a href="#" class="buy-btn">Buy Now</a>
+
+      <div class="features">
+        <h3>What You Get</h3>
+        <ul>
+          <li>✔ 30 Unique Designs</li>
+          <li>✔ High Quality PNG</li>
+          <li>✔ Ready for CNC</li>
+          <li>✔ Instant Download</li>
+        </ul>
+      </div>
+
+    </div>
+
   </div>
-</div>
-
-<!-- PRICE -->
-<div class="price">Only ₹200</div>
-
-<!-- BUY BUTTON -->
-<a href="#" class="buy-btn">Buy Now</a>
-
-<!-- FEATURES -->
-<div class="features">
-  <h2>What You Get</h2>
-  <ul>
-    <li>✔ 30 Unique 3D Flower Designs</li>
-    <li>✔ High Quality PNG Files</li>
-    <li>✔ Ready for CNC Use</li>
-    <li>✔ Instant Download</li>
-  </ul>
-</div>
 
 </div>
 
@@ -128,28 +130,18 @@ let images = [
 "flower-design-3d-relief-digital-effect3.png",
 "flower-design-3d-relief-digital-effect4.png",
 "flower-design-3d-relief-digital-effect5.png",
-"flower-design-3d-relief-digital-effect6.png",
-"flower-design-3d-relief-digital-effect7.png",
-"flower-design-3d-relief-digital-effect8.png",
-"flower-design-3d-relief-digital-effect9.png",
-"flower-design-3d-relief-digital-effect10.png"
+"flower-design-3d-relief-digital-effect6.png"
 ];
 
 let index = 0;
 
-function showSlide() {
+function autoSlide() {
+  index = (index + 1) % images.length;
   document.getElementById("slideImage").src = images[index];
 }
 
-function nextSlide() {
-  index = (index + 1) % images.length;
-  showSlide();
-}
-
-function prevSlide() {
-  index = (index - 1 + images.length) % images.length;
-  showSlide();
-}
+/* CHANGE EVERY 2 SECONDS */
+setInterval(autoSlide, 2000);
 </script>
 
 </body>
