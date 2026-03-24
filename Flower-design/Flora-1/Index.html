@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>30 3D Flower Designs for CNC | Flora 1 Pack (₹200)</title>
-
-<meta name="description" content="Buy Flora 1 Combo Pack – 30 premium 3D flower designs for CNC carving. Instant download.">
+<title>Flora 1 Combo Pack – 30 CNC Flower Designs</title>
+<meta name="description" content="Flora 1 Combo Pack – 30 premium 3D flower designs for CNC carving. Preview images, Buy via WhatsApp.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -17,21 +15,20 @@ body {
   background: #f5f5f5;
 }
 
-/* MAIN LAYOUT */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 20px;
 }
 
-/* FLEX FOR PC */
+/* PRODUCT SECTION */
 .product {
   display: flex;
   gap: 40px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-/* IMAGE SIDE */
 .slider {
   flex: 1;
 }
@@ -41,13 +38,13 @@ body {
   border-radius: 10px;
 }
 
-/* DETAILS SIDE */
 .details {
   flex: 1;
 }
 
 h1 {
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .price {
@@ -71,62 +68,108 @@ h1 {
   margin-top: 20px;
 }
 
-/* MOBILE VIEW */
+/* RELATED PRODUCTS */
+.related-section {
+  margin-top: 50px;
+}
+
+.related-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333; /* Make visible */
+  text-align: center;
+}
+
+.related {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.related img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.related a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .product {
     flex-direction: column;
     text-align: center;
   }
-
   .details {
+    text-align: center;
+  }
+  .related-section {
     text-align: center;
   }
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
+  <!-- PRODUCT -->
   <div class="product">
 
-    <!-- LEFT IMAGE (AUTO SLIDER) -->
+    <!-- IMAGE SLIDER -->
     <div class="slider">
       <img id="slideImage" src="flower-design-3d-relief-digital-effect1.png" alt="Flora 1 preview">
     </div>
 
-    <!-- RIGHT DETAILS -->
+    <!-- DETAILS -->
     <div class="details">
-
       <h1>Flora 1 Combo Pack</h1>
-
-      <p>30 beautiful 3D flower designs for CNC carving. Perfect for wood panels and decoration.</p>
+      <p>30 premium 3D flower designs for CNC carving. Perfect for wood panels and decorative projects.</p>
 
       <div class="price">₹200 Only</div>
 
-      <a href="#" class="buy-btn">Buy Now</a>
-      
-<a href="flora-1-pack.pdf" class="buy-btn" style="background:#333;">
-  Download Preview PDF
-</a>
-      
+      <a href="https://wa.me/XXXXXXXXXXX" class="buy-btn">Buy Now via WhatsApp</a>
+
       <div class="features">
         <h3>What You Get</h3>
         <ul>
           <li>✔ 30 Unique Designs</li>
-          <li>✔ High Quality PNG</li>
-          <li>✔ Ready for CNC</li>
-          <li>✔ Instant Download</li>
+          <li>✔ High Quality PNG Preview</li>
+          <li>✔ Ready for CNC Carving</li>
+          <li>✔ Preview Only – Files sent after payment</li>
         </ul>
       </div>
-
     </div>
 
   </div>
 
+  <!-- RELATED PRODUCTS -->
+  <div class="related-section">
+    <h2>You May Also Like</h2>
+    <div class="related">
+      <a href="../Flora-2/flora-2.html">
+        <img src="../Flora-2/flower-design-3d-relief-digital-effect1.png" alt="Flora 2 preview">
+        <p>Flora 2 Pack</p>
+      </a>
+
+      <a href="../Flora-5/flora-5.html">
+        <img src="../Flora-5/flower-design-3d-relief-digital-effect1.png" alt="Flora 5 preview">
+        <p>Flora 5 Pack</p>
+      </a>
+
+      <a href="../Flora-3/flora-3.html">
+        <img src="../Flora-3/flower-design-3d-relief-digital-effect1.png" alt="Flora 3 preview">
+        <p>Flora 3 Pack</p>
+      </a>
+    </div>
+  </div>
+
 </div>
 
+<!-- AUTO SLIDER SCRIPT -->
 <script>
 let images = [
 "flower-design-3d-relief-digital-effect1.png",
@@ -144,32 +187,9 @@ function autoSlide() {
   document.getElementById("slideImage").src = images[index];
 }
 
-/* CHANGE EVERY 2 SECONDS */
-setInterval(autoSlide, 500);
+/* Faster sliding = change 1200ms */
+setInterval(autoSlide, 1200);
 </script>
 
-
-
-  <div class="container">
-  <h2 style="margin-top:50px;">You May Also Like</h2>
-  <div class="related">
-    <a href="../Flora-2/flora-2.html">
-      <img src="../Flora-2/flower-design-3d-relief-digital-effect1.png">
-      <p>Flora 2 Pack</p>
-    </a>
-    <a href="../Flora-5/flora-5.html">
-      <img src="../Flora-5/flower-design-3d-relief-digital-effect1.png">
-      <p>Flora 5 Pack</p>
-    </a>
-    <a href="../Flora-3/flora-3.html">
-      <img src="../Flora-3/flower-design-3d-relief-digital-effect1.png">
-      <p>Flora 3 Pack</p>
-    </a>
-  </div>
-</div>
-
-
-
-  
 </body>
 </html>
