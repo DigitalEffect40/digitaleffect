@@ -310,23 +310,23 @@ setInterval(autoSlide, 1200);
 <div id="footer-placeholder"></div>
 
 <script>
-  // Load header
+  // Header
   fetch("../../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
-      initializeHeaderScripts();
+      initializeHeaderScripts(); // if you are using menu JS
     })
-    .catch(error => console.error('Error loading header:', error));
+    .catch(error => console.error('Header not loading:', error));
 
-  // Load footer
+  // Footer
   fetch("../../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     })
-    .catch(error => console.error('Error loading footer:', error));
-
+    .catch(error => console.error('Footer not loading:', error));
+  
   // Initialize header JS (menu toggles, dropdowns, etc.)
   function initializeHeaderScripts() {
     const menuToggle = document.getElementById('menuToggle');
