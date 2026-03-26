@@ -7,103 +7,89 @@
 
 <title>Flower Design STL Collection</title>
 
-<!-- Google Font -->
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    background: #f7f7f7;
 }
 
 .container {
-    padding: 30px 20px;
+    padding: 15px;
 }
 
 h1 {
     text-align: center;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.subtext {
-    text-align: center;
-    color: #777;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
 }
 
 /* CARD */
 .card {
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
+/* IMAGE BOX */
+.img-box {
+    position: relative;
 }
 
-/* IMAGE */
-.card img {
+.img-box img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
+}
+
+/* BADGE TOP RIGHT */
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff4757;
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 12px;
 }
 
 /* CONTENT */
 .content {
-    padding: 18px;
+    padding: 10px;
     text-align: center;
 }
 
 .content h3 {
-    margin: 8px 0;
-    font-weight: 600;
+    margin: 5px 0;
+    font-size: 16px;
 }
 
 .desc {
-    font-size: 14px;
-    color: #666;
-}
-
-/* BADGE */
-.badge {
-    display: inline-block;
-    background: #ff7675;
-    color: #fff;
     font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 8px;
+    color: #666;
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 12px;
-    padding: 10px 18px;
-    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    margin-top: 8px;
+    padding: 7px 14px;
+    background: #27ae60;
     color: #fff;
     text-decoration: none;
-    border-radius: 25px;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.85;
+    border-radius: 20px;
+    font-size: 12px;
 }
 </style>
 
@@ -111,30 +97,30 @@ h1 {
 <body>
 
 <div class="container">
-
-<h1>Premium Flower Design STL Collection 🌸</h1>
-<p class="subtext">High-quality 3D relief flower designs for CNC & carving projects</p>
+<h1>Flower STL Combo Packs 🌸</h1>
 
 <div class="grid">
 
 <!-- Flora 1 -->
 
 <div class="card">
-    <img class="slider"
-         data-images='[
-         "Flora-1/flower-design-3d-relief-digital-effect1.png",
-         "Flora-1/flower-design-3d-relief-digital-effect2.png",
-         "Flora-1/flower-design-3d-relief-digital-effect3.png",
-         "Flora-1/flower-design-3d-relief-digital-effect4.png"
-         ]'
-         src="Flora-1/flower-design-3d-relief-digital-effect1.png">
+    <div class="img-box">
+        <span class="badge">Combo Pack</span>
+        <img class="slider"
+             data-images='[
+             "Flora-1/flower-design-3d-relief-digital-effect1.png",
+             "Flora-1/flower-design-3d-relief-digital-effect2.png",
+             "Flora-1/flower-design-3d-relief-digital-effect3.png",
+             "Flora-1/flower-design-3d-relief-digital-effect4.png"
+             ]'
+             src="Flora-1/flower-design-3d-relief-digital-effect1.png">
+    </div>
 
 ```
 <div class="content">
-    <span class="badge">Best Seller</span>
     <h3>Flora Pack 01</h3>
-    <p class="desc">30 premium STL flower designs for CNC carving & 3D projects</p>
-    <a href="Flora-1/" class="btn">View Collection</a>
+    <p class="desc">30 STL designs for CNC carving</p>
+    <a href="Flora-1/" class="btn">View</a>
 </div>
 ```
 
@@ -143,21 +129,23 @@ h1 {
 <!-- Flora 2 -->
 
 <div class="card">
-    <img class="slider"
-         data-images='[
-         "Flora-2/flower-design-3d-relief-digital-effect1.png",
-         "Flora-2/flower-design-3d-relief-digital-effect2.png",
-         "Flora-2/flower-design-3d-relief-digital-effect3.png",
-         "Flora-2/flower-design-3d-relief-digital-effect4.png"
-         ]'
-         src="Flora-2/flower-design-3d-relief-digital-effect1.png">
+    <div class="img-box">
+        <span class="badge">Combo Pack</span>
+        <img class="slider"
+             data-images='[
+             "Flora-2/flower-design-3d-relief-digital-effect1.png",
+             "Flora-2/flower-design-3d-relief-digital-effect2.png",
+             "Flora-2/flower-design-3d-relief-digital-effect3.png",
+             "Flora-2/flower-design-3d-relief-digital-effect4.png"
+             ]'
+             src="Flora-2/flower-design-3d-relief-digital-effect1.png">
+    </div>
 
 ```
 <div class="content">
-    <span class="badge">New</span>
     <h3>Flora Pack 02</h3>
-    <p class="desc">Modern floral STL bundle perfect for furniture & decor carving</p>
-    <a href="Flora-2/" class="btn">View Collection</a>
+    <p class="desc">Premium floral STL bundle</p>
+    <a href="Flora-2/" class="btn">View</a>
 </div>
 ```
 
@@ -182,3 +170,4 @@ sliders.forEach((slider) => {
 
 </body>
 </html>
+
