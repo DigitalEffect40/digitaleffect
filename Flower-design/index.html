@@ -5,42 +5,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Flower Design Collection</title>
+<title>Flower Design STL Collection</title>
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
 }
 
 .container {
-    padding: 20px;
+    padding: 30px 20px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 /* CARD */
 .card {
-    background: #fff;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
 }
 
 /* IMAGE */
@@ -52,21 +64,46 @@ h1 {
 
 /* CONTENT */
 .content {
-    padding: 15px;
+    padding: 18px;
     text-align: center;
 }
 
 .content h3 {
-    margin: 10px 0;
+    margin: 8px 0;
+    font-weight: 600;
 }
 
+.desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* BADGE */
+.badge {
+    display: inline-block;
+    background: #ff7675;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+/* BUTTON */
 .btn {
     display: inline-block;
-    padding: 8px 15px;
-    background: #27ae60;
+    margin-top: 12px;
+    padding: 10px 18px;
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.85;
 }
 </style>
 
@@ -74,7 +111,9 @@ h1 {
 <body>
 
 <div class="container">
-<h1>Flower Design Collection 🌸</h1>
+
+<h1>Premium Flower Design STL Collection 🌸</h1>
+<p class="subtext">High-quality 3D relief flower designs for CNC & carving projects</p>
 
 <div class="grid">
 
@@ -92,9 +131,10 @@ h1 {
 
 ```
 <div class="content">
-    <h3>Flora 1</h3>
-    <p>30 STL Flower Design Bundle</p>
-    <a href="Flora-1/" class="btn">View More</a>
+    <span class="badge">Best Seller</span>
+    <h3>Flora Pack 01</h3>
+    <p class="desc">30 premium STL flower designs for CNC carving & 3D projects</p>
+    <a href="Flora-1/" class="btn">View Collection</a>
 </div>
 ```
 
@@ -114,9 +154,10 @@ h1 {
 
 ```
 <div class="content">
-    <h3>Flora 2</h3>
-    <p>30 STL Flower Design Bundle</p>
-    <a href="Flora-2/" class="btn">View More</a>
+    <span class="badge">New</span>
+    <h3>Flora Pack 02</h3>
+    <p class="desc">Modern floral STL bundle perfect for furniture & decor carving</p>
+    <a href="Flora-2/" class="btn">View Collection</a>
 </div>
 ```
 
@@ -126,10 +167,8 @@ h1 {
 </div>
 
 <script>
-// Select all sliders
 let sliders = document.querySelectorAll(".slider");
 
-// Loop each slider
 sliders.forEach((slider) => {
     let images = JSON.parse(slider.getAttribute("data-images"));
     let index = 0;
@@ -137,7 +176,7 @@ sliders.forEach((slider) => {
     setInterval(() => {
         index = (index + 1) % images.length;
         slider.src = images[index];
-    }, 1500);
+    }, 1800);
 });
 </script>
 
