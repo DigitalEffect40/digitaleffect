@@ -629,22 +629,47 @@
   
  <!-- ✅ SLIDESHOW SCRIPT -->
 <script>
-  document.querySelectorAll('.slider').forEach(slider => {
-    const link = slider.dataset.link;
-    const img = slider.querySelector('img');
+document.querySelectorAll('.slider').forEach(slider => {
+  const img = slider.querySelector('img');
+  const link = slider.dataset.link;
+
+  // ✅ NEW: check if data-images exists
+  const imagesData = slider.getAttribute("data-images");
+
+  if (imagesData) {
+    // 👉 For Flower (custom images)
+    const images = JSON.parse(imagesData);
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+
+      const newImg = new Image();
+      newImg.src = images[index];
+
+      newImg.onload = () => {
+        img.src = images[index];
+      };
+
+    }, 2000);
+
+  } else {
+    // 👉 OLD system (for other cards)
     const srcStart = img.getAttribute("src").replace(/-\d+\.jpg$/, "");
-    const totalImages = 3; // ✅ Change to the total images in that folder
+    const totalImages = 3;
 
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * totalImages) + 1;
       img.src = `${srcStart}-${randomIndex}.jpg`;
     }, 2500);
+  }
 
-    slider.style.cursor = "pointer";
-    slider.addEventListener("click", () => {
-      window.location.href = link;
-    });
+  // ✅ Click redirect
+  slider.style.cursor = "pointer";
+  slider.addEventListener("click", () => {
+    window.location.href = link;
   });
+});
 </script>
 
 
