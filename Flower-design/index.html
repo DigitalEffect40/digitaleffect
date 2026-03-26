@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Flower Designs</title>
+<title>Flower Design Collection</title>
 
 <style>
 body {
@@ -20,14 +20,14 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 /* CARD */
@@ -36,38 +36,18 @@ h1 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-/* SLIDER */
-.slider {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.slides {
-    display: flex;
-    width: 400%;
-    animation: slide 12s infinite;
-}
-
-.slides img {
+/* IMAGE */
+.card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-}
-
-/* ANIMATION */
-@keyframes slide {
-    0% {transform: translateX(0);}
-    25% {transform: translateX(0);}
-    30% {transform: translateX(-100%);}
-    50% {transform: translateX(-100%);}
-    55% {transform: translateX(-200%);}
-    75% {transform: translateX(-200%);}
-    80% {transform: translateX(-300%);}
-    100% {transform: translateX(-300%);}
 }
 
 /* CONTENT */
@@ -101,41 +81,65 @@ h1 {
 <!-- Flora 1 -->
 
 <div class="card">
-    <div class="slider">
-        <div class="slides">
-            <img src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect1.png">
-            <img src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect2.png">
-            <img src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect3.png">
-            <img src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect4.png">
-        </div>
-    </div>
-    <div class="content">
-        <h3>Flora 1</h3>
-        <p>30 STL Flower Design Bundle</p>
-        <a href="Flora-1/" class="btn">View More</a>
-    </div>
+    <img class="slider"
+         data-images='[
+         "Flora-1/flower-design-3d-relief-digital-effect1.png",
+         "Flora-1/flower-design-3d-relief-digital-effect2.png",
+         "Flora-1/flower-design-3d-relief-digital-effect3.png",
+         "Flora-1/flower-design-3d-relief-digital-effect4.png"
+         ]'
+         src="Flora-1/flower-design-3d-relief-digital-effect1.png">
+
+```
+<div class="content">
+    <h3>Flora 1</h3>
+    <p>30 STL Flower Design Bundle</p>
+    <a href="Flora-1/" class="btn">View More</a>
+</div>
+```
+
 </div>
 
 <!-- Flora 2 -->
 
 <div class="card">
-    <div class="slider">
-        <div class="slides">
-            <img src="Flora-2/images/1.jpg">
-            <img src="Flora-2/images/2.jpg">
-            <img src="Flora-2/images/3.jpg">
-            <img src="Flora-2/images/4.jpg">
-        </div>
-    </div>
-    <div class="content">
-        <h3>Flora 2</h3>
-        <p>30 STL Flower Design Bundle</p>
-        <a href="Flora-2/" class="btn">View More</a>
-    </div>
+    <img class="slider"
+         data-images='[
+         "Flora-2/flower-design-3d-relief-digital-effect1.png",
+         "Flora-2/flower-design-3d-relief-digital-effect2.png",
+         "Flora-2/flower-design-3d-relief-digital-effect3.png",
+         "Flora-2/flower-design-3d-relief-digital-effect4.png"
+         ]'
+         src="Flora-2/flower-design-3d-relief-digital-effect1.png">
+
+```
+<div class="content">
+    <h3>Flora 2</h3>
+    <p>30 STL Flower Design Bundle</p>
+    <a href="Flora-2/" class="btn">View More</a>
+</div>
+```
+
 </div>
 
 </div>
 </div>
+
+<script>
+// Select all sliders
+let sliders = document.querySelectorAll(".slider");
+
+// Loop each slider
+sliders.forEach((slider) => {
+    let images = JSON.parse(slider.getAttribute("data-images"));
+    let index = 0;
+
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        slider.src = images[index];
+    }, 1500);
+});
+</script>
 
 </body>
 </html>
