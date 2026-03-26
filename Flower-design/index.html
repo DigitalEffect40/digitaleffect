@@ -320,24 +320,29 @@ src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect1.png">
 <!-- Footer placeholder -->
 <div id="footer-placeholder"></div>
 
+
+  
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
   // Header
-  fetch("/header.html")
+  fetch("https://www.digitaleffect.in/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
-      initializeHeaderScripts(); // if you are using menu JS
     })
-    .catch(error => console.error('Header not loading:', error));
+    .catch(err => console.log("Header error:", err));
 
   // Footer
-  fetch("/footer.html")
+  fetch("https://www.digitaleffect.in/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     })
-    .catch(error => console.error('Footer not loading:', error));
-  <script>
+    .catch(err => console.log("Footer error:", err));
+
+});
+</script>
 
 
 
