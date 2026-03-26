@@ -187,27 +187,30 @@ alt="Flower STL Pack 02">
 <!-- Footer -->
 <div id="footer-placeholder"></div>
 
-<!-- ✅ Scripts -->
+
+    
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  // 🔥 CHANGE THIS TO YOUR REPO NAME
-  const basePath = "/your-repo-name";
-
   // Header
-  fetch(basePath + "/header.html")
+  fetch("../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
-    });
+    })
+    .catch(err => console.log("Header error:", err));
 
   // Footer
-  fetch(basePath + "/footer.html")
+  fetch("../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
-    });
+    })
+    .catch(err => console.log("Footer error:", err));
 
+});
+
+    
   // Slider
   let sliders = document.querySelectorAll(".slider");
 
