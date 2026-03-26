@@ -322,7 +322,7 @@ src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect1.png">
 
 <script>
   // Header
-  fetch("../header.html")
+  fetch("/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
@@ -331,7 +331,7 @@ src="/Flower-design/Flora-1/flower-design-3d-relief-digital-effect1.png">
     .catch(error => console.error('Header not loading:', error));
 
   // Footer
-  fetch("../footer.html")
+  fetch("/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
