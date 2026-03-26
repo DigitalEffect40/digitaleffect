@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Flower Design STL Collection</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-
 <style>
 body {
     margin: 0;
@@ -17,157 +6,81 @@ body {
 }
 
 .container {
-    padding: 15px;
+    padding: 10px;
 }
 
 h1 {
     text-align: center;
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 15px;
+    gap: 12px;
 }
 
 /* CARD */
 .card {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
 /* IMAGE BOX */
 .img-box {
     position: relative;
+    line-height: 0; /* 🔥 removes extra gap */
 }
 
 .img-box img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 180px;
+    object-fit: contain; /* 🔥 FIX: no crop */
+    background: #fff;
 }
 
-/* BADGE TOP RIGHT */
+/* BADGE */
 .badge {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 6px;
+    right: 6px;
     background: #ff4757;
     color: #fff;
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 12px;
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 10px;
 }
 
 /* CONTENT */
 .content {
-    padding: 10px;
+    padding: 6px 8px; /* 🔥 reduced space */
     text-align: center;
 }
 
 .content h3 {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 2px 0;
+    font-size: 14px;
 }
 
 .desc {
-    font-size: 12px;
+    font-size: 11px;
     color: #666;
+    margin: 2px 0;
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 8px;
-    padding: 7px 14px;
+    margin-top: 5px;
+    padding: 6px 12px;
     background: #27ae60;
     color: #fff;
     text-decoration: none;
-    border-radius: 20px;
-    font-size: 12px;
+    border-radius: 15px;
+    font-size: 11px;
 }
 </style>
-
-</head>
-<body>
-
-<div class="container">
-<h1>Flower STL Combo Packs 🌸</h1>
-
-<div class="grid">
-
-<!-- Flora 1 -->
-
-<div class="card">
-    <div class="img-box">
-        <span class="badge">Combo Pack</span>
-        <img class="slider"
-             data-images='[
-             "Flora-1/flower-design-3d-relief-digital-effect1.png",
-             "Flora-1/flower-design-3d-relief-digital-effect2.png",
-             "Flora-1/flower-design-3d-relief-digital-effect3.png",
-             "Flora-1/flower-design-3d-relief-digital-effect4.png"
-             ]'
-             src="Flora-1/flower-design-3d-relief-digital-effect1.png">
-    </div>
-
-```
-<div class="content">
-    <h3>Flora Pack 01</h3>
-    <p class="desc">30 STL designs for CNC carving</p>
-    <a href="Flora-1/" class="btn">View</a>
-</div>
-```
-
-</div>
-
-<!-- Flora 2 -->
-
-<div class="card">
-    <div class="img-box">
-        <span class="badge">Combo Pack</span>
-        <img class="slider"
-             data-images='[
-             "Flora-2/flower-design-3d-relief-digital-effect1.png",
-             "Flora-2/flower-design-3d-relief-digital-effect2.png",
-             "Flora-2/flower-design-3d-relief-digital-effect3.png",
-             "Flora-2/flower-design-3d-relief-digital-effect4.png"
-             ]'
-             src="Flora-2/flower-design-3d-relief-digital-effect1.png">
-    </div>
-
-```
-<div class="content">
-    <h3>Flora Pack 02</h3>
-    <p class="desc">Premium floral STL bundle</p>
-    <a href="Flora-2/" class="btn">View</a>
-</div>
-```
-
-</div>
-
-</div>
-</div>
-
-<script>
-let sliders = document.querySelectorAll(".slider");
-
-sliders.forEach((slider) => {
-    let images = JSON.parse(slider.getAttribute("data-images"));
-    let index = 0;
-
-    setInterval(() => {
-        index = (index + 1) % images.length;
-        slider.src = images[index];
-    }, 1800);
-});
-</script>
-
-</body>
-</html>
-
