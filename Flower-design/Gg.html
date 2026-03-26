@@ -193,7 +193,7 @@ alt="Flower STL Pack 02">
 document.addEventListener("DOMContentLoaded", function () {
 
   // Header
-  fetch("../header.html")
+  fetch("https://www.digitaleffect.in/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(err => console.log("Header error:", err));
 
   // Footer
-  fetch("../footer.html")
+  fetch("https://www.digitaleffect.in/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
@@ -209,8 +209,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(err => console.log("Footer error:", err));
 
 });
+</script>
 
-    
+<script>
   // Slider
   let sliders = document.querySelectorAll(".slider");
 
