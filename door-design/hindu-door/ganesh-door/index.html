@@ -344,7 +344,7 @@ setInterval(autoSlide, 1200);
 
 <script>
   // Header
-  fetch("../../header.html")
+  fetch("../../../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
@@ -353,7 +353,7 @@ setInterval(autoSlide, 1200);
     .catch(error => console.error('Header not loading:', error));
 
   // Footer
-  fetch("../../footer.html")
+  fetch("../../../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
