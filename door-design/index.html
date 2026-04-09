@@ -18,7 +18,7 @@
 <meta property="og:description" content="premium 3D door designs for CNC carving.">
 <meta property="og:image" content="https://www.digitaleffect.in/door-design/half-moon/door-01/half--moon-circle-door-design-digital-effect-1.jpg">
 <meta property="og:url" content="https://www.digitaleffect.in/door-design/">
-<meta property="og:type" content="product">
+<meta property="og:type" content="website">
   <!-- ✅ ADD OPEN GRAPH HERE -->
   
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -153,21 +153,23 @@ h1 {
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
 }
 
 /* CARD */
 .card {
     background: #fff;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    transition: 0.25s ease;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border: 2px solid #27ae60;
 }
 
 /* IMAGE */
@@ -177,8 +179,8 @@ h1 {
 
 .img-box img {
     width: 100%;
-    height: 230px;
-    object-fit: contain;
+    height: 150px;
+    object-fit: cover;
 }
 
 /* BADGE */
@@ -201,18 +203,18 @@ h1 {
 
 /* CONTENT */
 .content {
-    padding: 20px;
+    padding: 12px;
     text-align: center;
 }
 
 .content h2 {
-    font-size: 18px;
+    font-size: 14px;
     margin: 10px 0 5px;
     font-weight: 600;
 }
 
 .desc {
-    font-size: 14px;
+    font-size: 12px;
     color: #555;
     margin-bottom: 8px;
 }
@@ -263,6 +265,7 @@ Explore high-quality 3D relief Door RLF/STL designs for CNC machines, furniture 
 <div class="grid">
 
 <!-- door 1 -->
+<a href="YOUR-LINK" class="card-link">
 <div class="card">
     <div class="img-box">
     
@@ -285,6 +288,7 @@ Explore high-quality 3D relief Door RLF/STL designs for CNC machines, furniture 
         <a href="https://www.digitaleffect.in/door-design/half-moon/" class="btn">View Collection</a>
     </div>
 </div>
+</a>
 <!-- door 1 -->
 
   
@@ -789,11 +793,20 @@ let sliders = document.querySelectorAll(".slider");
 sliders.forEach((slider) => {
     let images = JSON.parse(slider.getAttribute("data-images"));
     let index = 0;
+    let interval;
 
-    setInterval(() => {
-        index = (index + 1) % images.length;
-        slider.src = images[index];
-    }, 1800);
+    slider.parentElement.addEventListener("mouseenter", () => {
+        interval = setInterval(() => {
+            index = (index + 1) % images.length;
+            slider.src = images[index];
+        }, 800);
+    });
+
+    slider.parentElement.addEventListener("mouseleave", () => {
+        clearInterval(interval);
+        slider.src = images[0];
+        index = 0;
+    });
 });
 </script>
 
