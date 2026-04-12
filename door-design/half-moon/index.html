@@ -179,8 +179,9 @@ h1 {
 
 .img-box img {
     width: 100%;
-    height: 180px; /* smaller image */
-    object-fit: cover;
+    height: 180px;
+    object-fit: contain; /* no crop */
+    background: #fff; /* optional clean background */
 }
 
   @media (max-width: 1024px) {
