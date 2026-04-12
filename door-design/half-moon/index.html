@@ -153,8 +153,8 @@ h1 {
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
+    gap: 20px; /* less gap = tighter premium look */
 }
 
 /* 👇 ADD THIS BELOW */
@@ -189,8 +189,20 @@ h1 {
 
 .img-box img {
     width: 100%;
-    height: 230px;
-    object-fit: contain;
+    height: 180px; /* smaller image */
+    object-fit: cover;
+}
+
+  @media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* BADGE */
@@ -213,7 +225,7 @@ h1 {
 
 /* CONTENT */
 .content {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
 
