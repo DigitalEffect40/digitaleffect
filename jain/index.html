@@ -118,8 +118,6 @@
 
 
 
-
-    
 <style>
 body {
     margin: 0;
@@ -153,10 +151,12 @@ h1 {
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
+    gap: 20px; /* less gap = tighter premium look */
 }
 
+/* 👇 ADD THIS BELOW */
+  
 /* CARD */
 .card {
     background: #fff;
@@ -177,8 +177,21 @@ h1 {
 
 .img-box img {
     width: 100%;
-    height: 230px;
-    object-fit: contain;
+    height: 180px;
+    object-fit: contain; /* no crop */
+    background: #fff; /* optional clean background */
+}
+
+  @media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* BADGE */
@@ -186,11 +199,13 @@ h1 {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: #27ae60;
+    background: rgba(0, 0, 0, 0.35); /* transparent black */
     color: #fff;
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 20px;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
 }
 
 /* DIVIDER */
@@ -201,7 +216,7 @@ h1 {
 
 /* CONTENT */
 .content {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -222,15 +237,18 @@ h1 {
     display: inline-block;
     margin-top: 12px;
     padding: 10px 18px;
-    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    background: #000; /* black */
     color: #fff;
     text-decoration: none;
     border-radius: 25px;
     font-size: 14px;
+    border: 1px solid #000;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
-    opacity: 0.85;
+    background: #111;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -247,6 +265,7 @@ h1 {
 <!-- ✅ HEADER PLACEHOLDER -->
   <div id="header-placeholder"></div>
 
+    
     
 
 
