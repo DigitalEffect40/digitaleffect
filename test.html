@@ -1056,12 +1056,9 @@ Sab kuch ek subscription mein</p>
 
 <script>
   window.addEventListener('load', function () {
-    if (!sessionStorage.getItem('promoPopupShown')) {
-      setTimeout(function () {
-        document.getElementById('promoPopupOverlay').style.display = 'flex';
-        sessionStorage.setItem('promoPopupShown', 'true');
-      }, 5000);
-    }
+    setTimeout(function () {
+      document.getElementById('promoPopupOverlay').style.display = 'flex';
+    }, 5000);
   });
 
   document.getElementById('promoPopupClose').addEventListener('click', function () {
