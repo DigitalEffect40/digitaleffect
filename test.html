@@ -902,6 +902,23 @@ document.querySelectorAll('.slider').forEach(slider => {
     overflow: hidden;
   }
 
+ /* ✅ Desktop ke liye bada size */
+  @media (min-width: 768px) {
+    #promoPopupBox {
+      max-width: 460px;
+    }
+    #promoPopupBox h3 {
+      font-size: 22px;
+    }
+    #promoPopupBox p {
+      font-size: 15px;
+    }
+    #promoPopupBtn {
+      font-size: 16px;
+      padding: 15px 24px;
+    }
+  
+
   @keyframes popupSlideUp {
     from { opacity: 0; transform: translateY(30px) scale(0.95); }
     to { opacity: 1; transform: translateY(0) scale(1); }
